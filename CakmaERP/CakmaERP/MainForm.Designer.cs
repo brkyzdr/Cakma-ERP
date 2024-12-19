@@ -28,165 +28,291 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCariKartlar = new System.Windows.Forms.Button();
-            this.btnMalzemeKartlari = new System.Windows.Forms.Button();
-            this.btnMaliyetMerkezleri = new System.Windows.Forms.Button();
-            this.btnIsMerkezleri = new System.Windows.Forms.Button();
-            this.btnOperasyonlar = new System.Windows.Forms.Button();
-            this.btnRotalar = new System.Windows.Forms.Button();
+            this.btnFirma = new System.Windows.Forms.Button();
+            this.btnMateryal = new System.Windows.Forms.Button();
+            this.btnMaliyetMerkezi = new System.Windows.Forms.Button();
+            this.btnIsMerkezi = new System.Windows.Forms.Button();
+            this.btnMalzemeTipi = new System.Windows.Forms.Button();
+            this.btnMaliyetMerkeziKontrol = new System.Windows.Forms.Button();
             this.btnUrunAgaci = new System.Windows.Forms.Button();
-            this.btnCariTipleri = new System.Windows.Forms.Button();
-            this.btnMalzemeTipleri = new System.Windows.Forms.Button();
-            this.btnRotaTipleri = new System.Windows.Forms.Button();
-            this.btnUrunAgaciTipleri = new System.Windows.Forms.Button();
-            this.btnUlkeler = new System.Windows.Forms.Button();
+            this.btnBirim = new System.Windows.Forms.Button();
+            this.btnSehir = new System.Windows.Forms.Button();
+            this.btnRotaYonetimi = new System.Windows.Forms.Button();
+            this.btnUlke = new System.Windows.Forms.Button();
+            this.btnDil = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnUrunAgaciKontrol = new System.Windows.Forms.Button();
+            this.btnRotaTipi = new System.Windows.Forms.Button();
+            this.btnIsMerkeziTipi = new System.Windows.Forms.Button();
+            this.btnOperasyonTipi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnCariKartlar
+            // btnFirma
             // 
-            this.btnCariKartlar.Location = new System.Drawing.Point(71, 149);
-            this.btnCariKartlar.Name = "btnCariKartlar";
-            this.btnCariKartlar.Size = new System.Drawing.Size(150, 50);
-            this.btnCariKartlar.TabIndex = 0;
-            this.btnCariKartlar.Text = "Cari Kartlar";
-            this.btnCariKartlar.UseVisualStyleBackColor = true;
+            this.btnFirma.BackColor = System.Drawing.SystemColors.Info;
+            this.btnFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirma.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnFirma.Location = new System.Drawing.Point(89, 118);
+            this.btnFirma.Name = "btnFirma";
+            this.btnFirma.Size = new System.Drawing.Size(150, 50);
+            this.btnFirma.TabIndex = 0;
+            this.btnFirma.Text = "Firma";
+            this.btnFirma.UseVisualStyleBackColor = false;
             // 
-            // btnMalzemeKartlari
+            // btnMateryal
             // 
-            this.btnMalzemeKartlari.Location = new System.Drawing.Point(71, 234);
-            this.btnMalzemeKartlari.Name = "btnMalzemeKartlari";
-            this.btnMalzemeKartlari.Size = new System.Drawing.Size(150, 50);
-            this.btnMalzemeKartlari.TabIndex = 1;
-            this.btnMalzemeKartlari.Text = "Malzeme Kartları";
-            this.btnMalzemeKartlari.UseVisualStyleBackColor = true;
+            this.btnMateryal.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMateryal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMateryal.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnMateryal.Location = new System.Drawing.Point(561, 230);
+            this.btnMateryal.Name = "btnMateryal";
+            this.btnMateryal.Size = new System.Drawing.Size(150, 50);
+            this.btnMateryal.TabIndex = 1;
+            this.btnMateryal.Text = "Materyal";
+            this.btnMateryal.UseVisualStyleBackColor = false;
             // 
-            // btnMaliyetMerkezleri
+            // btnMaliyetMerkezi
             // 
-            this.btnMaliyetMerkezleri.Location = new System.Drawing.Point(71, 314);
-            this.btnMaliyetMerkezleri.Name = "btnMaliyetMerkezleri";
-            this.btnMaliyetMerkezleri.Size = new System.Drawing.Size(150, 50);
-            this.btnMaliyetMerkezleri.TabIndex = 2;
-            this.btnMaliyetMerkezleri.Text = "Maliyet Merkezleri";
-            this.btnMaliyetMerkezleri.UseVisualStyleBackColor = true;
+            this.btnMaliyetMerkezi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMaliyetMerkezi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaliyetMerkezi.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnMaliyetMerkezi.Location = new System.Drawing.Point(747, 174);
+            this.btnMaliyetMerkezi.Name = "btnMaliyetMerkezi";
+            this.btnMaliyetMerkezi.Size = new System.Drawing.Size(150, 50);
+            this.btnMaliyetMerkezi.TabIndex = 2;
+            this.btnMaliyetMerkezi.Text = "Maliyet Merkezi";
+            this.btnMaliyetMerkezi.UseVisualStyleBackColor = false;
             // 
-            // btnIsMerkezleri
+            // btnIsMerkezi
             // 
-            this.btnIsMerkezleri.Location = new System.Drawing.Point(278, 149);
-            this.btnIsMerkezleri.Name = "btnIsMerkezleri";
-            this.btnIsMerkezleri.Size = new System.Drawing.Size(150, 50);
-            this.btnIsMerkezleri.TabIndex = 3;
-            this.btnIsMerkezleri.Text = "İş Merkezleri";
-            this.btnIsMerkezleri.UseVisualStyleBackColor = true;
+            this.btnIsMerkezi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnIsMerkezi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIsMerkezi.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnIsMerkezi.Location = new System.Drawing.Point(561, 174);
+            this.btnIsMerkezi.Name = "btnIsMerkezi";
+            this.btnIsMerkezi.Size = new System.Drawing.Size(150, 50);
+            this.btnIsMerkezi.TabIndex = 3;
+            this.btnIsMerkezi.Text = "İş Merkezi";
+            this.btnIsMerkezi.UseVisualStyleBackColor = false;
             // 
-            // btnOperasyonlar
+            // btnMalzemeTipi
             // 
-            this.btnOperasyonlar.Location = new System.Drawing.Point(278, 234);
-            this.btnOperasyonlar.Name = "btnOperasyonlar";
-            this.btnOperasyonlar.Size = new System.Drawing.Size(150, 50);
-            this.btnOperasyonlar.TabIndex = 4;
-            this.btnOperasyonlar.Text = "Operasyonlar";
-            this.btnOperasyonlar.UseVisualStyleBackColor = true;
+            this.btnMalzemeTipi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMalzemeTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMalzemeTipi.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnMalzemeTipi.Location = new System.Drawing.Point(256, 174);
+            this.btnMalzemeTipi.Name = "btnMalzemeTipi";
+            this.btnMalzemeTipi.Size = new System.Drawing.Size(150, 50);
+            this.btnMalzemeTipi.TabIndex = 4;
+            this.btnMalzemeTipi.Text = "Malzeme Tipi";
+            this.btnMalzemeTipi.UseVisualStyleBackColor = false;
             // 
-            // btnRotalar
+            // btnMaliyetMerkeziKontrol
             // 
-            this.btnRotalar.Location = new System.Drawing.Point(278, 314);
-            this.btnRotalar.Name = "btnRotalar";
-            this.btnRotalar.Size = new System.Drawing.Size(150, 50);
-            this.btnRotalar.TabIndex = 5;
-            this.btnRotalar.Text = "Rotalar";
-            this.btnRotalar.UseVisualStyleBackColor = true;
+            this.btnMaliyetMerkeziKontrol.BackColor = System.Drawing.SystemColors.Info;
+            this.btnMaliyetMerkeziKontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaliyetMerkeziKontrol.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnMaliyetMerkeziKontrol.Location = new System.Drawing.Point(256, 230);
+            this.btnMaliyetMerkeziKontrol.Name = "btnMaliyetMerkeziKontrol";
+            this.btnMaliyetMerkeziKontrol.Size = new System.Drawing.Size(150, 50);
+            this.btnMaliyetMerkeziKontrol.TabIndex = 5;
+            this.btnMaliyetMerkeziKontrol.Text = "Maliyet Merkezi";
+            this.btnMaliyetMerkeziKontrol.UseVisualStyleBackColor = false;
             // 
             // btnUrunAgaci
             // 
-            this.btnUrunAgaci.Location = new System.Drawing.Point(494, 149);
+            this.btnUrunAgaci.BackColor = System.Drawing.SystemColors.Info;
+            this.btnUrunAgaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUrunAgaci.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnUrunAgaci.Location = new System.Drawing.Point(561, 118);
             this.btnUrunAgaci.Name = "btnUrunAgaci";
             this.btnUrunAgaci.Size = new System.Drawing.Size(150, 50);
             this.btnUrunAgaci.TabIndex = 6;
             this.btnUrunAgaci.Text = "Ürün Ağacı";
-            this.btnUrunAgaci.UseVisualStyleBackColor = true;
+            this.btnUrunAgaci.UseVisualStyleBackColor = false;
             // 
-            // btnCariTipleri
+            // btnBirim
             // 
-            this.btnCariTipleri.Location = new System.Drawing.Point(494, 234);
-            this.btnCariTipleri.Name = "btnCariTipleri";
-            this.btnCariTipleri.Size = new System.Drawing.Size(150, 50);
-            this.btnCariTipleri.TabIndex = 7;
-            this.btnCariTipleri.Text = "Cari Tipleri";
-            this.btnCariTipleri.UseVisualStyleBackColor = true;
+            this.btnBirim.BackColor = System.Drawing.SystemColors.Info;
+            this.btnBirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBirim.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnBirim.Location = new System.Drawing.Point(256, 118);
+            this.btnBirim.Name = "btnBirim";
+            this.btnBirim.Size = new System.Drawing.Size(150, 50);
+            this.btnBirim.TabIndex = 7;
+            this.btnBirim.Text = "Birim";
+            this.btnBirim.UseVisualStyleBackColor = false;
             // 
-            // btnMalzemeTipleri
+            // btnSehir
             // 
-            this.btnMalzemeTipleri.Location = new System.Drawing.Point(494, 311);
-            this.btnMalzemeTipleri.Name = "btnMalzemeTipleri";
-            this.btnMalzemeTipleri.Size = new System.Drawing.Size(150, 50);
-            this.btnMalzemeTipleri.TabIndex = 8;
-            this.btnMalzemeTipleri.Text = "Malzeme Tipleri";
-            this.btnMalzemeTipleri.UseVisualStyleBackColor = true;
+            this.btnSehir.BackColor = System.Drawing.SystemColors.Info;
+            this.btnSehir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSehir.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnSehir.Location = new System.Drawing.Point(89, 286);
+            this.btnSehir.Name = "btnSehir";
+            this.btnSehir.Size = new System.Drawing.Size(150, 50);
+            this.btnSehir.TabIndex = 8;
+            this.btnSehir.Text = "Şehir";
+            this.btnSehir.UseVisualStyleBackColor = false;
             // 
-            // btnRotaTipleri
+            // btnRotaYonetimi
             // 
-            this.btnRotaTipleri.Location = new System.Drawing.Point(729, 149);
-            this.btnRotaTipleri.Name = "btnRotaTipleri";
-            this.btnRotaTipleri.Size = new System.Drawing.Size(150, 50);
-            this.btnRotaTipleri.TabIndex = 9;
-            this.btnRotaTipleri.Text = "Rota Tipleri";
-            this.btnRotaTipleri.UseVisualStyleBackColor = true;
+            this.btnRotaYonetimi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnRotaYonetimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRotaYonetimi.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnRotaYonetimi.Location = new System.Drawing.Point(747, 118);
+            this.btnRotaYonetimi.Name = "btnRotaYonetimi";
+            this.btnRotaYonetimi.Size = new System.Drawing.Size(150, 50);
+            this.btnRotaYonetimi.TabIndex = 9;
+            this.btnRotaYonetimi.Text = "Rota Yönetimi";
+            this.btnRotaYonetimi.UseVisualStyleBackColor = false;
             // 
-            // btnUrunAgaciTipleri
+            // btnUlke
             // 
-            this.btnUrunAgaciTipleri.Location = new System.Drawing.Point(729, 234);
-            this.btnUrunAgaciTipleri.Name = "btnUrunAgaciTipleri";
-            this.btnUrunAgaciTipleri.Size = new System.Drawing.Size(150, 50);
-            this.btnUrunAgaciTipleri.TabIndex = 10;
-            this.btnUrunAgaciTipleri.Text = "Ürün Ağacı Tipleri";
-            this.btnUrunAgaciTipleri.UseVisualStyleBackColor = true;
+            this.btnUlke.BackColor = System.Drawing.SystemColors.Info;
+            this.btnUlke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUlke.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnUlke.Location = new System.Drawing.Point(89, 230);
+            this.btnUlke.Name = "btnUlke";
+            this.btnUlke.Size = new System.Drawing.Size(150, 50);
+            this.btnUlke.TabIndex = 10;
+            this.btnUlke.Text = "Ülke";
+            this.btnUlke.UseVisualStyleBackColor = false;
             // 
-            // btnUlkeler
+            // btnDil
             // 
-            this.btnUlkeler.Location = new System.Drawing.Point(729, 311);
-            this.btnUlkeler.Name = "btnUlkeler";
-            this.btnUlkeler.Size = new System.Drawing.Size(150, 50);
-            this.btnUlkeler.TabIndex = 11;
-            this.btnUlkeler.Text = "Ülkeler";
-            this.btnUlkeler.UseVisualStyleBackColor = true;
+            this.btnDil.BackColor = System.Drawing.SystemColors.Info;
+            this.btnDil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDil.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnDil.Location = new System.Drawing.Point(89, 174);
+            this.btnDil.Name = "btnDil";
+            this.btnDil.Size = new System.Drawing.Size(150, 50);
+            this.btnDil.TabIndex = 11;
+            this.btnDil.Text = "Dil";
+            this.btnDil.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label1.Location = new System.Drawing.Point(152, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(186, 26);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Kontrol Tabloları";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label3.Location = new System.Drawing.Point(655, 73);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 26);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Ana Ekranlar";
+            // 
+            // btnUrunAgaciKontrol
+            // 
+            this.btnUrunAgaciKontrol.BackColor = System.Drawing.SystemColors.Info;
+            this.btnUrunAgaciKontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUrunAgaciKontrol.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnUrunAgaciKontrol.Location = new System.Drawing.Point(256, 286);
+            this.btnUrunAgaciKontrol.Name = "btnUrunAgaciKontrol";
+            this.btnUrunAgaciKontrol.Size = new System.Drawing.Size(150, 50);
+            this.btnUrunAgaciKontrol.TabIndex = 15;
+            this.btnUrunAgaciKontrol.Text = "Ürün Ağacı";
+            this.btnUrunAgaciKontrol.UseVisualStyleBackColor = false;
+            // 
+            // btnRotaTipi
+            // 
+            this.btnRotaTipi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnRotaTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRotaTipi.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnRotaTipi.Location = new System.Drawing.Point(89, 342);
+            this.btnRotaTipi.Name = "btnRotaTipi";
+            this.btnRotaTipi.Size = new System.Drawing.Size(150, 50);
+            this.btnRotaTipi.TabIndex = 16;
+            this.btnRotaTipi.Text = "Rota Tipi";
+            this.btnRotaTipi.UseVisualStyleBackColor = false;
+            // 
+            // btnIsMerkeziTipi
+            // 
+            this.btnIsMerkeziTipi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnIsMerkeziTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIsMerkeziTipi.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnIsMerkeziTipi.Location = new System.Drawing.Point(256, 342);
+            this.btnIsMerkeziTipi.Name = "btnIsMerkeziTipi";
+            this.btnIsMerkeziTipi.Size = new System.Drawing.Size(150, 50);
+            this.btnIsMerkeziTipi.TabIndex = 17;
+            this.btnIsMerkeziTipi.Text = "İş Merkezi Tipi";
+            this.btnIsMerkeziTipi.UseVisualStyleBackColor = false;
+            // 
+            // btnOperasyonTipi
+            // 
+            this.btnOperasyonTipi.BackColor = System.Drawing.SystemColors.Info;
+            this.btnOperasyonTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOperasyonTipi.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.btnOperasyonTipi.Location = new System.Drawing.Point(89, 398);
+            this.btnOperasyonTipi.Name = "btnOperasyonTipi";
+            this.btnOperasyonTipi.Size = new System.Drawing.Size(150, 50);
+            this.btnOperasyonTipi.TabIndex = 18;
+            this.btnOperasyonTipi.Text = "Operasyon Tipi";
+            this.btnOperasyonTipi.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
-            this.Controls.Add(this.btnUlkeler);
-            this.Controls.Add(this.btnUrunAgaciTipleri);
-            this.Controls.Add(this.btnRotaTipleri);
-            this.Controls.Add(this.btnMalzemeTipleri);
-            this.Controls.Add(this.btnCariTipleri);
+            this.Controls.Add(this.btnOperasyonTipi);
+            this.Controls.Add(this.btnIsMerkeziTipi);
+            this.Controls.Add(this.btnRotaTipi);
+            this.Controls.Add(this.btnUrunAgaciKontrol);
+            this.Controls.Add(this.btnDil);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnUlke);
+            this.Controls.Add(this.btnRotaYonetimi);
+            this.Controls.Add(this.btnSehir);
+            this.Controls.Add(this.btnBirim);
             this.Controls.Add(this.btnUrunAgaci);
-            this.Controls.Add(this.btnRotalar);
-            this.Controls.Add(this.btnOperasyonlar);
-            this.Controls.Add(this.btnIsMerkezleri);
-            this.Controls.Add(this.btnMaliyetMerkezleri);
-            this.Controls.Add(this.btnMalzemeKartlari);
-            this.Controls.Add(this.btnCariKartlar);
+            this.Controls.Add(this.btnMaliyetMerkeziKontrol);
+            this.Controls.Add(this.btnMalzemeTipi);
+            this.Controls.Add(this.btnIsMerkezi);
+            this.Controls.Add(this.btnMaliyetMerkezi);
+            this.Controls.Add(this.btnMateryal);
+            this.Controls.Add(this.btnFirma);
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "Grş Çakma Erp";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnCariKartlar;
-        private System.Windows.Forms.Button btnMalzemeKartlari;
-        private System.Windows.Forms.Button btnMaliyetMerkezleri;
-        private System.Windows.Forms.Button btnIsMerkezleri;
-        private System.Windows.Forms.Button btnOperasyonlar;
-        private System.Windows.Forms.Button btnRotalar;
+        private System.Windows.Forms.Button btnFirma;
+        private System.Windows.Forms.Button btnMateryal;
+        private System.Windows.Forms.Button btnMaliyetMerkezi;
+        private System.Windows.Forms.Button btnIsMerkezi;
+        private System.Windows.Forms.Button btnMalzemeTipi;
+        private System.Windows.Forms.Button btnMaliyetMerkeziKontrol;
         private System.Windows.Forms.Button btnUrunAgaci;
-        private System.Windows.Forms.Button btnCariTipleri;
-        private System.Windows.Forms.Button btnMalzemeTipleri;
-        private System.Windows.Forms.Button btnRotaTipleri;
-        private System.Windows.Forms.Button btnUrunAgaciTipleri;
-        private System.Windows.Forms.Button btnUlkeler;
+        private System.Windows.Forms.Button btnBirim;
+        private System.Windows.Forms.Button btnSehir;
+        private System.Windows.Forms.Button btnRotaYonetimi;
+        private System.Windows.Forms.Button btnUlke;
+        private System.Windows.Forms.Button btnDil;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnUrunAgaciKontrol;
+        private System.Windows.Forms.Button btnRotaTipi;
+        private System.Windows.Forms.Button btnIsMerkeziTipi;
+        private System.Windows.Forms.Button btnOperasyonTipi;
     }
 }
