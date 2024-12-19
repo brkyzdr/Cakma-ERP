@@ -57,5 +57,9 @@ namespace CakmaERP
             CRUD.Delete("Employees", "Id = 1");
         }
 
+        private void btnFirma_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

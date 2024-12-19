@@ -59,6 +59,7 @@
             this.btnFirma.TabIndex = 0;
             this.btnFirma.Text = "Firma";
             this.btnFirma.UseVisualStyleBackColor = false;
+            this.btnFirma.Click += new System.EventHandler(this.btnFirma_Click);
             // 
             // btnMateryal
             // 
