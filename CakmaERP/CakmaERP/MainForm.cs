@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CakmaERP;
+using CakmaERP.FormsControlTables;
 
 namespace CakmaERP
 {
@@ -23,11 +24,7 @@ namespace CakmaERP
 
         }
 
-
-
-
-
-        //CRUD class usage example
+        #region CRUD class usage example
         private void Create()
         {
             Dictionary<string, object> newData = new Dictionary<string, object>
@@ -56,10 +53,15 @@ namespace CakmaERP
         {
             CRUD.Delete("Employees", "Id = 1");
         }
+        #endregion
 
+        #region Buttons
         private void btnFirma_Click(object sender, EventArgs e)
         {
-
+            Firma firma = new Firma();
+            firma.Show();
         }
+        #endregion
+
     }
 }

@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRUD.cs" />
+    <Compile Include="FormsControlTables\Firma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsControlTables\Firma.Designer.cs">
+      <DependentUpon>Firma.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,6 +61,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormsControlTables\Firma.resx">
+      <DependentUpon>Firma.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -66,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -79,6 +89,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FormsMainScreens\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icons8-add-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icons8-delete-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icons8-detail-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Icons\icons8-pencil-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,7 +13,7 @@ namespace CakmaERP
     /// </summary>
     public class CRUD
     {
-        private static readonly string connectionString = "Data Source=...;Initial Catalog=...;Integrated Security=True";
+        private static readonly string connectionString = "Server=STRMOON2; Database=DB03; Integrated Security=true";
 
         public static void Create(string tableName, Dictionary<string, object> data)
         {
