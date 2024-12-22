@@ -260,6 +260,7 @@
             this.btnIsMerkeziTipi.TabIndex = 17;
             this.btnIsMerkeziTipi.Text = "İş Merkezi Tipi";
             this.btnIsMerkeziTipi.UseVisualStyleBackColor = false;
+            this.btnIsMerkeziTipi.Click += new System.EventHandler(this.btnIsMerkeziTipi_Click);
             // 
             // btnOperasyonTipi
             // 

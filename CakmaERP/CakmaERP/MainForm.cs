@@ -110,5 +110,11 @@ namespace CakmaERP
             rotaTipi.Show();
         }
         #endregion
+
+        private void btnIsMerkeziTipi_Click(object sender, EventArgs e)
+        {
+            IsMerkeziTipi isMerkeziTipi =new IsMerkeziTipi();
+            isMerkeziTipi.Show();
+        }
     }
 }
