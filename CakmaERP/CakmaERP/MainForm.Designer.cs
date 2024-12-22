@@ -182,6 +182,7 @@
             this.btnUlke.TabIndex = 10;
             this.btnUlke.Text = "Ülke";
             this.btnUlke.UseVisualStyleBackColor = false;
+            this.btnUlke.Click += new System.EventHandler(this.btnUlke_Click);
             // 
             // btnDil
             // 

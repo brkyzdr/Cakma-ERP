@@ -80,5 +80,11 @@ namespace CakmaERP
             MalzemeTipi malzemeTipi = new MalzemeTipi();
             malzemeTipi.Show();
         }
+
+        private void btnUlke_Click(object sender, EventArgs e)
+        {
+            Ulke ulke = new Ulke(); 
+            ulke.Show();
+        }
     }
 }

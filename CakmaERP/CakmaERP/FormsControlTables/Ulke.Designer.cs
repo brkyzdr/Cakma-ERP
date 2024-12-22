@@ -1,6 +1,6 @@
 ﻿namespace CakmaERP.FormsControlTables
 {
-    partial class MalzemeTipi
+    partial class Ulke
     {
         /// <summary>
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMalzemeTipi = new System.Windows.Forms.TextBox();
+            this.txtUlkeKodu = new System.Windows.Forms.TextBox();
             this.txtFirmaKodu = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,9 +44,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 119);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 17;
-            this.label2.Text = "Malzeme Tipi";
+            this.label2.Text = "Ülke Kodu";
             // 
             // label1
             // 
@@ -57,12 +57,12 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Firma Kodu";
             // 
-            // txtMalzemeTipi
+            // txtUlkeKodu
             // 
-            this.txtMalzemeTipi.Location = new System.Drawing.Point(12, 135);
-            this.txtMalzemeTipi.Name = "txtMalzemeTipi";
-            this.txtMalzemeTipi.Size = new System.Drawing.Size(216, 20);
-            this.txtMalzemeTipi.TabIndex = 15;
+            this.txtUlkeKodu.Location = new System.Drawing.Point(12, 135);
+            this.txtUlkeKodu.Name = "txtUlkeKodu";
+            this.txtUlkeKodu.Size = new System.Drawing.Size(216, 20);
+            this.txtUlkeKodu.TabIndex = 15;
             // 
             // txtFirmaKodu
             // 
@@ -70,6 +70,19 @@
             this.txtFirmaKodu.Name = "txtFirmaKodu";
             this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
             this.txtFirmaKodu.TabIndex = 14;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView1.Location = new System.Drawing.Point(314, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridView1.Size = new System.Drawing.Size(658, 537);
+            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnDelete
             // 
@@ -101,20 +114,7 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(314, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(658, 537);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // MalzemeTipi
+            // Ulke
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -122,15 +122,16 @@
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMalzemeTipi);
+            this.Controls.Add(this.txtUlkeKodu);
             this.Controls.Add(this.txtFirmaKodu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "MalzemeTipi";
+            this.Name = "Ulke";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Malzeme Tipi Kontrol Tablosu";
+            this.Text = "Ülke Destek Tablosu";
+            this.Load += new System.EventHandler(this.Ulke_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,7 +142,7 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMalzemeTipi;
+        private System.Windows.Forms.TextBox txtUlkeKodu;
         private System.Windows.Forms.TextBox txtFirmaKodu;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
