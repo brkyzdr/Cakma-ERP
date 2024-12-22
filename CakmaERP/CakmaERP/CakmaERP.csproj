@@ -113,6 +113,12 @@
     <Compile Include="FormsControlTables\UrunAgaciKontrol.Designer.cs">
       <DependentUpon>UrunAgaciKontrol.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsMainScreens\IsMerkezi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsMainScreens\IsMerkezi.Designer.cs">
+      <DependentUpon>IsMerkezi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsMainScreens\RotaYonetimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsControlTables\UrunAgaciKontrol.resx">
       <DependentUpon>UrunAgaciKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsMainScreens\IsMerkezi.resx">
+      <DependentUpon>IsMerkezi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMainScreens\RotaYonetimi.resx">
       <DependentUpon>RotaYonetimi.cs</DependentUpon>

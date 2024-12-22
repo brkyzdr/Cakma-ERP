@@ -96,6 +96,7 @@
             this.btnIsMerkezi.TabIndex = 3;
             this.btnIsMerkezi.Text = "İş Merkezi";
             this.btnIsMerkezi.UseVisualStyleBackColor = false;
+            this.btnIsMerkezi.Click += new System.EventHandler(this.btnIsMerkezi_Click);
             // 
             // btnMalzemeTipi
             // 

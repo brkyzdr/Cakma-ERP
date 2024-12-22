@@ -138,5 +138,11 @@ namespace CakmaERP
             rotaYonetimi.Show();
         }
         #endregion
+
+        private void btnIsMerkezi_Click(object sender, EventArgs e)
+        {
+            IsMerkezi isMerkezi =new IsMerkezi();
+            isMerkezi.Show();
+        }
     }
 }
