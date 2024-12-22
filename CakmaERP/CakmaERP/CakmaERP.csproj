@@ -65,6 +65,12 @@
     <Compile Include="FormsControlTables\Firma.Designer.cs">
       <DependentUpon>Firma.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsControlTables\MaliyetMerkeziKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsControlTables\MaliyetMerkeziKontrol.Designer.cs">
+      <DependentUpon>MaliyetMerkeziKontrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsControlTables\MalzemeTipi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsControlTables\Firma.resx">
       <DependentUpon>Firma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsControlTables\MaliyetMerkeziKontrol.resx">
+      <DependentUpon>MaliyetMerkeziKontrol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsControlTables\MalzemeTipi.resx">
       <DependentUpon>MalzemeTipi.cs</DependentUpon>

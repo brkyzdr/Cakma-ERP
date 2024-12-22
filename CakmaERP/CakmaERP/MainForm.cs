@@ -86,5 +86,11 @@ namespace CakmaERP
             Ulke ulke = new Ulke(); 
             ulke.Show();
         }
+
+        private void btnMaliyetMerkeziKontrol_Click(object sender, EventArgs e)
+        {
+            MaliyetMerkeziKontrol maliyetMerkeziKontrol =new MaliyetMerkeziKontrol();
+            maliyetMerkeziKontrol.Show();
+        }
     }
 }

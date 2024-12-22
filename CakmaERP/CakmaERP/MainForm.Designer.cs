@@ -121,6 +121,7 @@
             this.btnMaliyetMerkeziKontrol.TabIndex = 5;
             this.btnMaliyetMerkeziKontrol.Text = "Maliyet Merkezi";
             this.btnMaliyetMerkeziKontrol.UseVisualStyleBackColor = false;
+            this.btnMaliyetMerkeziKontrol.Click += new System.EventHandler(this.btnMaliyetMerkeziKontrol_Click);
             // 
             // btnUrunAgaci
             // 
