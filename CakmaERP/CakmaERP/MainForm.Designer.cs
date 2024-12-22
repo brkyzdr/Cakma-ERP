@@ -173,6 +173,7 @@
             this.btnRotaYonetimi.TabIndex = 9;
             this.btnRotaYonetimi.Text = "Rota Yönetimi";
             this.btnRotaYonetimi.UseVisualStyleBackColor = false;
+            this.btnRotaYonetimi.Click += new System.EventHandler(this.btnRotaYonetimi_Click);
             // 
             // btnUlke
             // 

@@ -113,6 +113,12 @@
     <Compile Include="FormsControlTables\UrunAgaciKontrol.Designer.cs">
       <DependentUpon>UrunAgaciKontrol.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsMainScreens\RotaYonetimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsMainScreens\RotaYonetimi.Designer.cs">
+      <DependentUpon>RotaYonetimi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsMainScreens\UrunAgaci.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsControlTables\UrunAgaciKontrol.resx">
       <DependentUpon>UrunAgaciKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsMainScreens\RotaYonetimi.resx">
+      <DependentUpon>RotaYonetimi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMainScreens\UrunAgaci.resx">
       <DependentUpon>UrunAgaci.cs</DependentUpon>

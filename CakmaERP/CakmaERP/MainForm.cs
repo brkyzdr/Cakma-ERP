@@ -130,6 +130,13 @@ namespace CakmaERP
             UrunAgaci urunAgaci =new UrunAgaci();
             urunAgaci.Show();
         }
+        
+
+        private void btnRotaYonetimi_Click(object sender, EventArgs e)
+        {
+            RotaYonetimi rotaYonetimi =new RotaYonetimi();
+            rotaYonetimi.Show();
+        }
         #endregion
     }
 }
