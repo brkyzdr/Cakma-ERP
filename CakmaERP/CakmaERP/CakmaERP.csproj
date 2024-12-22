@@ -119,6 +119,12 @@
     <Compile Include="FormsMainScreens\IsMerkezi.Designer.cs">
       <DependentUpon>IsMerkezi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsMainScreens\MaliyetMerkezi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsMainScreens\MaliyetMerkezi.Designer.cs">
+      <DependentUpon>MaliyetMerkezi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsMainScreens\RotaYonetimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMainScreens\IsMerkezi.resx">
       <DependentUpon>IsMerkezi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsMainScreens\MaliyetMerkezi.resx">
+      <DependentUpon>MaliyetMerkezi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMainScreens\RotaYonetimi.resx">
       <DependentUpon>RotaYonetimi.cs</DependentUpon>

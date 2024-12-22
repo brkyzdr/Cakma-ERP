@@ -137,12 +137,19 @@ namespace CakmaERP
             RotaYonetimi rotaYonetimi =new RotaYonetimi();
             rotaYonetimi.Show();
         }
-        #endregion
+       
 
         private void btnIsMerkezi_Click(object sender, EventArgs e)
         {
             IsMerkezi isMerkezi =new IsMerkezi();
             isMerkezi.Show();
         }
+
+        private void btnMaliyetMerkezi_Click(object sender, EventArgs e)
+        {
+            MaliyetMerkezi maliyetMerkezi =new MaliyetMerkezi();
+            maliyetMerkezi.Show();
+        }
+        #endregion
     }
 }
