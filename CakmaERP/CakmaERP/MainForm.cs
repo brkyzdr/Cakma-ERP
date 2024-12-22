@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CakmaERP;
 using CakmaERP.FormsControlTables;
+using CakmaERP.FormsMainScreens;
 
 namespace CakmaERP
 {
@@ -120,6 +121,14 @@ namespace CakmaERP
         {
             OperasyonTipi operasyonTipi =new OperasyonTipi();
             operasyonTipi.Show();
+        }
+        #endregion
+
+        #region Ana Ekranlar Buttons
+        private void btnUrunAgaci_Click(object sender, EventArgs e)
+        {
+            UrunAgaci urunAgaci =new UrunAgaci();
+            urunAgaci.Show();
         }
         #endregion
     }

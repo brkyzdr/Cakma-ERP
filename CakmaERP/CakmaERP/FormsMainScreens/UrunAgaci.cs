@@ -8,19 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CakmaERP.FormsControlTables
+namespace CakmaERP.FormsMainScreens
 {
-    public partial class Firma : Form
+    public partial class UrunAgaci : Form
     {
-        public Firma()
+        public UrunAgaci()
         {
             InitializeComponent();
 
-            LoadData();
+            //LoadData();
         }
+
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM Firma");
+            DataTable dataTable = CRUD.Read("SELECT * FROM UrunAgaci");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
@@ -28,15 +29,15 @@ namespace CakmaERP.FormsControlTables
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtFirmaAciklamasi.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtMalzemeTipi.Text))
             {
                 var data = new Dictionary<string, object>
                 {
                     { "firma_kodu", txtFirmaKodu.Text },
-                    { "firma_aciklamasi", txtFirmaAciklamasi.Text }
+                    { "malzeme_tipi", txtMalzemeTipi.Text }
                 };
 
-                CRUD.Create("Firma", data);
+                CRUD.Create("UrunAgaci", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -45,18 +46,18 @@ namespace CakmaERP.FormsControlTables
                 MessageBox.Show("Lütfen tüm alanları doldurun.");
             }
         }
-        
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtFirmaAciklamasi.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtMalzemeTipi.Text))
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "firma_aciklamasi", txtFirmaAciklamasi.Text }
+                    { "malzeme_tipi", txtMalzemeTipi.Text }
                 };
 
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Update("Firma", data, condition);
+                CRUD.Update("UrunAgaci", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -71,7 +72,7 @@ namespace CakmaERP.FormsControlTables
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("Firma", condition);
+                CRUD.Delete("UrunAgaci", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
@@ -87,7 +88,7 @@ namespace CakmaERP.FormsControlTables
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtFirmaAciklamasi.Text = row.Cells["firma_aciklamasi"].Value.ToString();
+                txtMalzemeTipi.Text = row.Cells["malzeme_tipi"].Value.ToString();
             }
         }
     }

@@ -134,6 +134,7 @@
             this.btnUrunAgaci.TabIndex = 6;
             this.btnUrunAgaci.Text = "Ürün Ağacı";
             this.btnUrunAgaci.UseVisualStyleBackColor = false;
+            this.btnUrunAgaci.Click += new System.EventHandler(this.btnUrunAgaci_Click);
             // 
             // btnBirim
             // 
