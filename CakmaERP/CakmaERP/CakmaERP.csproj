@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CRUD.cs" />
+    <Compile Include="FormsControlTables\Birim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsControlTables\Birim.Designer.cs">
+      <DependentUpon>Birim.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsControlTables\Firma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormsControlTables\Birim.resx">
+      <DependentUpon>Birim.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsControlTables\Firma.resx">
       <DependentUpon>Firma.cs</DependentUpon>
     </EmbeddedResource>

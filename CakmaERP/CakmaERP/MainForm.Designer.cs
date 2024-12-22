@@ -50,8 +50,8 @@
             // 
             // btnFirma
             // 
-            this.btnFirma.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFirma.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFirma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFirma.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnFirma.Location = new System.Drawing.Point(89, 118);
             this.btnFirma.Name = "btnFirma";
@@ -63,8 +63,8 @@
             // 
             // btnMateryal
             // 
-            this.btnMateryal.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnMateryal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMateryal.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMateryal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMateryal.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnMateryal.Location = new System.Drawing.Point(561, 230);
             this.btnMateryal.Name = "btnMateryal";
@@ -75,8 +75,8 @@
             // 
             // btnMaliyetMerkezi
             // 
-            this.btnMaliyetMerkezi.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnMaliyetMerkezi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaliyetMerkezi.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMaliyetMerkezi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaliyetMerkezi.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnMaliyetMerkezi.Location = new System.Drawing.Point(747, 174);
             this.btnMaliyetMerkezi.Name = "btnMaliyetMerkezi";
@@ -87,8 +87,8 @@
             // 
             // btnIsMerkezi
             // 
-            this.btnIsMerkezi.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnIsMerkezi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIsMerkezi.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnIsMerkezi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIsMerkezi.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnIsMerkezi.Location = new System.Drawing.Point(561, 174);
             this.btnIsMerkezi.Name = "btnIsMerkezi";
@@ -99,8 +99,8 @@
             // 
             // btnMalzemeTipi
             // 
-            this.btnMalzemeTipi.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnMalzemeTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMalzemeTipi.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMalzemeTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMalzemeTipi.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnMalzemeTipi.Location = new System.Drawing.Point(256, 174);
             this.btnMalzemeTipi.Name = "btnMalzemeTipi";
@@ -111,8 +111,8 @@
             // 
             // btnMaliyetMerkeziKontrol
             // 
-            this.btnMaliyetMerkeziKontrol.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnMaliyetMerkeziKontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaliyetMerkeziKontrol.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMaliyetMerkeziKontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaliyetMerkeziKontrol.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnMaliyetMerkeziKontrol.Location = new System.Drawing.Point(256, 230);
             this.btnMaliyetMerkeziKontrol.Name = "btnMaliyetMerkeziKontrol";
@@ -123,8 +123,8 @@
             // 
             // btnUrunAgaci
             // 
-            this.btnUrunAgaci.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnUrunAgaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUrunAgaci.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnUrunAgaci.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUrunAgaci.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnUrunAgaci.Location = new System.Drawing.Point(561, 118);
             this.btnUrunAgaci.Name = "btnUrunAgaci";
@@ -135,8 +135,8 @@
             // 
             // btnBirim
             // 
-            this.btnBirim.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnBirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBirim.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBirim.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBirim.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnBirim.Location = new System.Drawing.Point(256, 118);
             this.btnBirim.Name = "btnBirim";
@@ -144,11 +144,12 @@
             this.btnBirim.TabIndex = 7;
             this.btnBirim.Text = "Birim";
             this.btnBirim.UseVisualStyleBackColor = false;
+            this.btnBirim.Click += new System.EventHandler(this.btnBirim_Click);
             // 
             // btnSehir
             // 
-            this.btnSehir.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnSehir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSehir.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnSehir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSehir.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnSehir.Location = new System.Drawing.Point(89, 286);
             this.btnSehir.Name = "btnSehir";
@@ -159,8 +160,8 @@
             // 
             // btnRotaYonetimi
             // 
-            this.btnRotaYonetimi.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnRotaYonetimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRotaYonetimi.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRotaYonetimi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRotaYonetimi.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnRotaYonetimi.Location = new System.Drawing.Point(747, 118);
             this.btnRotaYonetimi.Name = "btnRotaYonetimi";
@@ -171,8 +172,8 @@
             // 
             // btnUlke
             // 
-            this.btnUlke.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnUlke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUlke.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnUlke.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUlke.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnUlke.Location = new System.Drawing.Point(89, 230);
             this.btnUlke.Name = "btnUlke";
@@ -183,8 +184,8 @@
             // 
             // btnDil
             // 
-            this.btnDil.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnDil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDil.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnDil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDil.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnDil.Location = new System.Drawing.Point(89, 174);
             this.btnDil.Name = "btnDil";
@@ -219,8 +220,8 @@
             // 
             // btnUrunAgaciKontrol
             // 
-            this.btnUrunAgaciKontrol.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnUrunAgaciKontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUrunAgaciKontrol.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnUrunAgaciKontrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUrunAgaciKontrol.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnUrunAgaciKontrol.Location = new System.Drawing.Point(256, 286);
             this.btnUrunAgaciKontrol.Name = "btnUrunAgaciKontrol";
@@ -231,8 +232,8 @@
             // 
             // btnRotaTipi
             // 
-            this.btnRotaTipi.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnRotaTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRotaTipi.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRotaTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRotaTipi.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnRotaTipi.Location = new System.Drawing.Point(89, 342);
             this.btnRotaTipi.Name = "btnRotaTipi";
@@ -243,8 +244,8 @@
             // 
             // btnIsMerkeziTipi
             // 
-            this.btnIsMerkeziTipi.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnIsMerkeziTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIsMerkeziTipi.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnIsMerkeziTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIsMerkeziTipi.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnIsMerkeziTipi.Location = new System.Drawing.Point(256, 342);
             this.btnIsMerkeziTipi.Name = "btnIsMerkeziTipi";
@@ -255,8 +256,8 @@
             // 
             // btnOperasyonTipi
             // 
-            this.btnOperasyonTipi.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnOperasyonTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOperasyonTipi.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnOperasyonTipi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOperasyonTipi.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btnOperasyonTipi.Location = new System.Drawing.Point(89, 398);
             this.btnOperasyonTipi.Name = "btnOperasyonTipi";
@@ -269,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.btnOperasyonTipi);
             this.Controls.Add(this.btnIsMerkeziTipi);

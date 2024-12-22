@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnCreate = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.txtFirmaKodu = new System.Windows.Forms.TextBox();
             this.txtFirmaAciklamasi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,25 +52,37 @@
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // btnCreate
+            // txtFirmaKodu
             // 
-            this.btnCreate.Image = global::CakmaERP.Properties.Resources.icons8_add_50;
-            this.btnCreate.Location = new System.Drawing.Point(22, 12);
-            this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(55, 55);
-            this.btnCreate.TabIndex = 2;
-            this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.txtFirmaKodu.Location = new System.Drawing.Point(12, 90);
+            this.txtFirmaKodu.Name = "txtFirmaKodu";
+            this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
+            this.txtFirmaKodu.TabIndex = 6;
             // 
-            // btnUpdate
+            // txtFirmaAciklamasi
             // 
-            this.btnUpdate.Image = global::CakmaERP.Properties.Resources.icons8_pencil_48;
-            this.btnUpdate.Location = new System.Drawing.Point(119, 12);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(55, 55);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.txtFirmaAciklamasi.Location = new System.Drawing.Point(12, 135);
+            this.txtFirmaAciklamasi.Name = "txtFirmaAciklamasi";
+            this.txtFirmaAciklamasi.Size = new System.Drawing.Size(216, 20);
+            this.txtFirmaAciklamasi.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Firma Kodu";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 119);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Firma Aciklama";
             // 
             // btnDelete
             // 
@@ -82,37 +94,25 @@
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // txtFirmaKodu
+            // btnUpdate
             // 
-            this.txtFirmaKodu.Location = new System.Drawing.Point(22, 90);
-            this.txtFirmaKodu.Name = "txtFirmaKodu";
-            this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtFirmaKodu.TabIndex = 6;
+            this.btnUpdate.Image = global::CakmaERP.Properties.Resources.icons8_pencil_48;
+            this.btnUpdate.Location = new System.Drawing.Point(115, 12);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(55, 55);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // txtFirmaAciklamasi
+            // btnCreate
             // 
-            this.txtFirmaAciklamasi.Location = new System.Drawing.Point(22, 135);
-            this.txtFirmaAciklamasi.Name = "txtFirmaAciklamasi";
-            this.txtFirmaAciklamasi.Size = new System.Drawing.Size(216, 20);
-            this.txtFirmaAciklamasi.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 74);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Firma Kodu";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 119);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Firma Aciklama";
+            this.btnCreate.Image = global::CakmaERP.Properties.Resources.icons8_add_50;
+            this.btnCreate.Location = new System.Drawing.Point(12, 12);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(55, 55);
+            this.btnCreate.TabIndex = 2;
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // Firma
             // 
@@ -131,6 +131,7 @@
             this.Name = "Firma";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Firma Kontrol Tablosu";
+            this.Load += new System.EventHandler(this.Firma_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

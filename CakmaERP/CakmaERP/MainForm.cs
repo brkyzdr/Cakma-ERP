@@ -63,5 +63,10 @@ namespace CakmaERP
         }
         #endregion
 
+        private void btnBirim_Click(object sender, EventArgs e)
+        {
+            Birim birim = new Birim();
+            birim.Show();
+        }
     }
 }
