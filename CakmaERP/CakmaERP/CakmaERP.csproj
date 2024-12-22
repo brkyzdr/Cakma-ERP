@@ -125,6 +125,12 @@
     <Compile Include="FormsMainScreens\MaliyetMerkezi.Designer.cs">
       <DependentUpon>MaliyetMerkezi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsMainScreens\Materyal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsMainScreens\Materyal.Designer.cs">
+      <DependentUpon>Materyal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsMainScreens\RotaYonetimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMainScreens\MaliyetMerkezi.resx">
       <DependentUpon>MaliyetMerkezi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsMainScreens\Materyal.resx">
+      <DependentUpon>Materyal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsMainScreens\RotaYonetimi.resx">
       <DependentUpon>RotaYonetimi.cs</DependentUpon>

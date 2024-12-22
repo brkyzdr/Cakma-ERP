@@ -150,6 +150,13 @@ namespace CakmaERP
             MaliyetMerkezi maliyetMerkezi =new MaliyetMerkezi();
             maliyetMerkezi.Show();
         }
+        
+
+        private void btnMateryal_Click(object sender, EventArgs e)
+        {
+            Materyal materyal =new Materyal();
+            materyal.Show();
+        }
         #endregion
     }
 }

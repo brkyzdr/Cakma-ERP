@@ -72,6 +72,7 @@
             this.btnMateryal.TabIndex = 1;
             this.btnMateryal.Text = "Materyal";
             this.btnMateryal.UseVisualStyleBackColor = false;
+            this.btnMateryal.Click += new System.EventHandler(this.btnMateryal_Click);
             // 
             // btnMaliyetMerkezi
             // 
