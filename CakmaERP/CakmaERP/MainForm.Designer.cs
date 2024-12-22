@@ -273,6 +273,7 @@
             this.btnOperasyonTipi.TabIndex = 18;
             this.btnOperasyonTipi.Text = "Operasyon Tipi";
             this.btnOperasyonTipi.UseVisualStyleBackColor = false;
+            this.btnOperasyonTipi.Click += new System.EventHandler(this.btnOperasyonTipi_Click);
             // 
             // MainForm
             // 

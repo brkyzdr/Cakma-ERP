@@ -55,7 +55,7 @@ namespace CakmaERP
         }
         #endregion
 
-        #region Buttons
+        #region Kontrol Tabloları Buttons
         private void btnFirma_Click(object sender, EventArgs e)
         {
             Firma firma = new Firma();
@@ -109,12 +109,18 @@ namespace CakmaERP
             RotaTipi rotaTipi =new RotaTipi();  
             rotaTipi.Show();
         }
-        #endregion
-
+        
         private void btnIsMerkeziTipi_Click(object sender, EventArgs e)
         {
             IsMerkeziTipi isMerkeziTipi =new IsMerkeziTipi();
             isMerkeziTipi.Show();
         }
+
+        private void btnOperasyonTipi_Click(object sender, EventArgs e)
+        {
+            OperasyonTipi operasyonTipi =new OperasyonTipi();
+            operasyonTipi.Show();
+        }
+        #endregion
     }
 }
