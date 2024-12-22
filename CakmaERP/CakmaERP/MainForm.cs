@@ -68,5 +68,11 @@ namespace CakmaERP
             Birim birim = new Birim();
             birim.Show();
         }
+
+        private void btnDil_Click(object sender, EventArgs e)
+        {
+            Dil dil = new Dil();
+            dil.Show();
+        }
     }
 }

@@ -193,6 +193,7 @@
             this.btnDil.TabIndex = 11;
             this.btnDil.Text = "Dil";
             this.btnDil.UseVisualStyleBackColor = false;
+            this.btnDil.Click += new System.EventHandler(this.btnDil_Click);
             // 
             // label1
             // 
