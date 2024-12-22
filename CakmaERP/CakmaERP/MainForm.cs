@@ -61,8 +61,7 @@ namespace CakmaERP
             Firma firma = new Firma();
             firma.Show();
         }
-        #endregion
-
+        
         private void btnBirim_Click(object sender, EventArgs e)
         {
             Birim birim = new Birim();
@@ -104,5 +103,12 @@ namespace CakmaERP
             UrunAgaciKontrol urunAgaciKontrol =new UrunAgaciKontrol();
             urunAgaciKontrol.Show();
         }
+
+        private void btnRotaTipi_Click(object sender, EventArgs e)
+        {
+            RotaTipi rotaTipi =new RotaTipi();  
+            rotaTipi.Show();
+        }
+        #endregion
     }
 }

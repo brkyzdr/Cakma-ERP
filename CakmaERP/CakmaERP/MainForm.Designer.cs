@@ -247,6 +247,7 @@
             this.btnRotaTipi.TabIndex = 16;
             this.btnRotaTipi.Text = "Rota Tipi";
             this.btnRotaTipi.UseVisualStyleBackColor = false;
+            this.btnRotaTipi.Click += new System.EventHandler(this.btnRotaTipi_Click);
             // 
             // btnIsMerkeziTipi
             // 

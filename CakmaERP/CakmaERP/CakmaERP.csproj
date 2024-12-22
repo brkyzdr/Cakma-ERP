@@ -77,6 +77,12 @@
     <Compile Include="FormsControlTables\MalzemeTipi.Designer.cs">
       <DependentUpon>MalzemeTipi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsControlTables\RotaTipi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsControlTables\RotaTipi.Designer.cs">
+      <DependentUpon>RotaTipi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormsControlTables\Sehir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsControlTables\MalzemeTipi.resx">
       <DependentUpon>MalzemeTipi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsControlTables\RotaTipi.resx">
+      <DependentUpon>RotaTipi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsControlTables\Sehir.resx">
       <DependentUpon>Sehir.cs</DependentUpon>
