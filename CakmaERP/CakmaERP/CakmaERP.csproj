@@ -89,6 +89,12 @@
     <Compile Include="FormsControlTables\Ulke.Designer.cs">
       <DependentUpon>Ulke.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormsControlTables\UrunAgaciKontrol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsControlTables\UrunAgaciKontrol.Designer.cs">
+      <DependentUpon>UrunAgaciKontrol.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsControlTables\Ulke.resx">
       <DependentUpon>Ulke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsControlTables\UrunAgaciKontrol.resx">
+      <DependentUpon>UrunAgaciKontrol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

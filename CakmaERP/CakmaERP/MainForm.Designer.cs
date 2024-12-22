@@ -234,6 +234,7 @@
             this.btnUrunAgaciKontrol.TabIndex = 15;
             this.btnUrunAgaciKontrol.Text = "Ürün Ağacı";
             this.btnUrunAgaciKontrol.UseVisualStyleBackColor = false;
+            this.btnUrunAgaciKontrol.Click += new System.EventHandler(this.btnUrunAgaciKontrol_Click);
             // 
             // btnRotaTipi
             // 

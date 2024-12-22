@@ -98,5 +98,11 @@ namespace CakmaERP
             Sehir sehir = new Sehir();
             sehir.Show();        
         }
+
+        private void btnUrunAgaciKontrol_Click(object sender, EventArgs e)
+        {
+            UrunAgaciKontrol urunAgaciKontrol =new UrunAgaciKontrol();
+            urunAgaciKontrol.Show();
+        }
     }
 }
