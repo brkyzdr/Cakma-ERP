@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CakmaERP.FormsControlTables
 {
-    public partial class Birim : Form
+    public partial class MalzemeTipi : Form
     {
-        public Birim()
+        public MalzemeTipi()
         {
             InitializeComponent();
 
@@ -21,7 +21,7 @@ namespace CakmaERP.FormsControlTables
 
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM Birim");//tablo güncellenecek
+            DataTable dataTable = CRUD.Read("SELECT * FROM MalzemeTipi");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
@@ -29,15 +29,15 @@ namespace CakmaERP.FormsControlTables
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtBirimKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtMalzemeTipi.Text))
             {
-                var data = new Dictionary<string, object>//kolon isimleri ve textboxlar güncellenecek
+                var data = new Dictionary<string, object>
                 {
                     { "firma_kodu", txtFirmaKodu.Text },
-                    { "birim_kodu", txtBirimKodu.Text }
+                    { "malzeme_tipi", txtMalzemeTipi.Text }
                 };
 
-                CRUD.Create("Birim", data);
+                CRUD.Create("MalzemeTipi", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -49,15 +49,15 @@ namespace CakmaERP.FormsControlTables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtBirimKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtMalzemeTipi.Text))
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "firma_aciklamasi", txtBirimKodu.Text }
+                    { "malzeme_tipi", txtMalzemeTipi.Text }
                 };
 
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Update("Firma", data, condition);
+                CRUD.Update("MalzemeTipi", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -72,13 +72,13 @@ namespace CakmaERP.FormsControlTables
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("Firma", condition);
+                CRUD.Delete("MalzemeTipi", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
             else
             {
-                MessageBox.Show("Lütfen firma kodunu girin.");
+                MessageBox.Show("Lütfen bir satır seçin.");
             }
         }
 
@@ -88,7 +88,7 @@ namespace CakmaERP.FormsControlTables
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtBirimKodu.Text = row.Cells["birim_kodu"].Value.ToString();
+                txtMalzemeTipi.Text = row.Cells["malzeme_tipi"].Value.ToString();
             }
         }
     }

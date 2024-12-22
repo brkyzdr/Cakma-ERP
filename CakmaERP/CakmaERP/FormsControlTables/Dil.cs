@@ -15,6 +15,8 @@ namespace CakmaERP.FormsControlTables
         public Dil()
         {
             InitializeComponent();
+
+            LoadData();
         }
         private void LoadData()
         {

@@ -74,5 +74,11 @@ namespace CakmaERP
             Dil dil = new Dil();
             dil.Show();
         }
+
+        private void btnMalzemeTipi_Click(object sender, EventArgs e)
+        {
+            MalzemeTipi malzemeTipi = new MalzemeTipi();
+            malzemeTipi.Show();
+        }
     }
 }

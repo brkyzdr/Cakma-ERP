@@ -108,6 +108,7 @@
             this.btnMalzemeTipi.TabIndex = 4;
             this.btnMalzemeTipi.Text = "Malzeme Tipi";
             this.btnMalzemeTipi.UseVisualStyleBackColor = false;
+            this.btnMalzemeTipi.Click += new System.EventHandler(this.btnMalzemeTipi_Click);
             // 
             // btnMaliyetMerkeziKontrol
             // 

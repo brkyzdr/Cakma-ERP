@@ -56,7 +56,7 @@ namespace CakmaERP.FormsControlTables
 
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
                 CRUD.Update("Firma", data, condition);
-                MessageBox.Show("Firma başarıyla güncellendi.");
+                MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
             else
@@ -71,12 +71,12 @@ namespace CakmaERP.FormsControlTables
             {
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
                 CRUD.Delete("Firma", condition);
-                MessageBox.Show("Firma başarıyla silindi.");
+                MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
             else
             {
-                MessageBox.Show("Lütfen firma kodunu girin.");
+                MessageBox.Show("Lütfen bir satır seçin.");
             }
         }
 
@@ -88,11 +88,6 @@ namespace CakmaERP.FormsControlTables
                 txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
                 txtFirmaAciklamasi.Text = row.Cells["firma_aciklamasi"].Value.ToString();
             }
-        }
-
-        private void Firma_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
