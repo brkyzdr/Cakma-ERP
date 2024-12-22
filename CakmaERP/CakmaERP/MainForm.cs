@@ -92,5 +92,11 @@ namespace CakmaERP
             MaliyetMerkeziKontrol maliyetMerkeziKontrol =new MaliyetMerkeziKontrol();
             maliyetMerkeziKontrol.Show();
         }
+
+        private void btnSehir_Click(object sender, EventArgs e)
+        {
+            Sehir sehir = new Sehir();
+            sehir.Show();        
+        }
     }
 }

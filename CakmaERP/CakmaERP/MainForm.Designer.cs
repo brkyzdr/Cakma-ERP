@@ -159,6 +159,7 @@
             this.btnSehir.TabIndex = 8;
             this.btnSehir.Text = "Şehir";
             this.btnSehir.UseVisualStyleBackColor = false;
+            this.btnSehir.Click += new System.EventHandler(this.btnSehir_Click);
             // 
             // btnRotaYonetimi
             // 

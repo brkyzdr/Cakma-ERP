@@ -16,9 +16,12 @@ namespace CakmaERP.FormsControlTables
         {
             InitializeComponent();
 
-            LoadData();
+            //LoadData();
         }
+        private void MalzemeTipi_Load(object sender, EventArgs e)
+        {
 
+        }
         private void LoadData()
         {
             DataTable dataTable = CRUD.Read("SELECT * FROM MalzemeTipi");
@@ -91,5 +94,7 @@ namespace CakmaERP.FormsControlTables
                 txtMalzemeTipi.Text = row.Cells["malzeme_tipi"].Value.ToString();
             }
         }
+
+        
     }
 }

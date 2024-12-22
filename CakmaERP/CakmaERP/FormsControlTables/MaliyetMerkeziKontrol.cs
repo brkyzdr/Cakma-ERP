@@ -16,7 +16,7 @@ namespace CakmaERP.FormsControlTables
         {
             InitializeComponent();
 
-            LoadData();
+            //LoadData();
         }
 
         private void MaliyetMerkeziKontrol_Load(object sender, EventArgs e)

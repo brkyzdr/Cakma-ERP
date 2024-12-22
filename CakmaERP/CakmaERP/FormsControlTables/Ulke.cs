@@ -16,7 +16,7 @@ namespace CakmaERP.FormsControlTables
         {
             InitializeComponent();
 
-            LoadData();
+            //LoadData();
         }
 
         private void Ulke_Load(object sender, EventArgs e)

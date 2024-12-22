@@ -10,33 +10,34 @@ using System.Windows.Forms;
 
 namespace CakmaERP.FormsControlTables
 {
-    public partial class Dil : Form
+    public partial class Sehir : Form
     {
-        public Dil()
+        public Sehir()
         {
             InitializeComponent();
 
             //LoadData();
         }
+
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM Dil");
+            DataTable dataTable = CRUD.Read("SELECT * FROM Sehir");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
         }
-        
+
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtDilKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtSehirKodu.Text))
             {
                 var data = new Dictionary<string, object>
                 {
                     { "firma_kodu", txtFirmaKodu.Text },
-                    { "dil_kodu", txtDilKodu.Text }
+                    { "sehir_kodu", txtSehirKodu.Text }
                 };
 
-                CRUD.Create("Dil", data);
+                CRUD.Create("Sehir", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -48,15 +49,15 @@ namespace CakmaERP.FormsControlTables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtDilKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtSehirKodu.Text))
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "dil_kodu", txtDilKodu.Text }
+                    { "sehir_kodu", txtSehirKodu.Text }
                 };
 
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Update("Dil", data, condition);
+                CRUD.Update("Sehir", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -71,8 +72,8 @@ namespace CakmaERP.FormsControlTables
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("Dil", condition);
-                MessageBox.Show("Firma başarıyla silindi.");
+                CRUD.Delete("Sehir", condition);
+                MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
             else
@@ -80,14 +81,14 @@ namespace CakmaERP.FormsControlTables
                 MessageBox.Show("Lütfen bir satır seçin.");
             }
         }
-        
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtDilKodu.Text = row.Cells["dil_kodu"].Value.ToString();
+                txtSehirKodu.Text = row.Cells["sehir_kodu"].Value.ToString();
             }
         }
     }
