@@ -36,11 +36,7 @@ namespace CakmaERP.FormsControlTables
         private void btnCreate_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
-                && !string.IsNullOrEmpty(txtFirmaAdi.Text)
-                && !string.IsNullOrEmpty(txtFirmaAdresi1.Text)
-                && !string.IsNullOrEmpty(txtFirmaAdresi2.Text)
-                && !string.IsNullOrEmpty(txtSehirKodu.Text)
-                && !string.IsNullOrEmpty(txtUlkeKodu.Text))
+                && !string.IsNullOrEmpty(txtFirmaAdi.Text))
             {
                 var data = new Dictionary<string, object>
                 {
@@ -65,11 +61,7 @@ namespace CakmaERP.FormsControlTables
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
-                && !string.IsNullOrEmpty(txtFirmaAdi.Text)
-                && !string.IsNullOrEmpty(txtFirmaAdresi1.Text)
-                && !string.IsNullOrEmpty(txtFirmaAdresi2.Text)
-                && !string.IsNullOrEmpty(txtSehirKodu.Text)
-                && !string.IsNullOrEmpty(txtUlkeKodu.Text))
+                && !string.IsNullOrEmpty(txtFirmaAdi.Text))
             {
                 var data = new Dictionary<string, object>
                 {

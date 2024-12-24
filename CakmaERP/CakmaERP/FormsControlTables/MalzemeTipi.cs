@@ -39,7 +39,6 @@ namespace CakmaERP.FormsControlTables
 
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
                 && !string.IsNullOrEmpty(txtMalzemeTipi.Text)
-                && !string.IsNullOrEmpty(txtMalzemeTipiAciklamasi.Text)
                 )
             {
                 var data = new Dictionary<string, object>
@@ -68,7 +67,6 @@ namespace CakmaERP.FormsControlTables
 
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
                 && !string.IsNullOrEmpty(txtMalzemeTipi.Text)
-                && !string.IsNullOrEmpty(txtMalzemeTipiAciklamasi.Text)
                 )
             {
                 var data = new Dictionary<string, object>
