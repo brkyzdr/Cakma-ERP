@@ -21,23 +21,34 @@ namespace CakmaERP.FormsControlTables
 
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM Sehir");
+            DataTable dataTable = CRUD.Read("SELECT * FROM BSMGR0GEN004");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            dataGridView1.Columns["COMCODE"].HeaderText = "Firma Kodu";
+            dataGridView1.Columns["CITYCODE"].HeaderText = "Şehir Kodu";
+            dataGridView1.Columns["CITYTEXT"].HeaderText = "Şehir Adı";
+            dataGridView1.Columns["COUNTRYCODE"].HeaderText = "Ülke Kodu";
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtSehirKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
+                && !string.IsNullOrEmpty(txtSehirKodu.Text)
+                && !string.IsNullOrEmpty(txtSehirAdi.Text)
+                && !string.IsNullOrEmpty(txtUlkeKodu.Text)
+                )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "firma_kodu", txtFirmaKodu.Text },
-                    { "sehir_kodu", txtSehirKodu.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "CITYCODE", txtSehirKodu.Text },
+                    { "CITYTEXT", txtSehirAdi.Text },
+                    { "COUNTRYCODE", txtUlkeKodu.Text }
                 };
 
-                CRUD.Create("Sehir", data);
+                CRUD.Create("BSMGR0GEN004", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -49,15 +60,22 @@ namespace CakmaERP.FormsControlTables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtSehirKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
+                && !string.IsNullOrEmpty(txtSehirKodu.Text)
+                && !string.IsNullOrEmpty(txtSehirAdi.Text)
+                && !string.IsNullOrEmpty(txtUlkeKodu.Text)
+                )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "sehir_kodu", txtSehirKodu.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "CITYCODE", txtSehirKodu.Text },
+                    { "CITYTEXT", txtSehirAdi.Text },
+                    { "COUNTRYCODE", txtUlkeKodu.Text }
                 };
 
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Update("Sehir", data, condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Update("BSMGR0GEN004", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -71,8 +89,8 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("Sehir", condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Delete("BSMGR0GEN004", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
@@ -87,8 +105,10 @@ namespace CakmaERP.FormsControlTables
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtSehirKodu.Text = row.Cells["sehir_kodu"].Value.ToString();
+                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
+                txtSehirKodu.Text = row.Cells["CITYCODE"].Value.ToString();
+                txtSehirAdi.Text = row.Cells["CITYTEXT"].Value.ToString();
+                txtUlkeKodu.Text = row.Cells["COUNTRYCODE"].Value.ToString();
             }
         }
     }

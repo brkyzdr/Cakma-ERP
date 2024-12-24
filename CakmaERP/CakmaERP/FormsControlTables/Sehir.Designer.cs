@@ -36,13 +36,17 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtUlkeKodu = new System.Windows.Forms.TextBox();
+            this.txtSehirAdi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 119);
+            this.label2.Location = new System.Drawing.Point(9, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 17;
@@ -51,7 +55,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 74);
+            this.label1.Location = new System.Drawing.Point(9, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 16;
@@ -59,14 +63,14 @@
             // 
             // txtSehirKodu
             // 
-            this.txtSehirKodu.Location = new System.Drawing.Point(12, 135);
+            this.txtSehirKodu.Location = new System.Drawing.Point(9, 146);
             this.txtSehirKodu.Name = "txtSehirKodu";
             this.txtSehirKodu.Size = new System.Drawing.Size(216, 20);
             this.txtSehirKodu.TabIndex = 15;
             // 
             // txtFirmaKodu
             // 
-            this.txtFirmaKodu.Location = new System.Drawing.Point(12, 90);
+            this.txtFirmaKodu.Location = new System.Drawing.Point(9, 99);
             this.txtFirmaKodu.Name = "txtFirmaKodu";
             this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
             this.txtFirmaKodu.TabIndex = 14;
@@ -114,12 +118,48 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 224);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Ülke Kodu";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Şehir Adı";
+            // 
+            // txtUlkeKodu
+            // 
+            this.txtUlkeKodu.Location = new System.Drawing.Point(9, 240);
+            this.txtUlkeKodu.Name = "txtUlkeKodu";
+            this.txtUlkeKodu.Size = new System.Drawing.Size(216, 20);
+            this.txtUlkeKodu.TabIndex = 19;
+            // 
+            // txtSehirAdi
+            // 
+            this.txtSehirAdi.Location = new System.Drawing.Point(9, 193);
+            this.txtSehirAdi.Name = "txtSehirAdi";
+            this.txtSehirAdi.Size = new System.Drawing.Size(216, 20);
+            this.txtSehirAdi.TabIndex = 18;
+            // 
             // Sehir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtUlkeKodu);
+            this.Controls.Add(this.txtSehirAdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSehirKodu);
@@ -147,5 +187,9 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtUlkeKodu;
+        private System.Windows.Forms.TextBox txtSehirAdi;
     }
 }
