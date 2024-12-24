@@ -29,12 +29,12 @@ namespace CakmaERP.FormsMainScreens
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtMalzemeTipi.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtIsMerkeziTipi.Text))
             {
                 var data = new Dictionary<string, object>
                 {
                     { "firma_kodu", txtFirmaKodu.Text },
-                    { "malzeme_tipi", txtMalzemeTipi.Text }
+                    { "malzeme_tipi", txtIsMerkeziTipi.Text }
                 };
 
                 CRUD.Create("IsMerkezi", data);
@@ -49,11 +49,11 @@ namespace CakmaERP.FormsMainScreens
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtMalzemeTipi.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtIsMerkeziTipi.Text))
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "malzeme_tipi", txtMalzemeTipi.Text }
+                    { "malzeme_tipi", txtIsMerkeziTipi.Text }
                 };
 
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
@@ -88,7 +88,7 @@ namespace CakmaERP.FormsMainScreens
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtMalzemeTipi.Text = row.Cells["malzeme_tipi"].Value.ToString();
+                txtIsMerkeziTipi.Text = row.Cells["malzeme_tipi"].Value.ToString();
             }
         }
     }
