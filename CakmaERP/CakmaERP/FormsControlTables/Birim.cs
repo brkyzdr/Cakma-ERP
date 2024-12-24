@@ -21,23 +21,37 @@ namespace CakmaERP.FormsControlTables
 
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM Birim");//tablo güncellenecek
+            DataTable dataTable = CRUD.Read("SELECT * FROM BSMGR0GEN005");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            dataGridView1.Columns["COMCODE"].HeaderText = "Firma Kodu";
+            dataGridView1.Columns["UNITCODE"].HeaderText = "Birim Kodu";
+            dataGridView1.Columns["UNITTEXT"].HeaderText = "Birim Adı";
+            dataGridView1.Columns["ISMAINUNIT"].HeaderText = "Ana Ağırlık Birimi";
+            dataGridView1.Columns["MAINUNITCODE"].HeaderText = "Ana Ağırlık Birimi Kodu";
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtBirimKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
+                && !string.IsNullOrEmpty(txtBirimKodu.Text)
+                && !string.IsNullOrEmpty(txtBirimAdi.Text)
+                && !string.IsNullOrEmpty(txtAnaAgirlikBirimi.Text)
+                && !string.IsNullOrEmpty(txtAnaAgirlikBirimiKodu.Text)
+                )
             {
-                var data = new Dictionary<string, object>//kolon isimleri ve textboxlar güncellenecek
+                var data = new Dictionary<string, object>
                 {
-                    { "firma_kodu", txtFirmaKodu.Text },
-                    { "birim_kodu", txtBirimKodu.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "UNITCODE", txtBirimKodu.Text },
+                    { "UNITTEXT", txtBirimAdi.Text },
+                    { "ISMAINUNIT", txtAnaAgirlikBirimi.Text },
+                    { "MAINUNITCODE", txtAnaAgirlikBirimiKodu.Text }
                 };
 
-                CRUD.Create("Birim", data);
+                CRUD.Create("BSMGR0GEN005", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -49,15 +63,24 @@ namespace CakmaERP.FormsControlTables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtBirimKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
+                && !string.IsNullOrEmpty(txtBirimKodu.Text)
+                && !string.IsNullOrEmpty(txtBirimAdi.Text)
+                && !string.IsNullOrEmpty(txtAnaAgirlikBirimi.Text)
+                && !string.IsNullOrEmpty(txtAnaAgirlikBirimiKodu.Text)
+                )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "firma_aciklamasi", txtBirimKodu.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "UNITCODE", txtBirimKodu.Text },
+                    { "UNITTEXT", txtBirimAdi.Text },
+                    { "ISMAINUNIT", txtAnaAgirlikBirimi.Text },
+                    { "MAINUNITCODE", txtAnaAgirlikBirimiKodu.Text }
                 };
 
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Update("Firma", data, condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Update("BSMGR0GEN005", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -71,8 +94,8 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("Firma", condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Delete("BSMGR0GEN005", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
@@ -87,8 +110,11 @@ namespace CakmaERP.FormsControlTables
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtBirimKodu.Text = row.Cells["birim_kodu"].Value.ToString();
+                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
+                txtBirimKodu.Text = row.Cells["UNITCODE"].Value.ToString();
+                txtBirimKodu.Text = row.Cells["UNITTEXT"].Value.ToString();
+                txtBirimKodu.Text = row.Cells["ISMAINUNIT"].Value.ToString();
+                txtBirimKodu.Text = row.Cells["MAINUNITCODE"].Value.ToString();
             }
         }
     }
