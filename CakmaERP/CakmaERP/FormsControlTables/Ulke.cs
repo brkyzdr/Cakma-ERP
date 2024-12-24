@@ -19,30 +19,32 @@ namespace CakmaERP.FormsControlTables
             //LoadData();
         }
 
-        private void Ulke_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM Ulke");
+            DataTable dataTable = CRUD.Read("SELECT * FROM BSMGR0GEN003");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            dataGridView1.Columns["COMCODE"].HeaderText = "Firma Kodu";
+            dataGridView1.Columns["COUNTRYCODE"].HeaderText = "Ülke Kodu";
+            dataGridView1.Columns["COUNTRYTEXT"].HeaderText = "Ülke Adı";
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtUlkeKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
+                && !string.IsNullOrEmpty(txtUlkeKodu.Text)
+                && !string.IsNullOrEmpty(txtUlkeAdi.Text))
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "firma_kodu", txtFirmaKodu.Text },
-                    { "ulke_kodu", txtUlkeKodu.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COUNTRYCODE", txtUlkeKodu.Text },
+                    { "COUNTRYTEXT", txtUlkeAdi.Text }
                 };
 
-                CRUD.Create("Ulke", data);
+                CRUD.Create("BSMGR0GEN003", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -54,15 +56,19 @@ namespace CakmaERP.FormsControlTables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtUlkeKodu.Text))
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
+                && !string.IsNullOrEmpty(txtUlkeKodu.Text)
+                && !string.IsNullOrEmpty(txtUlkeAdi.Text))
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "ulke_kodu", txtUlkeKodu.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COUNTRYCODE", txtUlkeKodu.Text },
+                    { "COUNTRYTEXT", txtUlkeAdi.Text }
                 };
 
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Update("Ulke", data, condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Update("BSMGR0GEN003", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -76,8 +82,8 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("Ulke", condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Delete("BSMGR0GEN003", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
@@ -92,8 +98,9 @@ namespace CakmaERP.FormsControlTables
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtUlkeKodu.Text = row.Cells["ulke_kodu"].Value.ToString();
+                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
+                txtUlkeKodu.Text = row.Cells["COUNTRYCODE"].Value.ToString();
+                txtUlkeAdi.Text = row.Cells["COUNTRYTEXT"].Value.ToString();
             }
         }
     }
