@@ -36,6 +36,8 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDilAdi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,12 +116,30 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 168);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Dil Adı";
+            // 
+            // txtDilAdi
+            // 
+            this.txtDilAdi.Location = new System.Drawing.Point(12, 184);
+            this.txtDilAdi.Name = "txtDilAdi";
+            this.txtDilAdi.Size = new System.Drawing.Size(216, 20);
+            this.txtDilAdi.TabIndex = 18;
+            // 
             // Dil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtDilAdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDilKodu);
@@ -147,5 +167,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtDilAdi;
     }
 }
