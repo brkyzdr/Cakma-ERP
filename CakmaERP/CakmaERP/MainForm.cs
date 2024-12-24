@@ -20,11 +20,6 @@ namespace CakmaERP
             InitializeComponent();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         #region CRUD class usage example
         private void Create()
         {

@@ -30,12 +30,20 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtFirmaKodu = new System.Windows.Forms.TextBox();
-            this.txtFirmaAciklamasi = new System.Windows.Forms.TextBox();
+            this.txtFirmaAdi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFirmaAdresi1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtUlkeKodu = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSehirKodu = new System.Windows.Forms.TextBox();
+            this.txtFirmaAdresi2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,12 +67,12 @@
             this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
             this.txtFirmaKodu.TabIndex = 6;
             // 
-            // txtFirmaAciklamasi
+            // txtFirmaAdi
             // 
-            this.txtFirmaAciklamasi.Location = new System.Drawing.Point(12, 135);
-            this.txtFirmaAciklamasi.Name = "txtFirmaAciklamasi";
-            this.txtFirmaAciklamasi.Size = new System.Drawing.Size(216, 20);
-            this.txtFirmaAciklamasi.TabIndex = 7;
+            this.txtFirmaAdi.Location = new System.Drawing.Point(12, 138);
+            this.txtFirmaAdi.Name = "txtFirmaAdi";
+            this.txtFirmaAdi.Size = new System.Drawing.Size(216, 20);
+            this.txtFirmaAdi.TabIndex = 7;
             // 
             // label1
             // 
@@ -78,11 +86,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 119);
+            this.label2.Location = new System.Drawing.Point(12, 122);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Firma Aciklama";
+            this.label2.Text = "Firma Adı";
             // 
             // btnDelete
             // 
@@ -114,15 +122,87 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 175);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Firma Adresi-1";
+            // 
+            // txtFirmaAdresi1
+            // 
+            this.txtFirmaAdresi1.Location = new System.Drawing.Point(12, 191);
+            this.txtFirmaAdresi1.Name = "txtFirmaAdresi1";
+            this.txtFirmaAdresi1.Size = new System.Drawing.Size(216, 20);
+            this.txtFirmaAdresi1.TabIndex = 10;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 346);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Ülke Kodu";
+            // 
+            // txtUlkeKodu
+            // 
+            this.txtUlkeKodu.Location = new System.Drawing.Point(12, 362);
+            this.txtUlkeKodu.Name = "txtUlkeKodu";
+            this.txtUlkeKodu.Size = new System.Drawing.Size(216, 20);
+            this.txtUlkeKodu.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 290);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Şehir Kodu";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 234);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Firma Adresi-2";
+            // 
+            // txtSehirKodu
+            // 
+            this.txtSehirKodu.Location = new System.Drawing.Point(12, 306);
+            this.txtSehirKodu.Name = "txtSehirKodu";
+            this.txtSehirKodu.Size = new System.Drawing.Size(216, 20);
+            this.txtSehirKodu.TabIndex = 13;
+            // 
+            // txtFirmaAdresi2
+            // 
+            this.txtFirmaAdresi2.Location = new System.Drawing.Point(12, 250);
+            this.txtFirmaAdresi2.Name = "txtFirmaAdresi2";
+            this.txtFirmaAdresi2.Size = new System.Drawing.Size(216, 20);
+            this.txtFirmaAdresi2.TabIndex = 12;
+            // 
             // Firma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtUlkeKodu);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtSehirKodu);
+            this.Controls.Add(this.txtFirmaAdresi2);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtFirmaAdresi1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtFirmaAciklamasi);
+            this.Controls.Add(this.txtFirmaAdi);
             this.Controls.Add(this.txtFirmaKodu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -144,8 +224,16 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtFirmaKodu;
-        private System.Windows.Forms.TextBox txtFirmaAciklamasi;
+        private System.Windows.Forms.TextBox txtFirmaAdi;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFirmaAdresi1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtUlkeKodu;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtSehirKodu;
+        private System.Windows.Forms.TextBox txtFirmaAdresi2;
     }
 }
