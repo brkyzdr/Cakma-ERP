@@ -29,16 +29,19 @@ namespace CakmaERP.FormsControlTables
             dataGridView1.Columns["COMCODE"].HeaderText = "Firma Kodu";
             dataGridView1.Columns["UNITCODE"].HeaderText = "Birim Kodu";
             dataGridView1.Columns["UNITTEXT"].HeaderText = "Birim Adı";
-            dataGridView1.Columns["ISMAINUNIT"].HeaderText = "Ana Ağırlık Birimi";
+            dataGridView1.Columns["ISMAINUNIT"].HeaderText = "Ana Ağırlık Birimi mi?";
             dataGridView1.Columns["MAINUNITCODE"].HeaderText = "Ana Ağırlık Birimi Kodu";
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            int ispassive;
+            if (checkBox1.Checked) ispassive = 1;
+            else ispassive = 0;
+
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
                 && !string.IsNullOrEmpty(txtBirimKodu.Text)
                 && !string.IsNullOrEmpty(txtBirimAdi.Text)
-                && !string.IsNullOrEmpty(txtAnaAgirlikBirimi.Text)
                 && !string.IsNullOrEmpty(txtAnaAgirlikBirimiKodu.Text)
                 )
             {
@@ -47,7 +50,7 @@ namespace CakmaERP.FormsControlTables
                     { "COMCODE", txtFirmaKodu.Text },
                     { "UNITCODE", txtBirimKodu.Text },
                     { "UNITTEXT", txtBirimAdi.Text },
-                    { "ISMAINUNIT", txtAnaAgirlikBirimi.Text },
+                    { "ISMAINUNIT", ispassive},
                     { "MAINUNITCODE", txtAnaAgirlikBirimiKodu.Text }
                 };
 
@@ -63,10 +66,13 @@ namespace CakmaERP.FormsControlTables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            int ispassive;
+            if (checkBox1.Checked) ispassive = 1;
+            else ispassive = 0;
+
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
                 && !string.IsNullOrEmpty(txtBirimKodu.Text)
                 && !string.IsNullOrEmpty(txtBirimAdi.Text)
-                && !string.IsNullOrEmpty(txtAnaAgirlikBirimi.Text)
                 && !string.IsNullOrEmpty(txtAnaAgirlikBirimiKodu.Text)
                 )
             {
@@ -75,7 +81,7 @@ namespace CakmaERP.FormsControlTables
                     { "COMCODE", txtFirmaKodu.Text },
                     { "UNITCODE", txtBirimKodu.Text },
                     { "UNITTEXT", txtBirimAdi.Text },
-                    { "ISMAINUNIT", txtAnaAgirlikBirimi.Text },
+                    { "ISMAINUNIT", ispassive },
                     { "MAINUNITCODE", txtAnaAgirlikBirimiKodu.Text }
                 };
 
@@ -113,7 +119,10 @@ namespace CakmaERP.FormsControlTables
                 txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
                 txtBirimKodu.Text = row.Cells["UNITCODE"].Value.ToString();
                 txtBirimKodu.Text = row.Cells["UNITTEXT"].Value.ToString();
-                txtBirimKodu.Text = row.Cells["ISMAINUNIT"].Value.ToString();
+
+                if (row.Cells["ISMAINUNIT"].Value.ToString() == "1") checkBox1.Checked = true;
+                else checkBox1.Checked = false;
+
                 txtBirimKodu.Text = row.Cells["MAINUNITCODE"].Value.ToString();
             }
         }

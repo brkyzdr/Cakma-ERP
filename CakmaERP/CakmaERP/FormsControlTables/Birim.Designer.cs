@@ -38,10 +38,10 @@
             this.txtFirmaKodu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtAnaAgirlikBirimi = new System.Windows.Forms.TextBox();
             this.txtBirimAdi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtAnaAgirlikBirimiKodu = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,11 +123,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 209);
+            this.label3.Location = new System.Drawing.Point(12, 212);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 13);
+            this.label3.Size = new System.Drawing.Size(103, 13);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Ana Ağırlık Birimi";
+            this.label3.Text = "Ana Ağırlık Birimi mi?";
             // 
             // label4
             // 
@@ -137,13 +137,6 @@
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Birim Adı";
-            // 
-            // txtAnaAgirlikBirimi
-            // 
-            this.txtAnaAgirlikBirimi.Location = new System.Drawing.Point(12, 225);
-            this.txtAnaAgirlikBirimi.Name = "txtAnaAgirlikBirimi";
-            this.txtAnaAgirlikBirimi.Size = new System.Drawing.Size(216, 20);
-            this.txtAnaAgirlikBirimi.TabIndex = 15;
             // 
             // txtBirimAdi
             // 
@@ -155,7 +148,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 253);
+            this.label5.Location = new System.Drawing.Point(12, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 13);
             this.label5.TabIndex = 19;
@@ -163,10 +156,19 @@
             // 
             // txtAnaAgirlikBirimiKodu
             // 
-            this.txtAnaAgirlikBirimiKodu.Location = new System.Drawing.Point(12, 269);
+            this.txtAnaAgirlikBirimiKodu.Location = new System.Drawing.Point(12, 253);
             this.txtAnaAgirlikBirimiKodu.Name = "txtAnaAgirlikBirimiKodu";
             this.txtAnaAgirlikBirimiKodu.Size = new System.Drawing.Size(216, 20);
             this.txtAnaAgirlikBirimiKodu.TabIndex = 18;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(116, 212);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Birim
             // 
@@ -174,11 +176,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtAnaAgirlikBirimiKodu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtAnaAgirlikBirimi);
             this.Controls.Add(this.txtBirimAdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -209,9 +211,9 @@
         private System.Windows.Forms.TextBox txtFirmaKodu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtAnaAgirlikBirimi;
         private System.Windows.Forms.TextBox txtBirimAdi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtAnaAgirlikBirimiKodu;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
