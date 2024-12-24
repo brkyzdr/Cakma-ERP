@@ -20,23 +20,37 @@ namespace CakmaERP.FormsControlTables
 
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM UrunAgaciKontrol");
+            DataTable dataTable = CRUD.Read("SELECT * FROM BSMGR0BOM001");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            dataGridView1.Columns["COMCODE"].HeaderText = "Firma Kodu";
+            dataGridView1.Columns["DOCTYPE"].HeaderText = "Ürün Ağacı Tipi";
+            dataGridView1.Columns["DOCTYPETEXT"].HeaderText = "Ürün Ağacı Tipi Açıklaması";
+            dataGridView1.Columns["ISPASSIVE"].HeaderText = "Pasif mi?";
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtUrunAgaciTipi.Text))
+            int ispassive;
+            if (checkBox1.Checked) ispassive = 1;
+            else ispassive = 0;
+
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
+                && !string.IsNullOrEmpty(txtUrunAgaciTipi.Text)
+                && !string.IsNullOrEmpty(txtUrunAgaciTipiAciklamasi.Text)
+                )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "firma_kodu", txtFirmaKodu.Text },
-                    { "urun_agaci_tipi", txtUrunAgaciTipi.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "DOCTYPE", txtUrunAgaciTipi.Text },
+                    { "DOCTYPETEXT", txtUrunAgaciTipiAciklamasi.Text },
+                    { "ISPASSIVE", ispassive }
                 };
 
-                CRUD.Create("UrunAgaciKontrol", data);
+                CRUD.Create("BSMGR0BOM001", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -48,15 +62,25 @@ namespace CakmaERP.FormsControlTables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtUrunAgaciTipi.Text))
+            int ispassive;
+            if (checkBox1.Checked) ispassive = 1;
+            else ispassive = 0;
+
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
+                && !string.IsNullOrEmpty(txtUrunAgaciTipi.Text)
+                && !string.IsNullOrEmpty(txtUrunAgaciTipiAciklamasi.Text)
+                )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "urun_agaci_tipi", txtUrunAgaciTipi.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "DOCTYPE", txtUrunAgaciTipi.Text },
+                    { "DOCTYPETEXT", txtUrunAgaciTipiAciklamasi.Text },
+                    { "ISPASSIVE", ispassive }
                 };
 
                 string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Update("UrunAgaciKontrol", data, condition);
+                CRUD.Update("BSMGR0BOM001", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -70,8 +94,8 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("UrunAgaciKontrol", condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Delete("BSMGR0BOM001", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
@@ -86,8 +110,12 @@ namespace CakmaERP.FormsControlTables
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtUrunAgaciTipi.Text = row.Cells["urun_agaci_tipi"].Value.ToString();
+                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
+                txtUrunAgaciTipi.Text = row.Cells["DOCTYPE"].Value.ToString();
+                txtUrunAgaciTipiAciklamasi.Text = row.Cells["DOCTYPETEXT"].Value.ToString();
+
+                if (row.Cells["ISPASSIVE"].Value.ToString() == "1") checkBox1.Checked = true;
+                else checkBox1.Checked = false;
             }
         }
     }
