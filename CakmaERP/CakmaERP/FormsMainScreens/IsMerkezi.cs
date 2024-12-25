@@ -30,15 +30,15 @@ namespace CakmaERP.FormsMainScreens
             dataGridView1.Columns["COMCODE"].HeaderText = "Firma Kodu";
             dataGridView1.Columns["WCMDOCTYPE"].HeaderText = "İş Merkezi Tipi";
             dataGridView1.Columns["WCMDOCNUM"].HeaderText = "İş Merkezi Kodu";
-            dataGridView1.Columns["WCMDOCFROM"].HeaderText = "Ana Ağırlık Birimi mi?";
-            dataGridView1.Columns["WCMDOCUNTIL"].HeaderText = "Ana Ağırlık Birimi Kodu";
-            dataGridView1.Columns["MAINWCMDOCTYPE"].HeaderText = "Firma Kodu";
-            dataGridView1.Columns["MAINWCMDOCNUM"].HeaderText = "Birim Kodu";
-            dataGridView1.Columns["CCMDOCTYPE"].HeaderText = "Birim Adı";
-            dataGridView1.Columns["CCMDOCNUM"].HeaderText = "Ana Ağırlık Birimi mi?";
-            dataGridView1.Columns["WORKTIME"].HeaderText = "Ana Ağırlık Birimi Kodu";
-            dataGridView1.Columns["ISDELETED"].HeaderText = "Ana Ağırlık Birimi Kodu";
-            dataGridView1.Columns["ISPASSIVE"].HeaderText = "Ana Ağırlık Birimi Kodu";
+            dataGridView1.Columns["WCMDOCFROM"].HeaderText = "Geçerlilik Başlangıç Tarihi";
+            dataGridView1.Columns["WCMDOCUNTIL"].HeaderText = "Geçerlilik Bitiş Tarihi";
+            dataGridView1.Columns["MAINWCMDOCTYPE"].HeaderText = "Ana İş Merkezi Tipi";
+            dataGridView1.Columns["MAINWCMDOCNUM"].HeaderText = "Ana İş Merkezi Kodu";
+            dataGridView1.Columns["CCMDOCTYPE"].HeaderText = "Maliyet Merkezi Tipi";
+            dataGridView1.Columns["CCMDOCNUM"].HeaderText = "Maliyet Merkezi Kodu";
+            dataGridView1.Columns["WORKTIME"].HeaderText = "Günlük Çalışma Saati";
+            dataGridView1.Columns["ISDELETED"].HeaderText = "Silindi mi?";
+            dataGridView1.Columns["ISPASSIVE"].HeaderText = "Pasif mi?";
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
