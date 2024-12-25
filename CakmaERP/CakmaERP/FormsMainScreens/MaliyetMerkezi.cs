@@ -174,7 +174,7 @@ namespace CakmaERP.FormsMainScreens
                 else checkBoxPasifmi.Checked = false;
 
 
-                DataTable tableText = CRUD.Read("SELECT * FROM GRSWCMTEXT");
+                DataTable tableText = CRUD.Read("SELECT * FROM GRSCCMTEXT");
                 var firmakodu = txtFirmaKodu.Text;
 
                 txtDilKodu.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();

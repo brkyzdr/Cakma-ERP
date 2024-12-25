@@ -33,7 +33,7 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtIsAciklamasi = new System.Windows.Forms.TextBox();
+            this.txtMalzemeAciklamasi = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtDilKodu = new System.Windows.Forms.TextBox();
             this.checkBoxPasifmi = new System.Windows.Forms.CheckBox();
@@ -129,12 +129,12 @@
             this.label13.TabIndex = 75;
             this.label13.Text = "Malzeme Açıklaması";
             // 
-            // txtIsAciklamasi
+            // txtMalzemeAciklamasi
             // 
-            this.txtIsAciklamasi.Location = new System.Drawing.Point(12, 950);
-            this.txtIsAciklamasi.Name = "txtIsAciklamasi";
-            this.txtIsAciklamasi.Size = new System.Drawing.Size(216, 20);
-            this.txtIsAciklamasi.TabIndex = 74;
+            this.txtMalzemeAciklamasi.Location = new System.Drawing.Point(12, 950);
+            this.txtMalzemeAciklamasi.Name = "txtMalzemeAciklamasi";
+            this.txtMalzemeAciklamasi.Size = new System.Drawing.Size(216, 20);
+            this.txtMalzemeAciklamasi.TabIndex = 74;
             // 
             // label14
             // 
@@ -483,7 +483,7 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txtBrutAgirlik);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtIsAciklamasi);
+            this.Controls.Add(this.txtMalzemeAciklamasi);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.txtDilKodu);
             this.Controls.Add(this.checkBoxPasifmi);
@@ -527,7 +527,7 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtIsAciklamasi;
+        private System.Windows.Forms.TextBox txtMalzemeAciklamasi;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtDilKodu;
         private System.Windows.Forms.CheckBox checkBoxPasifmi;
