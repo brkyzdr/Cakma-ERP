@@ -20,7 +20,7 @@ namespace CakmaERP.FormsControlTables
         }
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM BSMGR0MAT001");
+            DataTable dataTable = CRUD.Read("SELECT * FROM GRSMAT001");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
@@ -49,7 +49,7 @@ namespace CakmaERP.FormsControlTables
                     { "ISPASSIVE", ispassive }
                 };
 
-                CRUD.Create("BSMGR0MAT001", data);
+                CRUD.Create("GRSMAT001", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -78,7 +78,7 @@ namespace CakmaERP.FormsControlTables
                 };
 
                 string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
-                CRUD.Update("BSMGR0MAT001", data, condition);
+                CRUD.Update("GRSMAT001", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -93,7 +93,7 @@ namespace CakmaERP.FormsControlTables
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
                 string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("BSMGR0MAT001", condition);
+                CRUD.Delete("GRSMAT001", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }

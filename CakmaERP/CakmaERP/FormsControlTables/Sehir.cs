@@ -16,12 +16,12 @@ namespace CakmaERP.FormsControlTables
         {
             InitializeComponent();
 
-            //LoadData();
+            LoadData();
         }
 
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM BSMGR0GEN004");
+            DataTable dataTable = CRUD.Read("SELECT * FROM GRSGEN004");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
@@ -46,7 +46,7 @@ namespace CakmaERP.FormsControlTables
                     { "COUNTRYCODE", txtUlkeKodu.Text }
                 };
 
-                CRUD.Create("BSMGR0GEN004", data);
+                CRUD.Create("GRSGEN004", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -71,7 +71,7 @@ namespace CakmaERP.FormsControlTables
                 };
 
                 string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
-                CRUD.Update("BSMGR0GEN004", data, condition);
+                CRUD.Update("GRSGEN004", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -86,7 +86,7 @@ namespace CakmaERP.FormsControlTables
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
                 string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("BSMGR0GEN004", condition);
+                CRUD.Delete("GRSGEN004", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
