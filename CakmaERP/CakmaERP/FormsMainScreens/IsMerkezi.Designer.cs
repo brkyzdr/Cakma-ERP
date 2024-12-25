@@ -60,6 +60,8 @@
             this.txtIsAciklamasi = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtDilKodu = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtMaliyetMerkeziTipi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,7 +191,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 433);
+            this.label6.Location = new System.Drawing.Point(12, 473);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 13);
             this.label6.TabIndex = 38;
@@ -198,7 +200,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 388);
+            this.label7.Location = new System.Drawing.Point(12, 428);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 13);
             this.label7.TabIndex = 37;
@@ -206,7 +208,7 @@
             // 
             // txtMaliyetMerkeziKodu
             // 
-            this.txtMaliyetMerkeziKodu.Location = new System.Drawing.Point(12, 404);
+            this.txtMaliyetMerkeziKodu.Location = new System.Drawing.Point(12, 444);
             this.txtMaliyetMerkeziKodu.Name = "txtMaliyetMerkeziKodu";
             this.txtMaliyetMerkeziKodu.Size = new System.Drawing.Size(216, 20);
             this.txtMaliyetMerkeziKodu.TabIndex = 36;
@@ -245,7 +247,7 @@
             // 
             // txtGunlukCalismaSatti
             // 
-            this.txtGunlukCalismaSatti.Location = new System.Drawing.Point(12, 449);
+            this.txtGunlukCalismaSatti.Location = new System.Drawing.Point(12, 489);
             this.txtGunlukCalismaSatti.Name = "txtGunlukCalismaSatti";
             this.txtGunlukCalismaSatti.Size = new System.Drawing.Size(216, 20);
             this.txtGunlukCalismaSatti.TabIndex = 39;
@@ -253,7 +255,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 482);
+            this.label10.Location = new System.Drawing.Point(12, 522);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 40;
@@ -262,7 +264,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 505);
+            this.label11.Location = new System.Drawing.Point(12, 545);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 13);
             this.label11.TabIndex = 41;
@@ -271,7 +273,7 @@
             // checkBoxSilindimi
             // 
             this.checkBoxSilindimi.AutoSize = true;
-            this.checkBoxSilindimi.Location = new System.Drawing.Point(72, 481);
+            this.checkBoxSilindimi.Location = new System.Drawing.Point(72, 521);
             this.checkBoxSilindimi.Name = "checkBoxSilindimi";
             this.checkBoxSilindimi.Size = new System.Drawing.Size(15, 14);
             this.checkBoxSilindimi.TabIndex = 42;
@@ -280,7 +282,7 @@
             // checkBoxPasifmi
             // 
             this.checkBoxPasifmi.AutoSize = true;
-            this.checkBoxPasifmi.Location = new System.Drawing.Point(72, 505);
+            this.checkBoxPasifmi.Location = new System.Drawing.Point(72, 545);
             this.checkBoxPasifmi.Name = "checkBoxPasifmi";
             this.checkBoxPasifmi.Size = new System.Drawing.Size(15, 14);
             this.checkBoxPasifmi.TabIndex = 43;
@@ -288,7 +290,7 @@
             // 
             // txtOperasyonKodu
             // 
-            this.txtOperasyonKodu.Location = new System.Drawing.Point(12, 635);
+            this.txtOperasyonKodu.Location = new System.Drawing.Point(12, 675);
             this.txtOperasyonKodu.Name = "txtOperasyonKodu";
             this.txtOperasyonKodu.Size = new System.Drawing.Size(216, 20);
             this.txtOperasyonKodu.TabIndex = 49;
@@ -296,7 +298,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 619);
+            this.label12.Location = new System.Drawing.Point(12, 659);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(86, 13);
             this.label12.TabIndex = 48;
@@ -305,7 +307,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 574);
+            this.label13.Location = new System.Drawing.Point(12, 614);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(68, 13);
             this.label13.TabIndex = 47;
@@ -313,7 +315,7 @@
             // 
             // txtIsAciklamasi
             // 
-            this.txtIsAciklamasi.Location = new System.Drawing.Point(12, 590);
+            this.txtIsAciklamasi.Location = new System.Drawing.Point(12, 630);
             this.txtIsAciklamasi.Name = "txtIsAciklamasi";
             this.txtIsAciklamasi.Size = new System.Drawing.Size(216, 20);
             this.txtIsAciklamasi.TabIndex = 46;
@@ -321,7 +323,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 530);
+            this.label14.Location = new System.Drawing.Point(12, 566);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 13);
             this.label14.TabIndex = 45;
@@ -329,10 +331,26 @@
             // 
             // txtDilKodu
             // 
-            this.txtDilKodu.Location = new System.Drawing.Point(12, 546);
+            this.txtDilKodu.Location = new System.Drawing.Point(12, 586);
             this.txtDilKodu.Name = "txtDilKodu";
             this.txtDilKodu.Size = new System.Drawing.Size(216, 20);
             this.txtDilKodu.TabIndex = 44;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 389);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(100, 13);
+            this.label15.TabIndex = 51;
+            this.label15.Text = "Maliyet Merkezi Tipi";
+            // 
+            // txtMaliyetMerkeziTipi
+            // 
+            this.txtMaliyetMerkeziTipi.Location = new System.Drawing.Point(12, 405);
+            this.txtMaliyetMerkeziTipi.Name = "txtMaliyetMerkeziTipi";
+            this.txtMaliyetMerkeziTipi.Size = new System.Drawing.Size(216, 20);
+            this.txtMaliyetMerkeziTipi.TabIndex = 50;
             // 
             // IsMerkezi
             // 
@@ -340,6 +358,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1584, 1161);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtMaliyetMerkeziTipi);
             this.Controls.Add(this.txtOperasyonKodu);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
@@ -415,5 +435,7 @@
         private System.Windows.Forms.TextBox txtIsAciklamasi;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtDilKodu;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtMaliyetMerkeziTipi;
     }
 }

@@ -21,7 +21,7 @@ namespace CakmaERP.FormsControlTables
 
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM BSMGR0GEN005");
+            DataTable dataTable = CRUD.Read("SELECT * FROM GR0GEN005");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
