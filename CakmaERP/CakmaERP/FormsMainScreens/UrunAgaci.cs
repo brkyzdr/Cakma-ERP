@@ -16,28 +16,83 @@ namespace CakmaERP.FormsMainScreens
         {
             InitializeComponent();
 
-            //LoadData();
+            LoadData();
         }
 
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM UrunAgaci");
+            DataTable dataTable = CRUD.Read("SELECT * FROM GRSBOMHEAD");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+
+            dataGridView1.Columns["COMCODE"].HeaderText = "Firma Kodu";
+            dataGridView1.Columns["BOMDOCTYPE"].HeaderText = "Ürün Ağacı Tipi";
+            dataGridView1.Columns["BOMDOCNUM"].HeaderText = "Ürün Ağacı Kodu";
+            dataGridView1.Columns["BOMDOCFROM"].HeaderText = "Geçerlilik Başlangıç Tarihi";
+            dataGridView1.Columns["BOMDOCUNTIL"].HeaderText = "Geçerlilik Bitiş Tarihi";
+            dataGridView1.Columns["MATDOCTYPE"].HeaderText = "Malzeme Tipi";
+            dataGridView1.Columns["MATDOCNUM"].HeaderText = "Malzeme Kodu";
+            dataGridView1.Columns["QUANTITY"].HeaderText = "Temel Miktar";
+            dataGridView1.Columns["DRAWNUM"].HeaderText = "Çizim Numarası";
+            dataGridView1.Columns["ISDELETED"].HeaderText = "Silindi mi?";
+            dataGridView1.Columns["ISPASSIVE"].HeaderText = "Pasif mi?";
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtMalzemeTipi.Text))
+            int ispassive;
+            if (checkBoxPasifmi.Checked) ispassive = 1;
+            else ispassive = 0;
+
+            int isdeleted;
+            if (checkBoxSilindimi.Checked) isdeleted = 1;
+            else isdeleted = 0;
+
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
+                && !string.IsNullOrEmpty(txtUrunAgaciTipi.Text)
+                && !string.IsNullOrEmpty(txtUrunAgaciKodu.Text)
+                && !string.IsNullOrEmpty(dateTimePickerBaslangic.Text)
+                && !string.IsNullOrEmpty(dateTimePickerBitis.Text)
+                && !string.IsNullOrEmpty(txtMalzemeTipi.Text)
+                && !string.IsNullOrEmpty(txtMalzemeKodu.Text)
+                && !string.IsNullOrEmpty(txtTemelMiktar.Text)
+                && !string.IsNullOrEmpty(txtMaliyetMerkeziTipi.Text)
+                && !string.IsNullOrEmpty(txtMaliyetMerkeziKodu.Text)
+                && !string.IsNullOrEmpty(txtIcerikNumarasi.Text)
+                && !string.IsNullOrEmpty(txtBilesenKodu.Text)
+                && !string.IsNullOrEmpty(txtKalemUrunAgaciTipi.Text)
+                && !string.IsNullOrEmpty(txtKalemUrunAgaciKodu.Text)
+                && !string.IsNullOrEmpty(txtBilesenMiktari.Text)
+                )
             {
-                var data = new Dictionary<string, object>
+                var dataHead = new Dictionary<string, object>
                 {
-                    { "firma_kodu", txtFirmaKodu.Text },
-                    { "malzeme_tipi", txtMalzemeTipi.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "BOMDOCTYPE", txtUrunAgaciTipi.Text },
+                    { "BOMDOCNUM", txtUrunAgaciKodu.Text },
+                    { "BOMDOCFROM", dateTimePickerBaslangic.Text },
+                    { "BOMDOCUNTIL", dateTimePickerBitis.Text },
+                    { "MATDOCTYPE", txtMalzemeTipi.Text },
+                    { "MATDOCNUM", txtMalzemeKodu.Text },
+                    { "QUANTITY", txtTemelMiktar.Text },
+                    { "ISDELETED", isdeleted },
+                    { "ISPASSIVE", ispassive},
+                    { "DRAWNUM", txtCizimNumarasi.Text }
+                };
+                var dataContent = new Dictionary<string, object>
+                {
+                    { "BOMDOCTYPE", txtMaliyetMerkeziTipi.Text },
+                    { "BOMDOCNUM", txtMaliyetMerkeziKodu.Text },
+                    { "CONTENTNUM", txtIcerikNumarasi.Text },
+                    { "COMPONENT", txtBilesenKodu.Text },
+                    { "COMPBOMDOCTYPE", txtKalemUrunAgaciTipi.Text },
+                    { "COMPBOMDOCNUM", txtKalemUrunAgaciKodu.Text },
+                    { "QUANTITY", txtBilesenMiktari.Text }
                 };
 
-                CRUD.Create("UrunAgaci", data);
+                CRUD.Create("GRSBOMHEAD", dataHead);
+                CRUD.Create("GRSBOMCONTENT", dataContent);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -49,15 +104,59 @@ namespace CakmaERP.FormsMainScreens
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) && !string.IsNullOrEmpty(txtMalzemeTipi.Text))
+            int ispassive;
+            if (checkBoxPasifmi.Checked) ispassive = 1;
+            else ispassive = 0;
+
+            int isdeleted;
+            if (checkBoxSilindimi.Checked) isdeleted = 1;
+            else isdeleted = 0;
+
+            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
+                && !string.IsNullOrEmpty(txtUrunAgaciTipi.Text)
+                && !string.IsNullOrEmpty(txtUrunAgaciKodu.Text)
+                && !string.IsNullOrEmpty(dateTimePickerBaslangic.Text)
+                && !string.IsNullOrEmpty(dateTimePickerBitis.Text)
+                && !string.IsNullOrEmpty(txtMalzemeTipi.Text)
+                && !string.IsNullOrEmpty(txtMalzemeKodu.Text)
+                && !string.IsNullOrEmpty(txtTemelMiktar.Text)
+                && !string.IsNullOrEmpty(txtMaliyetMerkeziTipi.Text)
+                && !string.IsNullOrEmpty(txtMaliyetMerkeziKodu.Text)
+                && !string.IsNullOrEmpty(txtIcerikNumarasi.Text)
+                && !string.IsNullOrEmpty(txtBilesenKodu.Text)
+                && !string.IsNullOrEmpty(txtKalemUrunAgaciTipi.Text)
+                && !string.IsNullOrEmpty(txtKalemUrunAgaciKodu.Text)
+                && !string.IsNullOrEmpty(txtBilesenMiktari.Text)
+                )
             {
-                var data = new Dictionary<string, object>
+                var dataHead = new Dictionary<string, object>
                 {
-                    { "malzeme_tipi", txtMalzemeTipi.Text }
+                    { "COMCODE", txtFirmaKodu.Text },
+                    { "BOMDOCTYPE", txtUrunAgaciTipi.Text },
+                    { "BOMDOCNUM", txtUrunAgaciKodu.Text },
+                    { "BOMDOCFROM", dateTimePickerBaslangic.Text },
+                    { "BOMDOCUNTIL", dateTimePickerBitis.Text },
+                    { "MATDOCTYPE", txtMalzemeTipi.Text },
+                    { "MATDOCNUM", txtMalzemeKodu.Text },
+                    { "QUANTITY", txtTemelMiktar.Text },
+                    { "ISDELETED", isdeleted },
+                    { "ISPASSIVE", ispassive},
+                    { "DRAWNUM", txtCizimNumarasi.Text }
+                };
+                var dataContent = new Dictionary<string, object>
+                {
+                    { "BOMDOCTYPE", txtMaliyetMerkeziTipi.Text },
+                    { "BOMDOCNUM", txtMaliyetMerkeziKodu.Text },
+                    { "CONTENTNUM", txtIcerikNumarasi.Text },
+                    { "COMPONENT", txtBilesenKodu.Text },
+                    { "COMPBOMDOCTYPE", txtKalemUrunAgaciTipi.Text },
+                    { "COMPBOMDOCNUM", txtKalemUrunAgaciKodu.Text },
+                    { "QUANTITY", txtBilesenMiktari.Text }
                 };
 
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Update("UrunAgaci", data, condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Update("GRSBOMHEAD", dataHead, condition);
+                CRUD.Update("GRSBOMCONTENT", dataContent, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -71,8 +170,9 @@ namespace CakmaERP.FormsMainScreens
         {
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
             {
-                string condition = $"firma_kodu = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("UrunAgaci", condition);
+                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                CRUD.Delete("GRSBOMHEAD", condition);
+                CRUD.Delete("GRSBOMCONTENT", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
@@ -87,8 +187,32 @@ namespace CakmaERP.FormsMainScreens
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["firma_kodu"].Value.ToString();
-                txtMalzemeTipi.Text = row.Cells["malzeme_tipi"].Value.ToString();
+                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
+                txtUrunAgaciTipi.Text = row.Cells["BOMDOCTYPE"].Value.ToString();
+                txtUrunAgaciKodu.Text = row.Cells["BOMDOCNUM"].Value.ToString();
+                dateTimePickerBaslangic.Text = row.Cells["BOMDOCFROM"].Value.ToString();
+                dateTimePickerBitis.Text = row.Cells["BOMDOCUNTIL"].Value.ToString();
+                txtMalzemeTipi.Text = row.Cells["MATDOCTYPE"].Value.ToString();
+                txtMalzemeKodu.Text = row.Cells["MATDOCNUM"].Value.ToString();
+                txtTemelMiktar.Text = row.Cells["QUANTITY"].Value.ToString();
+                txtCizimNumarasi.Text = row.Cells["DRAWNUM"].Value.ToString();
+
+                if (row.Cells["ISDELETED"].Value.ToString() == "1") checkBoxSilindimi.Checked = true;
+                else checkBoxSilindimi.Checked = false;
+
+                if (row.Cells["ISPASSIVE"].Value.ToString() == "1") checkBoxPasifmi.Checked = true;
+                else checkBoxPasifmi.Checked = false;
+
+                var firmakodu = txtFirmaKodu.Text;
+                
+                DataTable tableContent = CRUD.Read("SELECT * FROM GRSBOMCONTENT");
+                txtMaliyetMerkeziTipi.Text = tableContent.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCTYPE"].ToString();
+                txtMaliyetMerkeziKodu.Text = tableContent.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCNUM"].ToString();
+                txtIcerikNumarasi.Text = tableContent.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["CONTENTNUM"].ToString();
+                txtBilesenKodu.Text = tableContent.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["COMPONENT"].ToString();
+                txtKalemUrunAgaciTipi.Text = tableContent.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["COMPBOMDOCTYPE"].ToString();
+                txtKalemUrunAgaciKodu.Text = tableContent.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["COMPBOMDOCNUM"].ToString();
+                txtBilesenMiktari.Text = tableContent.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["QUANTITY"].ToString();
             }
         }
     }

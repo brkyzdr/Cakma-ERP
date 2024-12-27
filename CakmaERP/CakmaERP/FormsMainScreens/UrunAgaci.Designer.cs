@@ -58,7 +58,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtMalzemeKodu = new System.Windows.Forms.TextBox();
             this.txtMalzemeTipi = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBilesenMiktari = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtBilesenKodu = new System.Windows.Forms.TextBox();
@@ -326,12 +326,12 @@
             this.txtMalzemeTipi.Size = new System.Drawing.Size(216, 20);
             this.txtMalzemeTipi.TabIndex = 140;
             // 
-            // textBox1
+            // txtBilesenMiktari
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 807);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(216, 20);
-            this.textBox1.TabIndex = 161;
+            this.txtBilesenMiktari.Location = new System.Drawing.Point(12, 807);
+            this.txtBilesenMiktari.Name = "txtBilesenMiktari";
+            this.txtBilesenMiktari.Size = new System.Drawing.Size(216, 20);
+            this.txtBilesenMiktari.TabIndex = 161;
             // 
             // label2
             // 
@@ -415,7 +415,7 @@
             this.Controls.Add(this.txtKalemUrunAgaciKodu);
             this.Controls.Add(this.txtKalemUrunAgaciTipi);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBilesenMiktari);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBilesenKodu);
@@ -491,7 +491,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtMalzemeKodu;
         private System.Windows.Forms.TextBox txtMalzemeTipi;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBilesenMiktari;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtBilesenKodu;
