@@ -54,9 +54,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Firma Seç";
+            this.label1.Text = "Firma Kodu";
             // 
             // UrunAgaciSeviyeleri
             // 
@@ -67,6 +67,7 @@
             this.Controls.Add(this.cbFirma);
             this.Controls.Add(this.treeView1);
             this.Name = "UrunAgaciSeviyeleri";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UrunAgaciSeviyeleri";
             this.Load += new System.EventHandler(this.UrunAgaciSeviyeleri_Load);
             this.ResumeLayout(false);

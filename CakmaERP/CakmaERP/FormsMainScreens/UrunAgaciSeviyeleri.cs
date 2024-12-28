@@ -16,8 +16,8 @@ namespace CakmaERP.FormsMainScreens
         public UrunAgaciSeviyeleri()
         {
             InitializeComponent();
-            LoadTreeView();
-            FillComboBox();
+            //LoadTreeView();
+           // FillComboBox();
         }
         private void FillComboBox()
         {

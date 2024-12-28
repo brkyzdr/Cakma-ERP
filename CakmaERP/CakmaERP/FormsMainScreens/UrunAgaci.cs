@@ -16,8 +16,8 @@ namespace CakmaERP.FormsMainScreens
         {
             InitializeComponent();
 
-            LoadData();
-            FillComboBox();
+            //LoadData();
+            //FillComboBox();
         }
 
         private void FillComboBox()
