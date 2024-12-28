@@ -31,7 +31,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaliyetMerkeziTipi = new System.Windows.Forms.TextBox();
-            this.txtFirmaKodu = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -40,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaliyetMerkeziTipiAciklamasi = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbFirma = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,13 +67,6 @@
             this.txtMaliyetMerkeziTipi.Name = "txtMaliyetMerkeziTipi";
             this.txtMaliyetMerkeziTipi.Size = new System.Drawing.Size(216, 20);
             this.txtMaliyetMerkeziTipi.TabIndex = 15;
-            // 
-            // txtFirmaKodu
-            // 
-            this.txtFirmaKodu.Location = new System.Drawing.Point(12, 90);
-            this.txtFirmaKodu.Name = "txtFirmaKodu";
-            this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtFirmaKodu.TabIndex = 14;
             // 
             // dataGridView1
             // 
@@ -152,12 +145,21 @@
             this.checkBox1.TabIndex = 22;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // cbFirma
+            // 
+            this.cbFirma.FormattingEnabled = true;
+            this.cbFirma.Location = new System.Drawing.Point(12, 91);
+            this.cbFirma.Name = "cbFirma";
+            this.cbFirma.Size = new System.Drawing.Size(216, 21);
+            this.cbFirma.TabIndex = 23;
+            // 
             // MaliyetMerkeziKontrol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.cbFirma);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
@@ -165,7 +167,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtMaliyetMerkeziTipi);
-            this.Controls.Add(this.txtFirmaKodu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCreate);
@@ -184,7 +185,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaliyetMerkeziTipi;
-        private System.Windows.Forms.TextBox txtFirmaKodu;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreate;
@@ -193,5 +193,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaliyetMerkeziTipiAciklamasi;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ComboBox cbFirma;
     }
 }

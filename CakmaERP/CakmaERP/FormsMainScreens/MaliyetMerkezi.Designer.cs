@@ -30,8 +30,6 @@
         {
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaliyetMerkeziTipi = new System.Windows.Forms.TextBox();
-            this.txtFirmaKodu = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -53,7 +51,9 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtMaliyetAciklamasi = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtDilKodu = new System.Windows.Forms.TextBox();
+            this.cbFirma = new System.Windows.Forms.ComboBox();
+            this.cbMaliyetM = new System.Windows.Forms.ComboBox();
+            this.cbDil = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,20 +74,6 @@
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 24;
             this.label1.Text = "Firma Kodu";
-            // 
-            // txtMaliyetMerkeziTipi
-            // 
-            this.txtMaliyetMerkeziTipi.Location = new System.Drawing.Point(12, 135);
-            this.txtMaliyetMerkeziTipi.Name = "txtMaliyetMerkeziTipi";
-            this.txtMaliyetMerkeziTipi.Size = new System.Drawing.Size(216, 20);
-            this.txtMaliyetMerkeziTipi.TabIndex = 23;
-            // 
-            // txtFirmaKodu
-            // 
-            this.txtFirmaKodu.Location = new System.Drawing.Point(12, 90);
-            this.txtFirmaKodu.Name = "txtFirmaKodu";
-            this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtFirmaKodu.TabIndex = 22;
             // 
             // dataGridView1
             // 
@@ -260,8 +246,9 @@
             // txtMaliyetAciklamasi
             // 
             this.txtMaliyetAciklamasi.Location = new System.Drawing.Point(12, 500);
+            this.txtMaliyetAciklamasi.Multiline = true;
             this.txtMaliyetAciklamasi.Name = "txtMaliyetAciklamasi";
-            this.txtMaliyetAciklamasi.Size = new System.Drawing.Size(216, 20);
+            this.txtMaliyetAciklamasi.Size = new System.Drawing.Size(216, 80);
             this.txtMaliyetAciklamasi.TabIndex = 50;
             // 
             // label14
@@ -273,12 +260,29 @@
             this.label14.TabIndex = 49;
             this.label14.Text = "Dil Kodu";
             // 
-            // txtDilKodu
+            // cbFirma
             // 
-            this.txtDilKodu.Location = new System.Drawing.Point(12, 456);
-            this.txtDilKodu.Name = "txtDilKodu";
-            this.txtDilKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtDilKodu.TabIndex = 48;
+            this.cbFirma.FormattingEnabled = true;
+            this.cbFirma.Location = new System.Drawing.Point(12, 91);
+            this.cbFirma.Name = "cbFirma";
+            this.cbFirma.Size = new System.Drawing.Size(216, 21);
+            this.cbFirma.TabIndex = 52;
+            // 
+            // cbMaliyetM
+            // 
+            this.cbMaliyetM.FormattingEnabled = true;
+            this.cbMaliyetM.Location = new System.Drawing.Point(12, 135);
+            this.cbMaliyetM.Name = "cbMaliyetM";
+            this.cbMaliyetM.Size = new System.Drawing.Size(216, 21);
+            this.cbMaliyetM.TabIndex = 53;
+            // 
+            // cbDil
+            // 
+            this.cbDil.FormattingEnabled = true;
+            this.cbDil.Location = new System.Drawing.Point(12, 456);
+            this.cbDil.Name = "cbDil";
+            this.cbDil.Size = new System.Drawing.Size(216, 21);
+            this.cbDil.TabIndex = 54;
             // 
             // MaliyetMerkezi
             // 
@@ -286,10 +290,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1584, 1161);
+            this.Controls.Add(this.cbDil);
+            this.Controls.Add(this.cbMaliyetM);
+            this.Controls.Add(this.cbFirma);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtMaliyetAciklamasi);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtDilKodu);
             this.Controls.Add(this.checkBoxPasifmi);
             this.Controls.Add(this.checkBoxSilindimi);
             this.Controls.Add(this.label11);
@@ -306,8 +312,6 @@
             this.Controls.Add(this.txtMaliyetMerkeziKodu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMaliyetMerkeziTipi);
-            this.Controls.Add(this.txtFirmaKodu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCreate);
@@ -325,8 +329,6 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaliyetMerkeziTipi;
-        private System.Windows.Forms.TextBox txtFirmaKodu;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreate;
@@ -348,6 +350,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtMaliyetAciklamasi;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtDilKodu;
+        private System.Windows.Forms.ComboBox cbFirma;
+        private System.Windows.Forms.ComboBox cbMaliyetM;
+        private System.Windows.Forms.ComboBox cbDil;
     }
 }

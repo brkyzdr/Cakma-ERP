@@ -35,18 +35,15 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtMalzemeAciklamasi = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtDilKodu = new System.Windows.Forms.TextBox();
             this.checkBoxPasifmi = new System.Windows.Forms.CheckBox();
             this.checkBoxSilindimi = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtNetAgirlikBirimi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNetAgirlik = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtMalzemeStokBirimi = new System.Windows.Forms.TextBox();
             this.txtTedarikTipi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,24 +53,27 @@
             this.txtMalzemeKodu = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMalzemeTipi = new System.Windows.Forms.TextBox();
-            this.txtFirmaKodu = new System.Windows.Forms.TextBox();
-            this.txtBrutAgirlikBirimi = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.txtBrutAgirlik = new System.Windows.Forms.TextBox();
             this.txtUrunAgaciKodu = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.txtUrunAgaciTipi = new System.Windows.Forms.TextBox();
             this.txtUrunAgaciVarmi = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txtRotaKodu = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.txtRotaTipi = new System.Windows.Forms.TextBox();
             this.txtRotaVarmi = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.cbFirma = new System.Windows.Forms.ComboBox();
+            this.cbMalzemeTipi = new System.Windows.Forms.ComboBox();
+            this.cbMalzemeStokBirimi = new System.Windows.Forms.ComboBox();
+            this.cbNetAgirlikBirimi = new System.Windows.Forms.ComboBox();
+            this.cbBrutAgirlikBirimi = new System.Windows.Forms.ComboBox();
+            this.cbUrunAgaciTipi = new System.Windows.Forms.ComboBox();
+            this.cbRotaTipi = new System.Windows.Forms.ComboBox();
+            this.cbDil = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,8 +132,9 @@
             // txtMalzemeAciklamasi
             // 
             this.txtMalzemeAciklamasi.Location = new System.Drawing.Point(12, 950);
+            this.txtMalzemeAciklamasi.Multiline = true;
             this.txtMalzemeAciklamasi.Name = "txtMalzemeAciklamasi";
-            this.txtMalzemeAciklamasi.Size = new System.Drawing.Size(216, 20);
+            this.txtMalzemeAciklamasi.Size = new System.Drawing.Size(216, 80);
             this.txtMalzemeAciklamasi.TabIndex = 74;
             // 
             // label14
@@ -144,13 +145,6 @@
             this.label14.Size = new System.Drawing.Size(47, 13);
             this.label14.TabIndex = 73;
             this.label14.Text = "Dil Kodu";
-            // 
-            // txtDilKodu
-            // 
-            this.txtDilKodu.Location = new System.Drawing.Point(12, 906);
-            this.txtDilKodu.Name = "txtDilKodu";
-            this.txtDilKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtDilKodu.TabIndex = 72;
             // 
             // checkBoxPasifmi
             // 
@@ -187,13 +181,6 @@
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 68;
             this.label10.Text = "Silindi mi?";
-            // 
-            // txtNetAgirlikBirimi
-            // 
-            this.txtNetAgirlikBirimi.Location = new System.Drawing.Point(12, 451);
-            this.txtNetAgirlikBirimi.Name = "txtNetAgirlikBirimi";
-            this.txtNetAgirlikBirimi.Size = new System.Drawing.Size(216, 20);
-            this.txtNetAgirlikBirimi.TabIndex = 67;
             // 
             // label6
             // 
@@ -237,13 +224,6 @@
             this.label9.Size = new System.Drawing.Size(196, 13);
             this.label9.TabIndex = 62;
             this.label9.Text = "Tedarik Tipi (0: Satın Alınan | 1: Üretilen)";
-            // 
-            // txtMalzemeStokBirimi
-            // 
-            this.txtMalzemeStokBirimi.Location = new System.Drawing.Point(12, 362);
-            this.txtMalzemeStokBirimi.Name = "txtMalzemeStokBirimi";
-            this.txtMalzemeStokBirimi.Size = new System.Drawing.Size(216, 20);
-            this.txtMalzemeStokBirimi.TabIndex = 61;
             // 
             // txtTedarikTipi
             // 
@@ -318,27 +298,6 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Firma Kodu";
             // 
-            // txtMalzemeTipi
-            // 
-            this.txtMalzemeTipi.Location = new System.Drawing.Point(12, 137);
-            this.txtMalzemeTipi.Name = "txtMalzemeTipi";
-            this.txtMalzemeTipi.Size = new System.Drawing.Size(216, 20);
-            this.txtMalzemeTipi.TabIndex = 51;
-            // 
-            // txtFirmaKodu
-            // 
-            this.txtFirmaKodu.Location = new System.Drawing.Point(12, 92);
-            this.txtFirmaKodu.Name = "txtFirmaKodu";
-            this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtFirmaKodu.TabIndex = 50;
-            // 
-            // txtBrutAgirlikBirimi
-            // 
-            this.txtBrutAgirlikBirimi.Location = new System.Drawing.Point(12, 541);
-            this.txtBrutAgirlikBirimi.Name = "txtBrutAgirlikBirimi";
-            this.txtBrutAgirlikBirimi.Size = new System.Drawing.Size(216, 20);
-            this.txtBrutAgirlikBirimi.TabIndex = 81;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -389,13 +348,6 @@
             this.label18.TabIndex = 85;
             this.label18.Text = "Ürün Ağacı Tipi";
             // 
-            // txtUrunAgaciTipi
-            // 
-            this.txtUrunAgaciTipi.Location = new System.Drawing.Point(12, 631);
-            this.txtUrunAgaciTipi.Name = "txtUrunAgaciTipi";
-            this.txtUrunAgaciTipi.Size = new System.Drawing.Size(216, 20);
-            this.txtUrunAgaciTipi.TabIndex = 84;
-            // 
             // txtUrunAgaciVarmi
             // 
             this.txtUrunAgaciVarmi.Location = new System.Drawing.Point(12, 586);
@@ -437,13 +389,6 @@
             this.label21.TabIndex = 91;
             this.label21.Text = "Rota Tipi";
             // 
-            // txtRotaTipi
-            // 
-            this.txtRotaTipi.Location = new System.Drawing.Point(12, 767);
-            this.txtRotaTipi.Name = "txtRotaTipi";
-            this.txtRotaTipi.Size = new System.Drawing.Size(216, 20);
-            this.txtRotaTipi.TabIndex = 90;
-            // 
             // txtRotaVarmi
             // 
             this.txtRotaVarmi.Location = new System.Drawing.Point(12, 722);
@@ -460,43 +405,109 @@
             this.label22.TabIndex = 88;
             this.label22.Text = "Rota Var mı? (0: Hayır, 1: Evet, 2: Olmayacak)";
             // 
+            // cbFirma
+            // 
+            this.cbFirma.FormattingEnabled = true;
+            this.cbFirma.Location = new System.Drawing.Point(12, 93);
+            this.cbFirma.Name = "cbFirma";
+            this.cbFirma.Size = new System.Drawing.Size(216, 21);
+            this.cbFirma.TabIndex = 94;
+            // 
+            // cbMalzemeTipi
+            // 
+            this.cbMalzemeTipi.FormattingEnabled = true;
+            this.cbMalzemeTipi.Location = new System.Drawing.Point(12, 137);
+            this.cbMalzemeTipi.Name = "cbMalzemeTipi";
+            this.cbMalzemeTipi.Size = new System.Drawing.Size(216, 21);
+            this.cbMalzemeTipi.TabIndex = 95;
+            // 
+            // cbMalzemeStokBirimi
+            // 
+            this.cbMalzemeStokBirimi.FormattingEnabled = true;
+            this.cbMalzemeStokBirimi.Location = new System.Drawing.Point(12, 362);
+            this.cbMalzemeStokBirimi.Name = "cbMalzemeStokBirimi";
+            this.cbMalzemeStokBirimi.Size = new System.Drawing.Size(216, 21);
+            this.cbMalzemeStokBirimi.TabIndex = 96;
+            // 
+            // cbNetAgirlikBirimi
+            // 
+            this.cbNetAgirlikBirimi.FormattingEnabled = true;
+            this.cbNetAgirlikBirimi.Location = new System.Drawing.Point(12, 451);
+            this.cbNetAgirlikBirimi.Name = "cbNetAgirlikBirimi";
+            this.cbNetAgirlikBirimi.Size = new System.Drawing.Size(216, 21);
+            this.cbNetAgirlikBirimi.TabIndex = 97;
+            // 
+            // cbBrutAgirlikBirimi
+            // 
+            this.cbBrutAgirlikBirimi.FormattingEnabled = true;
+            this.cbBrutAgirlikBirimi.Location = new System.Drawing.Point(12, 541);
+            this.cbBrutAgirlikBirimi.Name = "cbBrutAgirlikBirimi";
+            this.cbBrutAgirlikBirimi.Size = new System.Drawing.Size(216, 21);
+            this.cbBrutAgirlikBirimi.TabIndex = 98;
+            // 
+            // cbUrunAgaciTipi
+            // 
+            this.cbUrunAgaciTipi.FormattingEnabled = true;
+            this.cbUrunAgaciTipi.Location = new System.Drawing.Point(12, 631);
+            this.cbUrunAgaciTipi.Name = "cbUrunAgaciTipi";
+            this.cbUrunAgaciTipi.Size = new System.Drawing.Size(216, 21);
+            this.cbUrunAgaciTipi.TabIndex = 99;
+            // 
+            // cbRotaTipi
+            // 
+            this.cbRotaTipi.FormattingEnabled = true;
+            this.cbRotaTipi.Location = new System.Drawing.Point(12, 767);
+            this.cbRotaTipi.Name = "cbRotaTipi";
+            this.cbRotaTipi.Size = new System.Drawing.Size(216, 21);
+            this.cbRotaTipi.TabIndex = 100;
+            // 
+            // cbDil
+            // 
+            this.cbDil.FormattingEnabled = true;
+            this.cbDil.Location = new System.Drawing.Point(12, 906);
+            this.cbDil.Name = "cbDil";
+            this.cbDil.Size = new System.Drawing.Size(216, 21);
+            this.cbDil.TabIndex = 101;
+            // 
             // Materyal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1584, 1161);
+            this.Controls.Add(this.cbDil);
+            this.Controls.Add(this.cbRotaTipi);
+            this.Controls.Add(this.cbUrunAgaciTipi);
+            this.Controls.Add(this.cbBrutAgirlikBirimi);
+            this.Controls.Add(this.cbNetAgirlikBirimi);
+            this.Controls.Add(this.cbMalzemeStokBirimi);
+            this.Controls.Add(this.cbMalzemeTipi);
+            this.Controls.Add(this.cbFirma);
             this.Controls.Add(this.txtRotaKodu);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.txtRotaTipi);
             this.Controls.Add(this.txtRotaVarmi);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.txtUrunAgaciKodu);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.txtUrunAgaciTipi);
             this.Controls.Add(this.txtUrunAgaciVarmi);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.txtBrutAgirlikBirimi);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.txtBrutAgirlik);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.txtMalzemeAciklamasi);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.txtDilKodu);
             this.Controls.Add(this.checkBoxPasifmi);
             this.Controls.Add(this.checkBoxSilindimi);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtNetAgirlikBirimi);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNetAgirlik);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtMalzemeStokBirimi);
             this.Controls.Add(this.txtTedarikTipi);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -506,8 +517,6 @@
             this.Controls.Add(this.txtMalzemeKodu);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtMalzemeTipi);
-            this.Controls.Add(this.txtFirmaKodu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCreate);
@@ -529,18 +538,15 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtMalzemeAciklamasi;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtDilKodu;
         private System.Windows.Forms.CheckBox checkBoxPasifmi;
         private System.Windows.Forms.CheckBox checkBoxSilindimi;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtNetAgirlikBirimi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNetAgirlik;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtMalzemeStokBirimi;
         private System.Windows.Forms.TextBox txtTedarikTipi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -550,23 +556,26 @@
         private System.Windows.Forms.TextBox txtMalzemeKodu;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMalzemeTipi;
-        private System.Windows.Forms.TextBox txtFirmaKodu;
-        private System.Windows.Forms.TextBox txtBrutAgirlikBirimi;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtBrutAgirlik;
         private System.Windows.Forms.TextBox txtUrunAgaciKodu;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtUrunAgaciTipi;
         private System.Windows.Forms.TextBox txtUrunAgaciVarmi;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtRotaKodu;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtRotaTipi;
         private System.Windows.Forms.TextBox txtRotaVarmi;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ComboBox cbFirma;
+        private System.Windows.Forms.ComboBox cbMalzemeTipi;
+        private System.Windows.Forms.ComboBox cbMalzemeStokBirimi;
+        private System.Windows.Forms.ComboBox cbNetAgirlikBirimi;
+        private System.Windows.Forms.ComboBox cbBrutAgirlikBirimi;
+        private System.Windows.Forms.ComboBox cbUrunAgaciTipi;
+        private System.Windows.Forms.ComboBox cbRotaTipi;
+        private System.Windows.Forms.ComboBox cbDil;
     }
 }

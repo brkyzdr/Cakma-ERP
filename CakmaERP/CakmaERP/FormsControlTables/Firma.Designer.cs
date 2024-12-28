@@ -39,11 +39,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtFirmaAdresi1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtUlkeKodu = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSehirKodu = new System.Windows.Forms.TextBox();
             this.txtFirmaAdresi2 = new System.Windows.Forms.TextBox();
+            this.cbSehirKodu = new System.Windows.Forms.ComboBox();
+            this.cbUlkeKodu = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,23 +141,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 346);
+            this.label4.Location = new System.Drawing.Point(12, 341);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 17;
             this.label4.Text = "Ülke Kodu";
             // 
-            // txtUlkeKodu
-            // 
-            this.txtUlkeKodu.Location = new System.Drawing.Point(12, 362);
-            this.txtUlkeKodu.Name = "txtUlkeKodu";
-            this.txtUlkeKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtUlkeKodu.TabIndex = 16;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 290);
+            this.label5.Location = new System.Drawing.Point(12, 285);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 15;
@@ -172,13 +165,6 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Firma Adresi-2";
             // 
-            // txtSehirKodu
-            // 
-            this.txtSehirKodu.Location = new System.Drawing.Point(12, 306);
-            this.txtSehirKodu.Name = "txtSehirKodu";
-            this.txtSehirKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtSehirKodu.TabIndex = 13;
-            // 
             // txtFirmaAdresi2
             // 
             this.txtFirmaAdresi2.Location = new System.Drawing.Point(12, 250);
@@ -186,17 +172,33 @@
             this.txtFirmaAdresi2.Size = new System.Drawing.Size(216, 20);
             this.txtFirmaAdresi2.TabIndex = 12;
             // 
+            // cbSehirKodu
+            // 
+            this.cbSehirKodu.FormattingEnabled = true;
+            this.cbSehirKodu.Location = new System.Drawing.Point(12, 301);
+            this.cbSehirKodu.Name = "cbSehirKodu";
+            this.cbSehirKodu.Size = new System.Drawing.Size(216, 21);
+            this.cbSehirKodu.TabIndex = 18;
+            // 
+            // cbUlkeKodu
+            // 
+            this.cbUlkeKodu.FormattingEnabled = true;
+            this.cbUlkeKodu.Location = new System.Drawing.Point(12, 357);
+            this.cbUlkeKodu.Name = "cbUlkeKodu";
+            this.cbUlkeKodu.Size = new System.Drawing.Size(216, 21);
+            this.cbUlkeKodu.TabIndex = 19;
+            // 
             // Firma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.cbUlkeKodu);
+            this.Controls.Add(this.cbSehirKodu);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtUlkeKodu);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtSehirKodu);
             this.Controls.Add(this.txtFirmaAdresi2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFirmaAdresi1);
@@ -230,10 +232,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFirmaAdresi1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtUlkeKodu;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtSehirKodu;
         private System.Windows.Forms.TextBox txtFirmaAdresi2;
+        private System.Windows.Forms.ComboBox cbSehirKodu;
+        private System.Windows.Forms.ComboBox cbUlkeKodu;
     }
 }

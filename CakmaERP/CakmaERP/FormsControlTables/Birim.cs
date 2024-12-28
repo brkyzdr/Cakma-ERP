@@ -17,6 +17,16 @@ namespace CakmaERP.FormsControlTables
             InitializeComponent();
 
             LoadData();
+            FillComboBox(); 
+        }
+
+        private void FillComboBox()
+        {
+            DataTable com = CRUD.Read("SELECT DISTINCT COMCODE FROM GRSGEN001");
+            cbFirma.DataSource = com;
+            cbFirma.DisplayMember = "COMCODE";
+            cbFirma.ValueMember = "COMCODE";
+            cbFirma.SelectedIndex = -1;
         }
 
         private void LoadData()
@@ -39,14 +49,14 @@ namespace CakmaERP.FormsControlTables
             if (checkBox1.Checked) ispassive = 1;
             else ispassive = 0;
 
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
+            if (!string.IsNullOrEmpty(cbFirma.Text)
                 && !string.IsNullOrEmpty(txtBirimKodu.Text)
                 && !string.IsNullOrEmpty(txtBirimAdi.Text)
                 )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COMCODE", cbFirma.Text },
                     { "UNITCODE", txtBirimKodu.Text },
                     { "UNITTEXT", txtBirimAdi.Text },
                     { "ISMAINUNIT", ispassive},
@@ -69,21 +79,21 @@ namespace CakmaERP.FormsControlTables
             if (checkBox1.Checked) ispassive = 1;
             else ispassive = 0;
 
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
+            if (!string.IsNullOrEmpty(cbFirma.Text)
                 && !string.IsNullOrEmpty(txtBirimKodu.Text)
                 && !string.IsNullOrEmpty(txtBirimAdi.Text)
                 )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COMCODE", cbFirma.Text },
                     { "UNITCODE", txtBirimKodu.Text },
                     { "UNITTEXT", txtBirimAdi.Text },
                     { "ISMAINUNIT", ispassive },
                     { "MAINUNITCODE", txtAnaAgirlikBirimiKodu.Text }
                 };
 
-                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}'";
                 CRUD.Update("GRSGEN005", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
@@ -96,9 +106,9 @@ namespace CakmaERP.FormsControlTables
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
+            if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}'";
                 CRUD.Delete("GRSGEN005", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
@@ -114,7 +124,7 @@ namespace CakmaERP.FormsControlTables
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
+                cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
                 txtBirimKodu.Text = row.Cells["UNITCODE"].Value.ToString();
                 txtBirimKodu.Text = row.Cells["UNITTEXT"].Value.ToString();
 

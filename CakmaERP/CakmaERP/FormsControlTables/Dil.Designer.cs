@@ -31,13 +31,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDilKodu = new System.Windows.Forms.TextBox();
-            this.txtFirmaKodu = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDilAdi = new System.Windows.Forms.TextBox();
+            this.cbFirma = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,13 +65,6 @@
             this.txtDilKodu.Name = "txtDilKodu";
             this.txtDilKodu.Size = new System.Drawing.Size(216, 20);
             this.txtDilKodu.TabIndex = 15;
-            // 
-            // txtFirmaKodu
-            // 
-            this.txtFirmaKodu.Location = new System.Drawing.Point(12, 90);
-            this.txtFirmaKodu.Name = "txtFirmaKodu";
-            this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
-            this.txtFirmaKodu.TabIndex = 14;
             // 
             // dataGridView1
             // 
@@ -132,18 +125,26 @@
             this.txtDilAdi.Size = new System.Drawing.Size(216, 20);
             this.txtDilAdi.TabIndex = 18;
             // 
+            // cbFirma
+            // 
+            this.cbFirma.FormattingEnabled = true;
+            this.cbFirma.Location = new System.Drawing.Point(12, 90);
+            this.cbFirma.Name = "cbFirma";
+            this.cbFirma.Size = new System.Drawing.Size(216, 21);
+            this.cbFirma.TabIndex = 20;
+            // 
             // Dil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.cbFirma);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDilAdi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDilKodu);
-            this.Controls.Add(this.txtFirmaKodu);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnCreate);
@@ -162,12 +163,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDilKodu;
-        private System.Windows.Forms.TextBox txtFirmaKodu;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDilAdi;
+        private System.Windows.Forms.ComboBox cbFirma;
     }
 }

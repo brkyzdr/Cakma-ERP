@@ -15,9 +15,25 @@ namespace CakmaERP.FormsControlTables
         public Sehir()
         {
             InitializeComponent();
-
             LoadData();
+            FillComboBox();         
         }
+
+        private void FillComboBox()
+        {
+            DataTable com = CRUD.Read("SELECT DISTINCT COMCODE FROM GRSGEN001");
+            cbFirma.DataSource = com;
+            cbFirma.DisplayMember = "COMCODE";
+            cbFirma.ValueMember = "COMCODE";
+            cbFirma.SelectedIndex = -1;
+
+            DataTable country = CRUD.Read("SELECT DISTINCT COUNTRYCODE FROM GRSGEN003");
+            cbFirma.DataSource = country;
+            cbFirma.DisplayMember = "COUNTRYCODE";
+            cbFirma.ValueMember = "COUNTRYCODE";
+            cbFirma.SelectedIndex = -1;
+        }
+
 
         private void LoadData()
         {
@@ -34,16 +50,16 @@ namespace CakmaERP.FormsControlTables
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
+            if (!string.IsNullOrEmpty(cbFirma.Text) 
                 && !string.IsNullOrEmpty(txtSehirKodu.Text)
                 )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COMCODE", cbFirma.Text },
                     { "CITYCODE", txtSehirKodu.Text },
                     { "CITYTEXT", txtSehirAdi.Text },
-                    { "COUNTRYCODE", txtUlkeKodu.Text }
+                    { "COUNTRYCODE", cbUlke.Text }
                 };
 
                 CRUD.Create("GRSGEN004", data);
@@ -58,19 +74,19 @@ namespace CakmaERP.FormsControlTables
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
+            if (!string.IsNullOrEmpty(cbFirma.Text)
                 && !string.IsNullOrEmpty(txtSehirKodu.Text)
                 )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COMCODE", cbFirma.Text },
                     { "CITYCODE", txtSehirKodu.Text },
                     { "CITYTEXT", txtSehirAdi.Text },
-                    { "COUNTRYCODE", txtUlkeKodu.Text }
+                    { "COUNTRYCODE", cbUlke.Text }
                 };
 
-                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}'";
                 CRUD.Update("GRSGEN004", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
@@ -83,9 +99,9 @@ namespace CakmaERP.FormsControlTables
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
+            if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}'";
                 CRUD.Delete("GRSGEN004", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
@@ -101,10 +117,10 @@ namespace CakmaERP.FormsControlTables
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
+                cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
                 txtSehirKodu.Text = row.Cells["CITYCODE"].Value.ToString();
                 txtSehirAdi.Text = row.Cells["CITYTEXT"].Value.ToString();
-                txtUlkeKodu.Text = row.Cells["COUNTRYCODE"].Value.ToString();
+                cbUlke.Text = row.Cells["COUNTRYCODE"].Value.ToString();
             }
         }
     }

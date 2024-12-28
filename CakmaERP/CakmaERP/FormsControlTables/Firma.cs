@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CakmaERP.FormsControlTables
 {
@@ -17,7 +18,23 @@ namespace CakmaERP.FormsControlTables
             InitializeComponent();
 
             LoadData();
+            FillComboBox();
         }
+        private void FillComboBox()
+        {
+            DataTable city = CRUD.Read("SELECT DISTINCT CITYCODE FROM GRSGEN004");
+            cbSehirKodu.DataSource = city;
+            cbSehirKodu.DisplayMember = "CITYCODE";  
+            cbSehirKodu.ValueMember = "CITYCODE";
+            cbSehirKodu.SelectedIndex = -1;
+
+            DataTable country = CRUD.Read("SELECT DISTINCT COUNTRYCODE FROM GRSGEN003");
+            cbUlkeKodu.DataSource = country;
+            cbUlkeKodu.DisplayMember = "COUNTRYCODE";
+            cbUlkeKodu.ValueMember = "COUNTRYCODE";
+            cbUlkeKodu.SelectedIndex = -1;
+        }
+
         private void LoadData()
         {
             DataTable dataTable = CRUD.Read("SELECT * FROM GRSGEN001");
@@ -44,8 +61,8 @@ namespace CakmaERP.FormsControlTables
                     { "COMTEXT", txtFirmaAdi.Text },
                     { "ADDRESS1", txtFirmaAdresi1.Text },
                     { "ADDRESS2", txtFirmaAdresi2.Text },
-                    { "CITYCODE", txtSehirKodu.Text },
-                    { "COUNTRYCODE", txtUlkeKodu.Text }
+                    { "CITYCODE", cbSehirKodu.Text },
+                    { "COUNTRYCODE", cbUlkeKodu.Text }
                 };
 
                 CRUD.Create("GRSGEN001", data);
@@ -68,8 +85,8 @@ namespace CakmaERP.FormsControlTables
                     { "COMTEXT", txtFirmaAdi.Text },
                     { "ADDRESS1", txtFirmaAdresi1.Text },
                     { "ADDRESS2", txtFirmaAdresi2.Text },
-                    { "CITYCODE", txtSehirKodu.Text },
-                    { "COUNTRYCODE", txtUlkeKodu.Text }
+                    { "CITYCODE", cbSehirKodu.Text },
+                    { "COUNTRYCODE", cbUlkeKodu.Text }
                     
                 };
 
@@ -108,8 +125,8 @@ namespace CakmaERP.FormsControlTables
                 txtFirmaAdi.Text = row.Cells["COMTEXT"].Value.ToString();
                 txtFirmaAdresi1.Text = row.Cells["ADDRESS1"].Value.ToString();
                 txtFirmaAdresi2.Text = row.Cells["ADDRESS2"].Value.ToString();
-                txtSehirKodu.Text = row.Cells["CITYCODE"].Value.ToString();
-                txtUlkeKodu.Text = row.Cells["COUNTRYCODE"].Value.ToString();
+                cbSehirKodu.Text = row.Cells["CITYCODE"].Value.ToString();
+                cbUlkeKodu.Text = row.Cells["COUNTRYCODE"].Value.ToString();
             }
         }
     }

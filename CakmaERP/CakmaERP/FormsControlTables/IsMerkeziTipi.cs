@@ -17,11 +17,21 @@ namespace CakmaERP.FormsControlTables
             InitializeComponent();
 
             LoadData(); 
+            FillComboBox();
+        }
+
+        private void FillComboBox()
+        {
+            DataTable com = CRUD.Read("SELECT DISTINCT COMCODE FROM GRSGEN001");
+            cbFirma.DataSource = com;
+            cbFirma.DisplayMember = "COMCODE";
+            cbFirma.ValueMember = "COMCODE";
+            cbFirma.SelectedIndex = -1;
         }
 
         private void LoadData()
         {
-            DataTable dataTable = CRUD.Read("SELECT * FROM GRSROT002");
+            DataTable dataTable = CRUD.Read("SELECT * FROM GRSWCM001");
             dataGridView1.DataSource = dataTable;
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
@@ -38,19 +48,19 @@ namespace CakmaERP.FormsControlTables
             if (checkBox1.Checked) ispassive = 1;
             else ispassive = 0;
 
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
+            if (!string.IsNullOrEmpty(cbFirma.Text) 
                 && !string.IsNullOrEmpty(txtIsMerkeziTipi.Text)
                 )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COMCODE", cbFirma.Text },
                     { "DOCTYPE", txtIsMerkeziTipi.Text },
                     { "DOCTYPETEXT", txtIsMerkeziTipiAciklamasi.Text },
                     { "ISPASSIVE", ispassive }
                 };
 
-                CRUD.Create("GRSROT002", data);
+                CRUD.Create("GRSWCM001", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
             }
@@ -66,20 +76,20 @@ namespace CakmaERP.FormsControlTables
             if (checkBox1.Checked) ispassive = 1;
             else ispassive = 0;
 
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
+            if (!string.IsNullOrEmpty(cbFirma.Text) 
                 && !string.IsNullOrEmpty(txtIsMerkeziTipi.Text)
                 )
             {
                 var data = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COMCODE", cbFirma.Text },
                     { "DOCTYPE", txtIsMerkeziTipi.Text },
                     { "DOCTYPETEXT", txtIsMerkeziTipiAciklamasi.Text },
                     { "ISPASSIVE", ispassive }
                 };
 
-                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
-                CRUD.Update("GRSROT002", data, condition);
+                string condition = $"COMCODE = '{cbFirma.Text}'";
+                CRUD.Update("GRSWCM001", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
             }
@@ -91,10 +101,10 @@ namespace CakmaERP.FormsControlTables
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
+            if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
-                CRUD.Delete("GRSROT002", condition);
+                string condition = $"COMCODE = '{cbFirma.Text}'";
+                CRUD.Delete("GRSWCM001", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();
             }
@@ -109,7 +119,7 @@ namespace CakmaERP.FormsControlTables
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
+                cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
                 txtIsMerkeziTipi.Text = row.Cells["DOCTYPE"].Value.ToString();
                 txtIsMerkeziTipiAciklamasi.Text = row.Cells["DOCTYPETEXT"].Value.ToString();
 

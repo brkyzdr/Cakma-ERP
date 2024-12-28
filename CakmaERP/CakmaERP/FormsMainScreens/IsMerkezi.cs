@@ -18,6 +18,35 @@ namespace CakmaERP.FormsMainScreens
             InitializeComponent();
 
             LoadData();
+            FillComboBox();
+        }
+
+        private void FillComboBox()
+        {
+            DataTable com = CRUD.Read("SELECT DISTINCT COMCODE FROM GRSGEN001");
+            cbFirma.DataSource = com;
+            cbFirma.DisplayMember = "COMCODE";
+            cbFirma.ValueMember = "COMCODE";
+            cbFirma.SelectedIndex = -1;
+
+            DataTable wcm = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSWCM001");
+            cbIsMerkeziTipi.DataSource = wcm;
+            cbIsMerkeziTipi.DisplayMember = "DOCTYPE";
+            cbIsMerkeziTipi.ValueMember = "DOCTYPE";
+            cbIsMerkeziTipi.SelectedIndex = -1;
+
+            DataTable ccm = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSCCM001");
+            cbMaliyetMerkeziTipi.DataSource = com;
+            cbMaliyetMerkeziTipi.DisplayMember = "DOCTYPE";
+            cbMaliyetMerkeziTipi.ValueMember = "DOCTYPE";
+            cbMaliyetMerkeziTipi.SelectedIndex = -1;
+
+            DataTable lan = CRUD.Read("SELECT DISTINCT LANCODE FROM GRSGEN002");
+            cbDilKodu.DataSource = lan;
+            cbDilKodu.DisplayMember = "LANCODE";
+            cbDilKodu.ValueMember = "LANCODE";
+            cbDilKodu.SelectedIndex = -1;
+
         }
 
         private void LoadData()
@@ -52,30 +81,30 @@ namespace CakmaERP.FormsMainScreens
             else isdeleted = 0;
 
 
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
-                && !string.IsNullOrEmpty(txtIsMerkeziTipi.Text)
+            if (!string.IsNullOrEmpty(cbFirma.Text) 
+                && !string.IsNullOrEmpty(cbIsMerkeziTipi.Text)
                 && !string.IsNullOrEmpty(txtIsMerkeziKodu.Text)
                 && !string.IsNullOrEmpty(dateTimePickerBaslangic.Text)
                 && !string.IsNullOrEmpty(dateTimePickerBitis.Text)
                 && !string.IsNullOrEmpty(txtAnaIsMerkeziTipi.Text)
                 && !string.IsNullOrEmpty(txtAnaIsMerkeziKodu.Text)
-                && !string.IsNullOrEmpty(txtMaliyetMerkeziTipi.Text)
+                && !string.IsNullOrEmpty(cbMaliyetMerkeziTipi.Text)
                 && !string.IsNullOrEmpty(txtMaliyetMerkeziKodu.Text)
-                && !string.IsNullOrEmpty(txtDilKodu.Text)
+                && !string.IsNullOrEmpty(cbDilKodu.Text)
                 && !string.IsNullOrEmpty(txtIsAciklamasi.Text)
                 && !string.IsNullOrEmpty(txtOperasyonKodu.Text)
                 )
             {
                 var dataHead = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
-                    { "WCMDOCTYPE", txtIsMerkeziTipi.Text },
+                    { "COMCODE", cbFirma.Text },
+                    { "WCMDOCTYPE", cbIsMerkeziTipi.Text },
                     { "WCMDOCNUM", txtIsMerkeziKodu.Text },
                     { "WCMDOCFROM", dateTimePickerBaslangic.Text },
                     { "WCMDOCUNTIL", dateTimePickerBitis.Text },
                     { "MAINWCMDOCTYPE", txtAnaIsMerkeziTipi.Text },
                     { "MAINWCMDOCNUM", txtAnaIsMerkeziKodu.Text },
-                    { "CCMDOCTYPE", txtMaliyetMerkeziTipi.Text },
+                    { "CCMDOCTYPE", cbMaliyetMerkeziTipi.Text },
                     { "CCMDOCNUM", txtMaliyetMerkeziKodu.Text },
                     { "WORKTIME", txtGunlukCalismaSatti.Text },
                     { "ISDELETED", isdeleted },
@@ -83,13 +112,13 @@ namespace CakmaERP.FormsMainScreens
                 };
                 var dataText = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
-                    { "LANCODE", txtDilKodu.Text },
+                    { "COMCODE", cbFirma.Text },
+                    { "LANCODE", cbDilKodu.Text },
                     { "WCMSTEXT", txtIsAciklamasi.Text }
                 };
                 var dataOpr = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COMCODE", cbFirma.Text },
                     { "OPRDOCTYPE", txtOperasyonKodu.Text }
                 };
 
@@ -115,30 +144,30 @@ namespace CakmaERP.FormsMainScreens
             if (checkBoxSilindimi.Checked) isdeleted = 1;
             else isdeleted = 0;
 
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text)
-                && !string.IsNullOrEmpty(txtIsMerkeziTipi.Text)
+            if (!string.IsNullOrEmpty(cbFirma.Text)
+                && !string.IsNullOrEmpty(cbIsMerkeziTipi.Text)
                 && !string.IsNullOrEmpty(txtIsMerkeziKodu.Text)
                 && !string.IsNullOrEmpty(dateTimePickerBaslangic.Text)
                 && !string.IsNullOrEmpty(dateTimePickerBitis.Text)
                 && !string.IsNullOrEmpty(txtAnaIsMerkeziTipi.Text)
                 && !string.IsNullOrEmpty(txtAnaIsMerkeziKodu.Text)
-                && !string.IsNullOrEmpty(txtMaliyetMerkeziTipi.Text)
+                && !string.IsNullOrEmpty(cbMaliyetMerkeziTipi.Text)
                 && !string.IsNullOrEmpty(txtMaliyetMerkeziKodu.Text)
-                && !string.IsNullOrEmpty(txtDilKodu.Text)
+                && !string.IsNullOrEmpty(cbDilKodu.Text)
                 && !string.IsNullOrEmpty(txtIsAciklamasi.Text)
                 && !string.IsNullOrEmpty(txtOperasyonKodu.Text)
                 )
             {
                 var dataHead = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
-                    { "WCMDOCTYPE", txtIsMerkeziTipi.Text },
+                    { "COMCODE", cbFirma.Text },
+                    { "WCMDOCTYPE", cbIsMerkeziTipi.Text },
                     { "WCMDOCNUM", txtIsMerkeziKodu.Text },
                     { "WCMDOCFROM", dateTimePickerBaslangic.Text },
                     { "WCMDOCUNTIL", dateTimePickerBitis.Text },
                     { "MAINWCMDOCTYPE", txtAnaIsMerkeziTipi.Text },
                     { "MAINWCMDOCNUM", txtAnaIsMerkeziKodu.Text },
-                    { "CCMDOCTYPE", txtMaliyetMerkeziTipi.Text },
+                    { "CCMDOCTYPE", cbMaliyetMerkeziTipi.Text },
                     { "CCMDOCNUM", txtMaliyetMerkeziKodu.Text },
                     { "WORKTIME", txtGunlukCalismaSatti.Text },
                     { "ISDELETED", isdeleted },
@@ -146,17 +175,17 @@ namespace CakmaERP.FormsMainScreens
                 };
                 var dataText = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
-                    { "LANCODE", txtDilKodu.Text },
+                    { "COMCODE", cbFirma.Text },
+                    { "LANCODE", cbDilKodu.Text },
                     { "WCMSTEXT", txtIsAciklamasi.Text }
                 };
                 var dataOpr = new Dictionary<string, object>
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
+                    { "COMCODE", cbFirma.Text },
                     { "OPRDOCTYPE", txtOperasyonKodu.Text }
                 };
 
-                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}'";
                 CRUD.Update("GRSWCMHEAD", dataHead, condition);
                 CRUD.Update("GRSWCMTEXT", dataText, condition);
                 CRUD.Update("GRSWCMOPR", dataOpr, condition);
@@ -171,9 +200,9 @@ namespace CakmaERP.FormsMainScreens
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtFirmaKodu.Text))
+            if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{txtFirmaKodu.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}'";
                 CRUD.Delete("GRSWCMHEAD", condition);
                 CRUD.Delete("GRSWCMTEXT", condition);
                 CRUD.Delete("GRSWCMOPR", condition);
@@ -191,14 +220,14 @@ namespace CakmaERP.FormsMainScreens
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                txtFirmaKodu.Text = row.Cells["COMCODE"].Value.ToString();
-                txtIsMerkeziTipi.Text = row.Cells["WCMDOCTYPE"].Value.ToString();
+                cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
+                cbIsMerkeziTipi.Text = row.Cells["WCMDOCTYPE"].Value.ToString();
                 txtIsMerkeziKodu.Text = row.Cells["WCMDOCNUM"].Value.ToString();
                 dateTimePickerBaslangic.Text = row.Cells["WCMDOCFROM"].Value.ToString();
                 dateTimePickerBitis.Text = row.Cells["WCMDOCUNTIL"].Value.ToString();
                 txtAnaIsMerkeziTipi.Text = row.Cells["MAINWCMDOCTYPE"].Value.ToString();
                 txtAnaIsMerkeziKodu.Text = row.Cells["MAINWCMDOCNUM"].Value.ToString();
-                txtMaliyetMerkeziTipi.Text = row.Cells["CCMDOCTYPE"].Value.ToString();
+                cbMaliyetMerkeziTipi.Text = row.Cells["CCMDOCTYPE"].Value.ToString();
                 txtMaliyetMerkeziKodu.Text = row.Cells["CCMDOCNUM"].Value.ToString();
                 txtGunlukCalismaSatti.Text = row.Cells["WORKTIME"].Value.ToString();                
 
@@ -211,9 +240,9 @@ namespace CakmaERP.FormsMainScreens
 
                 DataTable tableText = CRUD.Read("SELECT * FROM GRSWCMTEXT");
                 DataTable tableOpr = CRUD.Read("SELECT * FROM GRSWCMOPR");
-                var firmakodu = txtFirmaKodu.Text;
+                var firmakodu = cbFirma.Text;
 
-                txtDilKodu.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
+                cbDilKodu.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
                 txtIsAciklamasi.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMSTEXT"].ToString();
                 txtOperasyonKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["OPRDOCTYPE"].ToString();
             }
