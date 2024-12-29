@@ -75,7 +75,7 @@ namespace CakmaERP.FormsControlTables
                     { "COUNTRYTEXT", txtUlkeAdi.Text }
                 };
 
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND COUNTRYCODE = '{txtUlkeKodu.Text}'";
                 CRUD.Update("GRSGEN003", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
@@ -90,7 +90,7 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}'AND COUNTRYCODE = '{txtUlkeKodu.Text}'";
                 CRUD.Delete("GRSGEN003", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();

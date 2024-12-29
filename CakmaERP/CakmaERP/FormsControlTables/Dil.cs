@@ -77,7 +77,7 @@ namespace CakmaERP.FormsControlTables
                     { "LANTEXT", txtDilAdi.Text }
                 };
 
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND LANCODE = '{txtDilKodu.Text}'";
                 CRUD.Update("GRSGEN002", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
@@ -92,7 +92,7 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND LANCODE = '{txtDilKodu.Text}'";
                 CRUD.Delete("GRSGEN002", condition);
                 MessageBox.Show("Firma başarıyla silindi.");
                 LoadData();

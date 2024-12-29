@@ -106,8 +106,8 @@ namespace CakmaERP.FormsMainScreens
                     { "COMCODE", cbFirma.Text },
                     { "ROTDOCTYPE", cbRota.Text },
                     { "ROTDOCNUM", txtRotaKodu.Text },
-                    { "ROTDOCFROM", dateTimePickerBaslangic.Text },
-                    { "ROTDOCUNTIL", dateTimePickerBitis.Text },
+                    { "ROTDOCFROM", dateTimePickerBaslangic.Value },
+                    { "ROTDOCUNTIL", dateTimePickerBitis.Value },
                     { "MATDOCTYPE", cbMalzeme.Text },
                     { "MATDOCNUM", txtMalzemeKodu.Text },
                     { "QUANTITY", txtTemelMiktar.Text },
@@ -117,7 +117,9 @@ namespace CakmaERP.FormsMainScreens
                 };
                 var dataOpr = new Dictionary<string, object>
                 {
+                    { "COMCODE", cbFirma.Text },
                     { "OPRNUM", txtOperasyonNumarasi.Text },
+                    { "ROTDOCTYPE", cbRota.Text },
                     { "WCMDOCTYPE", cbIsMerkezi.Text },
                     { "WCMDOCNUM", txtIsMerkeziKodu.Text },
                     { "OPRDOCTYPE", txtOperasyonKodu.Text },
@@ -127,7 +129,9 @@ namespace CakmaERP.FormsMainScreens
                 };
                 var dataBom = new Dictionary<string, object>
                 {
+                    { "COMCODE", cbFirma.Text },
                     { "BOMDOCTYPE", cbUrunAgaci.Text },
+                    { "ROTDOCTYPE", cbRota.Text },
                     { "BOMDOCNUM", txtUrunAgaciKodu.Text },
                     { "CONTENTNUM", txtIcerikNumarasi.Text },
                     { "COMPONENT", txtBilesenKodu.Text },
@@ -180,8 +184,8 @@ namespace CakmaERP.FormsMainScreens
                     { "COMCODE", cbFirma.Text },
                     { "ROTDOCTYPE", cbRota.Text },
                     { "ROTDOCNUM", txtRotaKodu.Text },
-                    { "ROTDOCFROM", dateTimePickerBaslangic.Text },
-                    { "ROTDOCUNTIL", dateTimePickerBitis.Text },
+                    { "ROTDOCFROM", dateTimePickerBaslangic.Value },
+                    { "ROTDOCUNTIL", dateTimePickerBitis.Value },
                     { "MATDOCTYPE", cbMalzeme.Text },
                     { "MATDOCNUM", txtMalzemeKodu.Text },
                     { "QUANTITY", txtTemelMiktar.Text },
@@ -191,7 +195,9 @@ namespace CakmaERP.FormsMainScreens
                 };
                 var dataOpr = new Dictionary<string, object>
                 {
+                    { "COMCODE", cbFirma.Text },
                     { "OPRNUM", txtOperasyonNumarasi.Text },
+                    { "ROTDOCTYPE", cbRota.Text },
                     { "WCMDOCTYPE", cbIsMerkezi.Text },
                     { "WCMDOCNUM", txtIsMerkeziKodu.Text },
                     { "OPRDOCTYPE", txtOperasyonKodu.Text },
@@ -201,14 +207,16 @@ namespace CakmaERP.FormsMainScreens
                 };
                 var dataBom = new Dictionary<string, object>
                 {
+                    { "COMCODE", cbFirma.Text },
                     { "BOMDOCTYPE", cbUrunAgaci.Text },
+                    { "ROTDOCTYPE", cbRota.Text },
                     { "BOMDOCNUM", txtUrunAgaciKodu.Text },
                     { "CONTENTNUM", txtIcerikNumarasi.Text },
                     { "COMPONENT", txtBilesenKodu.Text },
                     { "QUANTITY", txtBilesenMiktari.Text }
                 };
 
-                string condition = $"firma_kodu = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND ROTDOCTYPE = '{cbRota.Text}'";
                 CRUD.Update("GRSROTHEAD", dataHead, condition);
                 CRUD.Update("GRSROTOPRCONTENT", dataOpr, condition);
                 CRUD.Update("GRSROTBOMCONTENT", dataBom, condition);
@@ -225,7 +233,7 @@ namespace CakmaERP.FormsMainScreens
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"firma_kodu = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND ROTDOCTYPE = '{cbRota.Text}'";
                 CRUD.Delete("GRSROTHEAD", condition);
                 CRUD.Delete("GRSROTOPRCONTENT", condition);
                 CRUD.Delete("GRSROTBOMCONTENT", condition);
@@ -259,23 +267,41 @@ namespace CakmaERP.FormsMainScreens
                 if (row.Cells["ISPASSIVE"].Value.ToString() == "1") checkBoxPasifmi.Checked = true;
                 else checkBoxPasifmi.Checked = false;
 
-                var firmakodu = cbFirma.Text;
+                var firmakodu = row.Cells["COMCODE"].Value.ToString();
+                if (firmakodu !="")
+                {
+                    DataTable tableOpr = CRUD.Read("SELECT * FROM GRSROTOPRCONTENT");
+                    txtOperasyonNumarasi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["OPRNUM"].ToString();
+                    cbIsMerkezi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMDOCTYPE"].ToString();
+                    txtIsMerkeziKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMDOCNUM"].ToString();
+                    txtOperasyonKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["OPRDOCTYPE"].ToString();
+                    txtOperasyonHazirlikSuresi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["SETUPTIME"].ToString();
+                    txtOperasyonMakineSuresi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["MACHINETIME"].ToString();
+                    txtOperasyonIscilikSuresi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LABOURTIME"].ToString();
 
-                DataTable tableOpr = CRUD.Read("SELECT * FROM GRSROTOPRCONTENT");
-                txtOperasyonNumarasi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["OPRNUM"].ToString();
-                cbIsMerkezi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMDOCTYPE"].ToString();
-                txtIsMerkeziKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMDOCNUM"].ToString();
-                txtOperasyonKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["OPRDOCTYPE"].ToString();
-                txtOperasyonHazirlikSuresi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["SETUPTIME"].ToString();
-                txtOperasyonMakineSuresi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["MACHINETIME"].ToString();
-                txtOperasyonIscilikSuresi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LABOURTIME"].ToString();
+                    DataTable tableBom = CRUD.Read("SELECT * FROM GRSROTBOMCONTENT");
+                    cbUrunAgaci.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCTYPE"].ToString();
+                    txtUrunAgaciKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCNUM"].ToString();
+                    txtIcerikNumarasi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["CONTENTNUM"].ToString();
+                    txtBilesenKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["COMPONENT"].ToString();
+                    txtBilesenMiktari.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["QUANTITY"].ToString();
+                }
+                else
+                {
+                    txtOperasyonNumarasi.Text = "";
+                    cbIsMerkezi.Text = "";
+                    txtIsMerkeziKodu.Text = "";
+                    txtOperasyonKodu.Text = "";
+                    txtOperasyonHazirlikSuresi.Text = "";
+                    txtOperasyonMakineSuresi.Text = "";
+                    txtOperasyonIscilikSuresi.Text = "";
 
-                DataTable tableBom = CRUD.Read("SELECT * FROM GRSROTBOMCONTENT");
-                cbUrunAgaci.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCTYPE"].ToString();
-                txtUrunAgaciKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCNUM"].ToString();
-                txtIcerikNumarasi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["CONTENTNUM"].ToString();
-                txtBilesenKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["COMPONENT"].ToString();
-                txtBilesenMiktari.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["QUANTITY"].ToString();
+                    cbUrunAgaci.Text = "";
+                    txtUrunAgaciKodu.Text = "";
+                    txtIcerikNumarasi.Text = "";
+                    txtBilesenKodu.Text = "";
+                    txtBilesenMiktari.Text = "";
+                }
             }
         }
     }

@@ -88,7 +88,7 @@ namespace CakmaERP.FormsControlTables
                     { "ISPASSIVE", ispassive }
                 };
 
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND DOCTYPE = '{txtIsMerkeziTipi.Text}'";
                 CRUD.Update("GRSWCM001", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
@@ -103,7 +103,7 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND DOCTYPE = '{txtIsMerkeziTipi.Text}'";
                 CRUD.Delete("GRSWCM001", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();

@@ -49,20 +49,33 @@ namespace CakmaERP.FormsControlTables
             if (checkBox1.Checked) ispassive = 1;
             else ispassive = 0;
 
+            var data = new Dictionary<string, object>();
             if (!string.IsNullOrEmpty(cbFirma.Text)
                 && !string.IsNullOrEmpty(txtBirimKodu.Text)
                 && !string.IsNullOrEmpty(txtBirimAdi.Text)
                 )
             {
-                var data = new Dictionary<string, object>
+                if (txtAnaAgirlikBirimiKodu.Text == "")
                 {
-                    { "COMCODE", cbFirma.Text },
-                    { "UNITCODE", txtBirimKodu.Text },
-                    { "UNITTEXT", txtBirimAdi.Text },
-                    { "ISMAINUNIT", ispassive},
-                    { "MAINUNITCODE", txtAnaAgirlikBirimiKodu.Text }
-                };
-
+                    data = new Dictionary<string, object>
+                    {
+                        { "COMCODE", cbFirma.Text },
+                        { "UNITCODE", txtBirimKodu.Text },
+                        { "UNITTEXT", txtBirimAdi.Text },
+                        { "ISMAINUNIT", ispassive}
+                    };
+                }
+                else
+                {
+                    data = new Dictionary<string, object>
+                    {
+                        { "COMCODE", cbFirma.Text },
+                        { "UNITCODE", txtBirimKodu.Text },
+                        { "UNITTEXT", txtBirimAdi.Text },
+                        { "ISMAINUNIT", ispassive},
+                        { "MAINUNITCODE", txtAnaAgirlikBirimiKodu.Text }
+                    };
+                }
                 CRUD.Create("GRSGEN005", data);
                 MessageBox.Show("Veri başarıyla eklendi.");
                 LoadData();
@@ -93,7 +106,7 @@ namespace CakmaERP.FormsControlTables
                     { "MAINUNITCODE", txtAnaAgirlikBirimiKodu.Text }
                 };
 
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND UNITCODE = '{txtBirimKodu.Text}'";
                 CRUD.Update("GRSGEN005", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
@@ -108,7 +121,7 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND UNITCODE = '{txtBirimKodu.Text}'";
                 CRUD.Delete("GRSGEN005", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();

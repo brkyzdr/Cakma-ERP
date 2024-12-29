@@ -30,10 +30,10 @@ namespace CakmaERP.FormsMainScreens
         {
         }
 
-        private void LoadTreeView()
+        private void LoadTreeView(string firmaAdi)
         {
             
-            string firmaAdi = cbFirma.SelectedItem.ToString();
+            //string firmaAdi = cbFirma.SelectedItem.ToString();
 
             treeView1.Nodes.Clear(); // Mevcut düğümleri temizle
             string query = $"SELECT * FROM GRSBOMHEAD WHERE COMCODE = '{firmaAdi}'";
@@ -77,7 +77,7 @@ namespace CakmaERP.FormsMainScreens
             if (cbFirma.SelectedItem != null)
             {
                 string selectedFirma = cbFirma.SelectedItem.ToString();
-                LoadTreeView();
+                LoadTreeView(selectedFirma);
             }
         }
     }

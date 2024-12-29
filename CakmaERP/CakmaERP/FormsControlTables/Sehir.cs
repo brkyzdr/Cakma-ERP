@@ -28,10 +28,10 @@ namespace CakmaERP.FormsControlTables
             cbFirma.SelectedIndex = -1;
 
             DataTable country = CRUD.Read("SELECT DISTINCT COUNTRYCODE FROM GRSGEN003");
-            cbFirma.DataSource = country;
-            cbFirma.DisplayMember = "COUNTRYCODE";
-            cbFirma.ValueMember = "COUNTRYCODE";
-            cbFirma.SelectedIndex = -1;
+            cbUlke.DataSource = country;
+            cbUlke.DisplayMember = "COUNTRYCODE";
+            cbUlke.ValueMember = "COUNTRYCODE";
+            cbUlke.SelectedIndex = -1;
         }
 
 
@@ -86,7 +86,7 @@ namespace CakmaERP.FormsControlTables
                     { "COUNTRYCODE", cbUlke.Text }
                 };
 
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND CITYCODE = '{txtSehirKodu.Text}'";
                 CRUD.Update("GRSGEN004", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();
@@ -101,7 +101,7 @@ namespace CakmaERP.FormsControlTables
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND CITYCODE = '{txtSehirKodu.Text}'";
                 CRUD.Delete("GRSGEN004", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
                 LoadData();

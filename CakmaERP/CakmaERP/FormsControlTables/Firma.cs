@@ -55,15 +55,30 @@ namespace CakmaERP.FormsControlTables
             if (!string.IsNullOrEmpty(txtFirmaKodu.Text) 
                 && !string.IsNullOrEmpty(txtFirmaAdi.Text))
             {
-                var data = new Dictionary<string, object>
+                var data = new Dictionary<string, object> { };
+                if (cbUlkeKodu.Text=="" )
                 {
-                    { "COMCODE", txtFirmaKodu.Text },
-                    { "COMTEXT", txtFirmaAdi.Text },
-                    { "ADDRESS1", txtFirmaAdresi1.Text },
-                    { "ADDRESS2", txtFirmaAdresi2.Text },
-                    { "CITYCODE", cbSehirKodu.Text },
-                    { "COUNTRYCODE", cbUlkeKodu.Text }
-                };
+                    data = new Dictionary<string, object>
+                    {
+                        { "COMCODE", txtFirmaKodu.Text },
+                        { "COMTEXT", txtFirmaAdi.Text },
+                        { "ADDRESS1", txtFirmaAdresi1.Text },
+                        { "ADDRESS2", txtFirmaAdresi2.Text },
+                     };
+                }
+                else
+                {
+                    data = new Dictionary<string, object>
+                    {
+                        { "COMCODE", txtFirmaKodu.Text },
+                        { "COMTEXT", txtFirmaAdi.Text },
+                        { "ADDRESS1", txtFirmaAdresi1.Text },
+                        { "ADDRESS2", txtFirmaAdresi2.Text },
+                        { "CITYCODE", cbSehirKodu.Text },
+                        { "COUNTRYCODE", cbUlkeKodu.Text }
+                    };
+                }
+                
 
                 CRUD.Create("GRSGEN001", data);
                 MessageBox.Show("Veri başarıyla eklendi.");

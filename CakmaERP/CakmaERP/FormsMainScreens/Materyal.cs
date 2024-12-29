@@ -124,8 +124,8 @@ namespace CakmaERP.FormsMainScreens
                     { "COMCODE", cbFirma.Text },
                     { "MATDOCTYPE", cbMalzemeTipi.Text },
                     { "MATDOCNUM", txtMalzemeKodu.Text },
-                    { "MATDOCFROM", dateTimePickerBaslangic.Text },
-                    { "MATDOCUNTIL", dateTimePickerBitis.Text },
+                    { "MATDOCFROM", dateTimePickerBaslangic.Value },
+                    { "MATDOCUNTIL", dateTimePickerBitis.Value },
                     { "SUPPLYTYPE", txtTedarikTipi.Text },
                     { "STUNIT", cbMalzemeStokBirimi.Text },
                     { "NETWEIGHT", txtNetAgirlik.Text },
@@ -144,6 +144,7 @@ namespace CakmaERP.FormsMainScreens
                 var dataText = new Dictionary<string, object>
                 {
                     { "COMCODE", cbFirma.Text },
+                    { "MATDOCTYPE", cbMalzemeTipi.Text },
                     { "LANCODE", cbDil.Text },
                     { "MATSTEXT", txtMalzemeAciklamasi.Text }
                 };
@@ -184,8 +185,8 @@ namespace CakmaERP.FormsMainScreens
                     { "COMCODE", cbFirma.Text },
                     { "MATDOCTYPE", cbMalzemeTipi.Text },
                     { "MATDOCNUM", txtMalzemeKodu.Text },
-                    { "MATDOCFROM", dateTimePickerBaslangic.Text },
-                    { "MATDOCUNTIL", dateTimePickerBitis.Text },
+                    { "MATDOCFROM", dateTimePickerBaslangic.Value },
+                    { "MATDOCUNTIL", dateTimePickerBitis.Value },
                     { "SUPPLYTYPE", txtTedarikTipi.Text },
                     { "STUNIT", cbMalzemeStokBirimi.Text },
                     { "NETWEIGHT", txtNetAgirlik.Text },
@@ -204,11 +205,12 @@ namespace CakmaERP.FormsMainScreens
                 var dataText = new Dictionary<string, object>
                 {
                     { "COMCODE", cbFirma.Text },
+                    { "MATDOCTYPE", cbMalzemeTipi.Text },
                     { "LANCODE", cbDil.Text },
                     { "MATSTEXT", txtMalzemeAciklamasi.Text }
                 };
 
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND MATDOCTYPE = '{cbMalzemeTipi.Text}'";
                 CRUD.Update("GRSMATHEAD", dataHead, condition);
                 CRUD.Update("GRSMATTEXT", dataText, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
@@ -224,7 +226,7 @@ namespace CakmaERP.FormsMainScreens
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND MATDOCTYPE = '{cbMalzemeTipi.Text}'";
                 CRUD.Delete("GRSMATHEAD", condition);
                 CRUD.Delete("GRSMATTEXT", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
@@ -265,11 +267,18 @@ namespace CakmaERP.FormsMainScreens
                 if (row.Cells["ISPASSIVE"].Value.ToString() == "1") checkBoxPasifmi.Checked = true;
                 else checkBoxPasifmi.Checked = false;
 
-
-                DataTable tableText = CRUD.Read("SELECT * FROM GRSMATTEXT");
-                var firmakodu = cbFirma.Text;
-                cbDil.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
-                txtMalzemeAciklamasi.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["MATSTEXT"].ToString();
+                var firmakodu = row.Cells["COMCODE"].Value.ToString();
+                if (firmakodu!="")
+                {
+                    DataTable tableText = CRUD.Read("SELECT * FROM GRSMATTEXT");
+                    cbDil.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
+                    txtMalzemeAciklamasi.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["MATSTEXT"].ToString();
+                }
+                else
+                {
+                    cbDil.Text = "";
+                    txtMalzemeAciklamasi.Text = "";
+                }
             }
         }
     }

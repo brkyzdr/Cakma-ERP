@@ -83,10 +83,10 @@ namespace CakmaERP.FormsMainScreens
                 var dataHead = new Dictionary<string, object>
                 {
                     { "COMCODE", cbFirma.Text },
-                    { "CCMDOCTYPE", cbDil.Text },
+                    { "CCMDOCTYPE", cbMaliyetM.Text },
                     { "CCMDOCNUM", txtMaliyetMerkeziKodu.Text },
-                    { "CCMDOCFROM", dateTimePickerBaslangic.Text },
-                    { "CCMDOCUNTIL", dateTimePickerBitis.Text },
+                    { "CCMDOCFROM", dateTimePickerBaslangic.Value },
+                    { "CCMDOCUNTIL", dateTimePickerBitis.Value },
                     { "MAINCCMDOCTYPE", txtAnaMaliyetMerkeziTipi.Text },
                     { "MAINCCMDOCNUM", txtAnaMaliyetMerkeziKodu.Text },                  
                     { "ISDELETED", isdeleted },
@@ -95,6 +95,7 @@ namespace CakmaERP.FormsMainScreens
                 var dataText = new Dictionary<string, object>
                 {
                     { "COMCODE", cbFirma.Text },
+                    { "CCMDOCTYPE", cbMaliyetM.Text },
                     { "LANCODE", cbDil.Text },
                 };               
 
@@ -135,8 +136,8 @@ namespace CakmaERP.FormsMainScreens
                     { "COMCODE", cbFirma.Text },
                     { "CCMDOCTYPE", cbMaliyetM.Text },
                     { "CCMDOCNUM", txtMaliyetMerkeziKodu.Text },
-                    { "CCMDOCFROM", dateTimePickerBaslangic.Text },
-                    { "CCMDOCUNTIL", dateTimePickerBitis.Text },
+                    { "CCMDOCFROM", dateTimePickerBaslangic.Value },
+                    { "CCMDOCUNTIL", dateTimePickerBitis.Value },
                     { "MAINCCMDOCTYPE", txtAnaMaliyetMerkeziTipi.Text },
                     { "MAINCCMDOCNUM", txtAnaMaliyetMerkeziKodu.Text },
                     { "ISDELETED", isdeleted },
@@ -145,10 +146,11 @@ namespace CakmaERP.FormsMainScreens
                 var dataText = new Dictionary<string, object>
                 {
                     { "COMCODE", cbFirma.Text },
+                    { "CCMDOCTYPE", cbMaliyetM.Text },
                     { "LANCODE", cbDil.Text },
                 };
 
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND CCMDOCTYPE = '{cbMaliyetM.Text}'";
                 CRUD.Update("GRSCCMHEAD", dataHead, condition);
                 CRUD.Update("GRSCCMTEXT", dataText, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
@@ -164,7 +166,7 @@ namespace CakmaERP.FormsMainScreens
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND CCMDOCTYPE = '{cbMaliyetM.Text}'";
                 CRUD.Delete("GRSCCMHEAD", condition);
                 CRUD.Delete("GRSCCMTEXT", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
@@ -195,12 +197,18 @@ namespace CakmaERP.FormsMainScreens
                 if (row.Cells["ISPASSIVE"].Value.ToString() == "1") checkBoxPasifmi.Checked = true;
                 else checkBoxPasifmi.Checked = false;
 
-
-                DataTable tableText = CRUD.Read("SELECT * FROM GRSCCMTEXT");
-                var firmakodu = cbFirma.Text;
-
-                cbDil.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
-                txtMaliyetAciklamasi.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["CCMSTEXT"].ToString();           
+                var firmakodu = row.Cells["COMCODE"].Value.ToString();
+                if (firmakodu != "")
+                {
+                    DataTable tableText = CRUD.Read("SELECT * FROM GRSCCMTEXT");
+                    cbDil.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
+                    txtMaliyetAciklamasi.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["CCMSTEXT"].ToString();
+                }
+                else
+                {
+                    cbDil.Text = "";
+                    txtMaliyetAciklamasi.Text = "";
+                }
             }
         }
     }
