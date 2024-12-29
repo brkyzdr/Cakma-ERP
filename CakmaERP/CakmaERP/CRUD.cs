@@ -14,7 +14,7 @@ namespace CakmaERP
     public class CRUD
     {
         //!!! Database kısmına kendi database ismini yaz !!!
-        private static readonly string connectionString = "Server=localhost; Database=DB03; Integrated Security=true";
+        private static readonly string connectionString = "Server=localhost; Database=KBSERP; Integrated Security=true";
 
         public static void Create(string tableName, Dictionary<string, object> data)
         {

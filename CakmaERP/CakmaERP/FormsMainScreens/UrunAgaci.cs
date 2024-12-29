@@ -16,8 +16,8 @@ namespace CakmaERP.FormsMainScreens
         {
             InitializeComponent();
 
-            //LoadData();
-            //FillComboBox();
+            LoadData();
+            FillComboBox();
         }
 
         private void FillComboBox()
@@ -34,7 +34,7 @@ namespace CakmaERP.FormsMainScreens
             cbUrunAgaci.ValueMember = "DOCTYPE";
             cbUrunAgaci.SelectedIndex = -1;
 
-            DataTable mat = CRUD.Read("SELECT DISTINCT COMCODE FROM GRSMAT001");
+            DataTable mat = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSMAT001");
             cbMalzeme.DataSource = mat;
             cbMalzeme.DisplayMember = "DOCTYPE";
             cbMalzeme.ValueMember = "DOCTYPE";
@@ -208,7 +208,7 @@ namespace CakmaERP.FormsMainScreens
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
-                cbKalemUrunAgaci.Text = row.Cells["BOMDOCTYPE"].Value.ToString();
+                cbUrunAgaci.Text = row.Cells["BOMDOCTYPE"].Value.ToString();
                 txtUrunAgaciKodu.Text = row.Cells["BOMDOCNUM"].Value.ToString();
                 dateTimePickerBaslangic.Text = row.Cells["BOMDOCFROM"].Value.ToString();
                 dateTimePickerBitis.Text = row.Cells["BOMDOCUNTIL"].Value.ToString();

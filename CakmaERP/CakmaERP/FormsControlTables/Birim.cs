@@ -126,12 +126,12 @@ namespace CakmaERP.FormsControlTables
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
                 txtBirimKodu.Text = row.Cells["UNITCODE"].Value.ToString();
-                txtBirimKodu.Text = row.Cells["UNITTEXT"].Value.ToString();
+                txtBirimAdi.Text = row.Cells["UNITTEXT"].Value.ToString();
 
                 if (row.Cells["ISMAINUNIT"].Value.ToString() == "1") checkBox1.Checked = true;
                 else checkBox1.Checked = false;
 
-                txtBirimKodu.Text = row.Cells["MAINUNITCODE"].Value.ToString();
+                txtAnaAgirlikBirimiKodu.Text = row.Cells["MAINUNITCODE"].Value.ToString();
             }
         }
     }

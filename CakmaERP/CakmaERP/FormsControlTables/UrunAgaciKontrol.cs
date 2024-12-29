@@ -87,7 +87,7 @@ namespace CakmaERP.FormsControlTables
                     { "ISPASSIVE", ispassive }
                 };
 
-                string condition = $"firma_kodu = '{cbFirma.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}'";
                 CRUD.Update("GRSBOM001", data, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
                 LoadData();

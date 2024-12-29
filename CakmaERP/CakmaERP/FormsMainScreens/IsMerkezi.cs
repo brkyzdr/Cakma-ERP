@@ -36,7 +36,7 @@ namespace CakmaERP.FormsMainScreens
             cbIsMerkeziTipi.SelectedIndex = -1;
 
             DataTable ccm = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSCCM001");
-            cbMaliyetMerkeziTipi.DataSource = com;
+            cbMaliyetMerkeziTipi.DataSource = ccm;
             cbMaliyetMerkeziTipi.DisplayMember = "DOCTYPE";
             cbMaliyetMerkeziTipi.ValueMember = "DOCTYPE";
             cbMaliyetMerkeziTipi.SelectedIndex = -1;
