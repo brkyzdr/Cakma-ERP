@@ -18,21 +18,18 @@ namespace CakmaERP.FormsControlTables
             InitializeComponent();
 
             LoadData();
-            FillComboBox();
+            //FillComboBox();//Normalde firma kodunu dolduruyoruz sadece
+            txtFirmaKodu.TextChanged += txtFirmaKodu_TextChanged;
         }
         private void FillComboBox()
         {
-            DataTable city = CRUD.Read("SELECT DISTINCT CITYCODE FROM GRSGEN004");
-            cbSehirKodu.DataSource = city;
-            cbSehirKodu.DisplayMember = "CITYCODE";  
-            cbSehirKodu.ValueMember = "CITYCODE";
-            cbSehirKodu.SelectedIndex = -1;
+            /*string query = "SELECT DISTINCT FIRMA FROM YourFirmaTable"; // FIRMA bilgilerini sorgula
+            DataTable firmaTable = CRUD.Read(query);
 
-            DataTable country = CRUD.Read("SELECT DISTINCT COUNTRYCODE FROM GRSGEN003");
-            cbUlkeKodu.DataSource = country;
-            cbUlkeKodu.DisplayMember = "COUNTRYCODE";
-            cbUlkeKodu.ValueMember = "COUNTRYCODE";
-            cbUlkeKodu.SelectedIndex = -1;
+            cbFirma.DataSource = firmaTable;
+            cbFirma.DisplayMember = "FIRMA"; // Gösterilecek değer
+            cbFirma.ValueMember = "FIRMA";   // Seçimde kullanılacak değer
+            cbFirma.SelectedIndex = -1;      // Varsayılan olarak boş göster*/
         }
 
         private void LoadData()
@@ -142,6 +139,37 @@ namespace CakmaERP.FormsControlTables
                 txtFirmaAdresi2.Text = row.Cells["ADDRESS2"].Value.ToString();
                 cbSehirKodu.Text = row.Cells["CITYCODE"].Value.ToString();
                 cbUlkeKodu.Text = row.Cells["COUNTRYCODE"].Value.ToString();
+            }
+        }
+
+        private void txtFirmaKodu_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFirmaKodu.Text!= null)
+            {
+                // Seçilen firmanın ID'sini alın
+                string selectedFirma = txtFirmaKodu.Text;
+
+                // Seçilen firmaya göre CITYCODE'ları doldur
+                string cityQuery = $"SELECT DISTINCT CITYCODE FROM GRSGEN004 WHERE COMCODE = '{selectedFirma}'";
+                DataTable cityTable = CRUD.Read(cityQuery);
+                cbSehirKodu.DataSource = cityTable;
+                cbSehirKodu.DisplayMember = "CITYCODE";
+                cbSehirKodu.ValueMember = "CITYCODE";
+                cbSehirKodu.SelectedIndex = -1;
+
+                // Seçilen firmaya göre COUNTRYCODE'ları doldur
+                string countryQuery = $"SELECT DISTINCT COUNTRYCODE FROM GRSGEN003 WHERE COMCODE = '{selectedFirma}'";
+                DataTable countryTable = CRUD.Read(countryQuery);
+                cbUlkeKodu.DataSource = countryTable;
+                cbUlkeKodu.DisplayMember = "COUNTRYCODE";
+                cbUlkeKodu.ValueMember = "COUNTRYCODE";
+                cbUlkeKodu.SelectedIndex = -1;
+            }
+            else
+            {
+                // Eğer firma seçimi temizlenirse diğer combobox'ları da temizle
+                cbSehirKodu.DataSource = null;
+                cbUlkeKodu.DataSource = null;
             }
         }
     }

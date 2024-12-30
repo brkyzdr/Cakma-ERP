@@ -66,6 +66,7 @@
             this.txtFirmaKodu.Name = "txtFirmaKodu";
             this.txtFirmaKodu.Size = new System.Drawing.Size(216, 20);
             this.txtFirmaKodu.TabIndex = 6;
+            this.txtFirmaKodu.TextChanged += new System.EventHandler(this.txtFirmaKodu_TextChanged);
             // 
             // txtFirmaAdi
             // 
@@ -174,6 +175,7 @@
             // 
             // cbSehirKodu
             // 
+            this.cbSehirKodu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSehirKodu.FormattingEnabled = true;
             this.cbSehirKodu.Location = new System.Drawing.Point(12, 301);
             this.cbSehirKodu.Name = "cbSehirKodu";
@@ -182,6 +184,7 @@
             // 
             // cbUlkeKodu
             // 
+            this.cbUlkeKodu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUlkeKodu.FormattingEnabled = true;
             this.cbUlkeKodu.Location = new System.Drawing.Point(12, 357);
             this.cbUlkeKodu.Name = "cbUlkeKodu";

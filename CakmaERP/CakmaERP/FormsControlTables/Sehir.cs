@@ -16,7 +16,8 @@ namespace CakmaERP.FormsControlTables
         {
             InitializeComponent();
             LoadData();
-            FillComboBox();         
+            FillComboBox();        
+            cbFirma.SelectedIndexChanged += cbFirma_SelectedIndexChanged;
         }
 
         private void FillComboBox()
@@ -27,11 +28,11 @@ namespace CakmaERP.FormsControlTables
             cbFirma.ValueMember = "COMCODE";
             cbFirma.SelectedIndex = -1;
 
-            DataTable country = CRUD.Read("SELECT DISTINCT COUNTRYCODE FROM GRSGEN003");
+            /*DataTable country = CRUD.Read("SELECT DISTINCT COUNTRYCODE FROM GRSGEN003");
             cbUlke.DataSource = country;
             cbUlke.DisplayMember = "COUNTRYCODE";
             cbUlke.ValueMember = "COUNTRYCODE";
-            cbUlke.SelectedIndex = -1;
+            cbUlke.SelectedIndex = -1;*/
         }
 
 
@@ -121,6 +122,29 @@ namespace CakmaERP.FormsControlTables
                 txtSehirKodu.Text = row.Cells["CITYCODE"].Value.ToString();
                 txtSehirAdi.Text = row.Cells["CITYTEXT"].Value.ToString();
                 cbUlke.Text = row.Cells["COUNTRYCODE"].Value.ToString();
+            }
+        }
+
+        private void cbFirma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFirma.SelectedValue != null)
+            {
+                // Seçilen firmanın ID'sini alın
+                string selectedFirma = cbFirma.SelectedValue.ToString();               
+
+                // Seçilen firmaya göre COUNTRYCODE'ları doldur
+                string countryQuery = $"SELECT DISTINCT COUNTRYCODE FROM GRSGEN003 WHERE COMCODE = '{selectedFirma}'";
+                DataTable countryTable = CRUD.Read(countryQuery);
+                cbUlke.DataSource = countryTable;
+                cbUlke.DisplayMember = "COUNTRYCODE";
+                cbUlke.ValueMember = "COUNTRYCODE";
+                cbUlke.SelectedIndex = -1;
+            }
+            else
+            {
+                // Eğer firma seçimi temizlenirse diğer combobox'ları da temizle
+                
+                cbUlke.DataSource = null;
             }
         }
     }

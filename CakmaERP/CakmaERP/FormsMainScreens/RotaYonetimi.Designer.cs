@@ -463,14 +463,17 @@
             // 
             // cbFirma
             // 
+            this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
             this.cbFirma.Location = new System.Drawing.Point(12, 92);
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(216, 21);
             this.cbFirma.TabIndex = 152;
+            this.cbFirma.SelectedIndexChanged += new System.EventHandler(this.cbFirma_SelectedIndexChanged);
             // 
             // cbRota
             // 
+            this.cbRota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRota.FormattingEnabled = true;
             this.cbRota.Location = new System.Drawing.Point(12, 135);
             this.cbRota.Name = "cbRota";
@@ -479,6 +482,7 @@
             // 
             // cbMalzeme
             // 
+            this.cbMalzeme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMalzeme.FormattingEnabled = true;
             this.cbMalzeme.Location = new System.Drawing.Point(12, 316);
             this.cbMalzeme.Name = "cbMalzeme";
@@ -487,6 +491,7 @@
             // 
             // cbIsMerkezi
             // 
+            this.cbIsMerkezi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIsMerkezi.FormattingEnabled = true;
             this.cbIsMerkezi.Location = new System.Drawing.Point(12, 590);
             this.cbIsMerkezi.Name = "cbIsMerkezi";
@@ -495,6 +500,7 @@
             // 
             // cbUrunAgaci
             // 
+            this.cbUrunAgaci.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUrunAgaci.FormattingEnabled = true;
             this.cbUrunAgaci.Location = new System.Drawing.Point(12, 853);
             this.cbUrunAgaci.Name = "cbUrunAgaci";

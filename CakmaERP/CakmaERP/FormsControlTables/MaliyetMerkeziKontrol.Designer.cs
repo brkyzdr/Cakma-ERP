@@ -147,6 +147,7 @@
             // 
             // cbFirma
             // 
+            this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
             this.cbFirma.Location = new System.Drawing.Point(12, 91);
             this.cbFirma.Name = "cbFirma";

@@ -327,14 +327,17 @@
             // 
             // cbFirma
             // 
+            this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
             this.cbFirma.Location = new System.Drawing.Point(12, 91);
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(216, 21);
             this.cbFirma.TabIndex = 52;
+            this.cbFirma.SelectedIndexChanged += new System.EventHandler(this.cbFirma_SelectedIndexChanged);
             // 
             // cbIsMerkeziTipi
             // 
+            this.cbIsMerkeziTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIsMerkeziTipi.FormattingEnabled = true;
             this.cbIsMerkeziTipi.Location = new System.Drawing.Point(13, 136);
             this.cbIsMerkeziTipi.Name = "cbIsMerkeziTipi";
@@ -343,6 +346,7 @@
             // 
             // cbMaliyetMerkeziTipi
             // 
+            this.cbMaliyetMerkeziTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaliyetMerkeziTipi.FormattingEnabled = true;
             this.cbMaliyetMerkeziTipi.Location = new System.Drawing.Point(12, 406);
             this.cbMaliyetMerkeziTipi.Name = "cbMaliyetMerkeziTipi";
@@ -351,6 +355,7 @@
             // 
             // cbDilKodu
             // 
+            this.cbDilKodu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDilKodu.FormattingEnabled = true;
             this.cbDilKodu.Location = new System.Drawing.Point(12, 589);
             this.cbDilKodu.Name = "cbDilKodu";

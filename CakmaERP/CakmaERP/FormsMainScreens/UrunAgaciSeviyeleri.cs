@@ -32,9 +32,6 @@ namespace CakmaERP.FormsMainScreens
 
         private void LoadTreeView(string firmaAdi)
         {
-            
-            //string firmaAdi = cbFirma.SelectedItem.ToString();
-
             treeView1.Nodes.Clear(); // Mevcut düğümleri temizle
             string query = $"SELECT * FROM GRSBOMHEAD WHERE COMCODE = '{firmaAdi}'";
             DataTable dt = CRUD.Read(query);
@@ -43,8 +40,8 @@ namespace CakmaERP.FormsMainScreens
 
             foreach (DataRow row in dt.Rows)
             {
-                string id = row["BOMDOCTYPE"].ToString();
-                string name = row["BOMDOCNUM"].ToString();
+                string id = row["BOMDOCNUM"].ToString();
+                string name = row["BOMDOCTYPE"].ToString();
 
                 TreeNode node = new TreeNode(name) { Tag = id };
                 nodeDict[id] = node;
@@ -74,9 +71,9 @@ namespace CakmaERP.FormsMainScreens
 
         private void cbFirma_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbFirma.SelectedItem != null)
+            if (cbFirma.SelectedValue != null)
             {
-                string selectedFirma = cbFirma.SelectedItem.ToString();
+                string selectedFirma = cbFirma.SelectedValue.ToString();
                 LoadTreeView(selectedFirma);
             }
         }

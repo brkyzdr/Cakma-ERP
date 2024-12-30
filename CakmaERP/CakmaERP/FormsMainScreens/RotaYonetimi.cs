@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CakmaERP.FormsControlTables;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,8 @@ namespace CakmaERP.FormsMainScreens
             InitializeComponent();
             LoadData();
             FillComboBox();
+            cbFirma.SelectedIndexChanged += cbFirma_SelectedIndexChanged;
+
         }
 
         private void FillComboBox()
@@ -27,7 +30,7 @@ namespace CakmaERP.FormsMainScreens
             cbFirma.ValueMember = "COMCODE";
             cbFirma.SelectedIndex = -1;
 
-            DataTable rot = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSROT001");
+            /*DataTable rot = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSROT001");
             cbRota.DataSource = rot;
             cbRota.DisplayMember = "DOCTYPE";
             cbRota.ValueMember = "DOCTYPE";
@@ -49,7 +52,7 @@ namespace CakmaERP.FormsMainScreens
             cbUrunAgaci.DataSource = bom;
             cbUrunAgaci.DisplayMember = "DOCTYPE";
             cbUrunAgaci.ValueMember = "DOCTYPE";
-            cbUrunAgaci.SelectedIndex = -1;
+            cbUrunAgaci.SelectedIndex = -1;*/
         }
 
         private void LoadData()
@@ -113,7 +116,7 @@ namespace CakmaERP.FormsMainScreens
                     { "QUANTITY", txtTemelMiktar.Text },
                     { "ISDELETED", isdeleted },
                     { "ISPASSIVE", ispassive },
-                    { "DRAWNUM", txtCizimNumarasi }
+                    { "DRAWNUM", txtCizimNumarasi.Text }
                 };
                 var dataOpr = new Dictionary<string, object>
                 {
@@ -191,7 +194,7 @@ namespace CakmaERP.FormsMainScreens
                     { "QUANTITY", txtTemelMiktar.Text },
                     { "ISDELETED", isdeleted },
                     { "ISPASSIVE", ispassive },
-                    { "DRAWNUM", txtCizimNumarasi }
+                    { "DRAWNUM", txtCizimNumarasi.Text }
                 };
                 var dataOpr = new Dictionary<string, object>
                 {
@@ -251,12 +254,12 @@ namespace CakmaERP.FormsMainScreens
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
-                cbRota.Text = row.Cells["ROTDOCTYPE"].Value.ToString();
+                cbFirma.SelectedValue = row.Cells["COMCODE"].Value.ToString();
+                cbRota.SelectedValue = row.Cells["ROTDOCTYPE"].Value.ToString();
                 txtRotaKodu.Text = row.Cells["ROTDOCNUM"].Value.ToString();
                 dateTimePickerBaslangic.Text = row.Cells["ROTDOCFROM"].Value.ToString();
                 dateTimePickerBitis.Text = row.Cells["ROTDOCUNTIL"].Value.ToString();
-                cbMalzeme.Text = row.Cells["MATDOCTYPE"].Value.ToString();
+                cbMalzeme.SelectedValue = row.Cells["MATDOCTYPE"].Value.ToString();
                 txtMalzemeKodu.Text = row.Cells["MATDOCNUM"].Value.ToString();
                 txtTemelMiktar.Text = row.Cells["QUANTITY"].Value.ToString();
                 txtCizimNumarasi.Text = row.Cells["DRAWNUM"].Value.ToString();
@@ -272,7 +275,7 @@ namespace CakmaERP.FormsMainScreens
                 {
                     DataTable tableOpr = CRUD.Read("SELECT * FROM GRSROTOPRCONTENT");
                     txtOperasyonNumarasi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["OPRNUM"].ToString();
-                    cbIsMerkezi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMDOCTYPE"].ToString();
+                    cbIsMerkezi.SelectedValue = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMDOCTYPE"].ToString();
                     txtIsMerkeziKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMDOCNUM"].ToString();
                     txtOperasyonKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["OPRDOCTYPE"].ToString();
                     txtOperasyonHazirlikSuresi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["SETUPTIME"].ToString();
@@ -280,28 +283,75 @@ namespace CakmaERP.FormsMainScreens
                     txtOperasyonIscilikSuresi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LABOURTIME"].ToString();
 
                     DataTable tableBom = CRUD.Read("SELECT * FROM GRSROTBOMCONTENT");
-                    cbUrunAgaci.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCTYPE"].ToString();
-                    txtUrunAgaciKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCNUM"].ToString();
-                    txtIcerikNumarasi.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["CONTENTNUM"].ToString();
-                    txtBilesenKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["COMPONENT"].ToString();
-                    txtBilesenMiktari.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["QUANTITY"].ToString();
+                    cbUrunAgaci.SelectedValue = tableBom.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCTYPE"].ToString();
+                    txtUrunAgaciKodu.Text = tableBom.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["BOMDOCNUM"].ToString();
+                    txtIcerikNumarasi.Text = tableBom.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["CONTENTNUM"].ToString();
+                    txtBilesenKodu.Text = tableBom.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["COMPONENT"].ToString();
+                    txtBilesenMiktari.Text = tableBom.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["QUANTITY"].ToString();
                 }
                 else
                 {
                     txtOperasyonNumarasi.Text = "";
-                    cbIsMerkezi.Text = "";
+                    cbIsMerkezi.SelectedValue = "";
                     txtIsMerkeziKodu.Text = "";
                     txtOperasyonKodu.Text = "";
                     txtOperasyonHazirlikSuresi.Text = "";
                     txtOperasyonMakineSuresi.Text = "";
                     txtOperasyonIscilikSuresi.Text = "";
 
-                    cbUrunAgaci.Text = "";
+                    cbUrunAgaci.SelectedValue = "";
                     txtUrunAgaciKodu.Text = "";
                     txtIcerikNumarasi.Text = "";
                     txtBilesenKodu.Text = "";
                     txtBilesenMiktari.Text = "";
                 }
+            }
+        }
+
+        private void cbFirma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFirma.SelectedValue != null)
+            {
+                // Seçilen firmanın ID'sini alın
+                string selectedFirma = cbFirma.SelectedValue.ToString();
+
+                // Seçilen firmaya göre COUNTRYCODE'ları doldur
+                string rotQuery = $"SELECT DISTINCT DOCTYPE FROM GRSROT001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable rotTable = CRUD.Read(rotQuery);
+                cbRota.DataSource = rotTable;
+                cbRota.DisplayMember = "DOCTYPE";
+                cbRota.ValueMember = "DOCTYPE";
+                cbRota.SelectedIndex = -1;
+
+                string wcmQuery = $"SELECT DISTINCT DOCTYPE FROM GRSWCM001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable wcmTable = CRUD.Read(wcmQuery);
+                cbIsMerkezi.DataSource = wcmTable;
+                cbIsMerkezi.DisplayMember = "DOCTYPE";
+                cbIsMerkezi.ValueMember = "DOCTYPE";
+                cbIsMerkezi.SelectedIndex = -1;
+
+                string matQuery = $"SELECT DISTINCT DOCTYPE FROM GRSMAT001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable matTable = CRUD.Read(matQuery);
+                cbMalzeme.DataSource = matTable;
+                cbMalzeme.DisplayMember = "DOCTYPE";
+                cbMalzeme.ValueMember = "DOCTYPE";
+                cbMalzeme.SelectedIndex = -1;
+
+                string bomQuery = $"SELECT DISTINCT DOCTYPE FROM GRSBOM001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable bomTable = CRUD.Read(bomQuery);
+                cbUrunAgaci.DataSource = bomTable;
+                cbUrunAgaci.DisplayMember = "DOCTYPE";
+                cbUrunAgaci.ValueMember = "DOCTYPE";
+                cbUrunAgaci.SelectedIndex = -1;
+            }
+            else
+            {
+                // Eğer firma seçimi temizlenirse diğer combobox'ları da temizle
+
+                cbRota.DataSource = null;
+                cbIsMerkezi.DataSource = null;
+                cbMalzeme.DataSource = null;
+                cbUrunAgaci.DataSource = null;
             }
         }
     }

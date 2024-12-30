@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CakmaERP.FormsControlTables;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,6 +19,8 @@ namespace CakmaERP.FormsMainScreens
 
             LoadData();   
             FillComboBox();
+            cbFirma.SelectedIndexChanged += cbFirma_SelectedIndexChanged;
+
         }
 
         private void FillComboBox()
@@ -28,7 +31,7 @@ namespace CakmaERP.FormsMainScreens
             cbFirma.ValueMember = "COMCODE";
             cbFirma.SelectedIndex = -1;
 
-            DataTable mat = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSMAT001");
+            /*DataTable mat = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSMAT001");
             cbMalzemeTipi.DataSource = mat;
             cbMalzemeTipi.DisplayMember = "DOCTYPE";
             cbMalzemeTipi.ValueMember = "DOCTYPE";
@@ -68,7 +71,7 @@ namespace CakmaERP.FormsMainScreens
             cbFirma.DataSource = lan;
             cbFirma.DisplayMember = "LANCODE";
             cbFirma.ValueMember = "LANCODE";
-            cbFirma.SelectedIndex = -1;
+            cbFirma.SelectedIndex = -1;*/
         }
 
         private void LoadData()
@@ -243,22 +246,22 @@ namespace CakmaERP.FormsMainScreens
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
-                cbMalzemeTipi.Text = row.Cells["MATDOCTYPE"].Value.ToString();
+                cbFirma.SelectedValue = row.Cells["COMCODE"].Value.ToString();
+                cbMalzemeTipi.SelectedValue = row.Cells["MATDOCTYPE"].Value.ToString();
                 txtMalzemeKodu.Text = row.Cells["MATDOCNUM"].Value.ToString();
                 dateTimePickerBaslangic.Text = row.Cells["MATDOCFROM"].Value.ToString();
                 dateTimePickerBitis.Text = row.Cells["MATDOCUNTIL"].Value.ToString();
                 txtTedarikTipi.Text = row.Cells["SUPPLYTYPE"].Value.ToString();
-                cbMalzemeStokBirimi.Text = row.Cells["STUNIT"].Value.ToString();
+                cbMalzemeStokBirimi.SelectedValue = row.Cells["STUNIT"].Value.ToString();
                 txtNetAgirlik.Text = row.Cells["NETWEIGHT"].Value.ToString();
-                cbNetAgirlikBirimi.Text = row.Cells["NWUNIT"].Value.ToString();
+                cbNetAgirlikBirimi.SelectedValue = row.Cells["NWUNIT"].Value.ToString();
                 txtBrutAgirlik.Text = row.Cells["BRUTWEIGHT"].Value.ToString();
-                cbBrutAgirlikBirimi.Text = row.Cells["BWUNIT"].Value.ToString();
+                cbBrutAgirlikBirimi.SelectedValue = row.Cells["BWUNIT"].Value.ToString();
                 txtUrunAgaciVarmi.Text = row.Cells["ISBOM"].Value.ToString();
-                cbUrunAgaciTipi.Text = row.Cells["BOMDOCTYPE"].Value.ToString();
+                cbUrunAgaciTipi.SelectedValue = row.Cells["BOMDOCTYPE"].Value.ToString();
                 txtUrunAgaciKodu.Text = row.Cells["BOMDOCNUM"].Value.ToString();
                 txtRotaVarmi.Text = row.Cells["ISROUTE"].Value.ToString();
-                cbRotaTipi.Text = row.Cells["ROTDOCTYPE"].Value.ToString();
+                cbRotaTipi.SelectedValue = row.Cells["ROTDOCTYPE"].Value.ToString();
                 txtRotaKodu.Text = row.Cells["BOMDOCNUM"].Value.ToString();
                 
                 if (row.Cells["ISDELETED"].Value.ToString() == "1") checkBoxSilindimi.Checked = true;
@@ -271,7 +274,7 @@ namespace CakmaERP.FormsMainScreens
                 if (firmakodu!="")
                 {
                     DataTable tableText = CRUD.Read("SELECT * FROM GRSMATTEXT");
-                    cbDil.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
+                    cbDil.SelectedValue = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
                     txtMalzemeAciklamasi.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["MATSTEXT"].ToString();
                 }
                 else
@@ -279,6 +282,77 @@ namespace CakmaERP.FormsMainScreens
                     cbDil.Text = "";
                     txtMalzemeAciklamasi.Text = "";
                 }
+            }
+        }
+
+        private void cbFirma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFirma.SelectedValue != null)
+            {
+                // Seçilen firmanın ID'sini alın
+                string selectedFirma = cbFirma.SelectedValue.ToString();
+
+                // Seçilen firmaya göre COUNTRYCODE'ları doldur
+                string matQuery = $"SELECT DISTINCT DOCTYPE FROM GRSMAT001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable matTable = CRUD.Read(matQuery);
+                cbMalzemeTipi.DataSource = matTable;
+                cbMalzemeTipi.DisplayMember = "DOCTYPE";
+                cbMalzemeTipi.ValueMember = "DOCTYPE";
+                cbMalzemeTipi.SelectedIndex = -1;
+
+                string maQuery = $"SELECT DISTINCT UNITCODE FROM GRSGEN005 WHERE COMCODE = '{selectedFirma}'";
+                DataTable maTable = CRUD.Read(maQuery);
+                cbMalzemeStokBirimi.DataSource = maTable;
+                cbMalzemeStokBirimi.DisplayMember = "UNITCODE";
+                cbMalzemeStokBirimi.ValueMember = "UNITCODE";
+                cbMalzemeStokBirimi.SelectedIndex = -1;
+
+                string manQuery = $"SELECT DISTINCT UNITCODE FROM GRSGEN005 WHERE COMCODE = '{selectedFirma}'";
+                DataTable manTable = CRUD.Read(manQuery);
+                cbNetAgirlikBirimi.DataSource = manTable;
+                cbNetAgirlikBirimi.DisplayMember = "UNITCODE";
+                cbNetAgirlikBirimi.ValueMember = "UNITCODE";
+                cbNetAgirlikBirimi.SelectedIndex = -1;
+
+                string mabQuery = $"SELECT DISTINCT UNITCODE FROM GRSGEN005 WHERE COMCODE = '{selectedFirma}'";
+                DataTable mabTable = CRUD.Read(mabQuery);
+                cbBrutAgirlikBirimi.DataSource = mabTable;
+                cbBrutAgirlikBirimi.DisplayMember = "UNITCODE";
+                cbBrutAgirlikBirimi.ValueMember = "UNITCODE";
+                cbBrutAgirlikBirimi.SelectedIndex = -1;
+
+                string bomQuery = $"SELECT DISTINCT DOCTYPE FROM GRSBOM001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable bomTable = CRUD.Read(bomQuery);
+                cbUrunAgaciTipi.DataSource = bomTable;
+                cbUrunAgaciTipi.DisplayMember = "DOCTYPE";
+                cbUrunAgaciTipi.ValueMember = "DOCTYPE";
+                cbUrunAgaciTipi.SelectedIndex = -1;
+
+                string rotQuery = $"SELECT DISTINCT DOCTYPE FROM GRSROT001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable rotTable = CRUD.Read(rotQuery);
+                cbRotaTipi.DataSource = rotTable;
+                cbRotaTipi.DisplayMember = "DOCTYPE";
+                cbRotaTipi.ValueMember = "DOCTYPE";
+                cbRotaTipi.SelectedIndex = -1;
+
+                string lanQuery = $"SELECT DISTINCT LANCODE FROM GRSGEN002 WHERE COMCODE = '{selectedFirma}'";
+                DataTable lanTable = CRUD.Read(lanQuery);
+                cbDil.DataSource = lanTable;
+                cbDil.DisplayMember = "LANCODE";
+                cbDil.ValueMember = "LANCODE";
+                cbDil.SelectedIndex = -1;
+            }
+            else
+            {
+                // Eğer firma seçimi temizlenirse diğer combobox'ları da temizle
+
+                cbMalzemeTipi.DataSource = null;
+                cbMalzemeStokBirimi.DataSource = null;
+                cbNetAgirlikBirimi.DataSource = null;
+                cbBrutAgirlikBirimi.DataSource = null;
+                cbUrunAgaciTipi.DataSource = null;
+                cbRotaTipi.DataSource = null;
+                cbDil.DataSource = null;
             }
         }
     }

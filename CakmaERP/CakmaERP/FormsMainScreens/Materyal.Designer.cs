@@ -407,14 +407,17 @@
             // 
             // cbFirma
             // 
+            this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
             this.cbFirma.Location = new System.Drawing.Point(12, 93);
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(216, 21);
             this.cbFirma.TabIndex = 94;
+            this.cbFirma.SelectedIndexChanged += new System.EventHandler(this.cbFirma_SelectedIndexChanged);
             // 
             // cbMalzemeTipi
             // 
+            this.cbMalzemeTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMalzemeTipi.FormattingEnabled = true;
             this.cbMalzemeTipi.Location = new System.Drawing.Point(12, 137);
             this.cbMalzemeTipi.Name = "cbMalzemeTipi";
@@ -423,6 +426,7 @@
             // 
             // cbMalzemeStokBirimi
             // 
+            this.cbMalzemeStokBirimi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMalzemeStokBirimi.FormattingEnabled = true;
             this.cbMalzemeStokBirimi.Location = new System.Drawing.Point(12, 362);
             this.cbMalzemeStokBirimi.Name = "cbMalzemeStokBirimi";
@@ -431,6 +435,7 @@
             // 
             // cbNetAgirlikBirimi
             // 
+            this.cbNetAgirlikBirimi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNetAgirlikBirimi.FormattingEnabled = true;
             this.cbNetAgirlikBirimi.Location = new System.Drawing.Point(12, 451);
             this.cbNetAgirlikBirimi.Name = "cbNetAgirlikBirimi";
@@ -439,6 +444,7 @@
             // 
             // cbBrutAgirlikBirimi
             // 
+            this.cbBrutAgirlikBirimi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBrutAgirlikBirimi.FormattingEnabled = true;
             this.cbBrutAgirlikBirimi.Location = new System.Drawing.Point(12, 541);
             this.cbBrutAgirlikBirimi.Name = "cbBrutAgirlikBirimi";
@@ -447,6 +453,7 @@
             // 
             // cbUrunAgaciTipi
             // 
+            this.cbUrunAgaciTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUrunAgaciTipi.FormattingEnabled = true;
             this.cbUrunAgaciTipi.Location = new System.Drawing.Point(12, 631);
             this.cbUrunAgaciTipi.Name = "cbUrunAgaciTipi";
@@ -455,6 +462,7 @@
             // 
             // cbRotaTipi
             // 
+            this.cbRotaTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRotaTipi.FormattingEnabled = true;
             this.cbRotaTipi.Location = new System.Drawing.Point(12, 767);
             this.cbRotaTipi.Name = "cbRotaTipi";
@@ -463,6 +471,7 @@
             // 
             // cbDil
             // 
+            this.cbDil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDil.FormattingEnabled = true;
             this.cbDil.Location = new System.Drawing.Point(12, 906);
             this.cbDil.Name = "cbDil";

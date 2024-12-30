@@ -262,14 +262,17 @@
             // 
             // cbFirma
             // 
+            this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
             this.cbFirma.Location = new System.Drawing.Point(12, 91);
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(216, 21);
             this.cbFirma.TabIndex = 52;
+            this.cbFirma.SelectedIndexChanged += new System.EventHandler(this.cbFirma_SelectedIndexChanged);
             // 
             // cbMaliyetM
             // 
+            this.cbMaliyetM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaliyetM.FormattingEnabled = true;
             this.cbMaliyetM.Location = new System.Drawing.Point(12, 135);
             this.cbMaliyetM.Name = "cbMaliyetM";
@@ -278,6 +281,7 @@
             // 
             // cbDil
             // 
+            this.cbDil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDil.FormattingEnabled = true;
             this.cbDil.Location = new System.Drawing.Point(12, 456);
             this.cbDil.Name = "cbDil";

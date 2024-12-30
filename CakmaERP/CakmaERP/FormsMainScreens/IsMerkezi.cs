@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CakmaERP.FormsControlTables;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace CakmaERP.FormsMainScreens
 
             LoadData();
             FillComboBox();
+            cbFirma.SelectedIndexChanged += cbFirma_SelectedIndexChanged;
         }
 
         private void FillComboBox()
@@ -29,7 +31,7 @@ namespace CakmaERP.FormsMainScreens
             cbFirma.ValueMember = "COMCODE";
             cbFirma.SelectedIndex = -1;
 
-            DataTable wcm = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSWCM001");
+            /*DataTable wcm = CRUD.Read("SELECT DISTINCT DOCTYPE FROM GRSWCM001");
             cbIsMerkeziTipi.DataSource = wcm;
             cbIsMerkeziTipi.DisplayMember = "DOCTYPE";
             cbIsMerkeziTipi.ValueMember = "DOCTYPE";
@@ -45,7 +47,7 @@ namespace CakmaERP.FormsMainScreens
             cbDilKodu.DataSource = lan;
             cbDilKodu.DisplayMember = "LANCODE";
             cbDilKodu.ValueMember = "LANCODE";
-            cbDilKodu.SelectedIndex = -1;
+            cbDilKodu.SelectedIndex = -1;*/
 
         }
 
@@ -224,14 +226,14 @@ namespace CakmaERP.FormsMainScreens
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                cbFirma.Text = row.Cells["COMCODE"].Value.ToString();
-                cbIsMerkeziTipi.Text = row.Cells["WCMDOCTYPE"].Value.ToString();
+                cbFirma.SelectedValue = row.Cells["COMCODE"].Value.ToString();
+                cbIsMerkeziTipi.SelectedValue = row.Cells["WCMDOCTYPE"].Value.ToString();
                 txtIsMerkeziKodu.Text = row.Cells["WCMDOCNUM"].Value.ToString();
                 dateTimePickerBaslangic.Text = row.Cells["WCMDOCFROM"].Value.ToString();
                 dateTimePickerBitis.Text = row.Cells["WCMDOCUNTIL"].Value.ToString();
                 txtAnaIsMerkeziTipi.Text = row.Cells["MAINWCMDOCTYPE"].Value.ToString();
                 txtAnaIsMerkeziKodu.Text = row.Cells["MAINWCMDOCNUM"].Value.ToString();
-                cbMaliyetMerkeziTipi.Text = row.Cells["CCMDOCTYPE"].Value.ToString();
+                cbMaliyetMerkeziTipi.SelectedValue = row.Cells["CCMDOCTYPE"].Value.ToString();
                 txtMaliyetMerkeziKodu.Text = row.Cells["CCMDOCNUM"].Value.ToString();
                 txtGunlukCalismaSatti.Text = row.Cells["WORKTIME"].Value.ToString();
 
@@ -246,16 +248,55 @@ namespace CakmaERP.FormsMainScreens
                 {
                     DataTable tableText = CRUD.Read("SELECT * FROM GRSWCMTEXT");
                     DataTable tableOpr = CRUD.Read("SELECT * FROM GRSWCMOPR");
-                    cbDilKodu.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
+                    cbDilKodu.SelectedValue = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["LANCODE"].ToString();
                     txtIsAciklamasi.Text = tableText.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["WCMSTEXT"].ToString();
                     txtOperasyonKodu.Text = tableOpr.AsEnumerable().FirstOrDefault(r => r.Field<string>("COMCODE") == firmakodu)["OPRDOCTYPE"].ToString();
                 }
                 else
                 {
-                    cbDilKodu.Text = "";
+                    cbDilKodu.SelectedValue = "";
                     txtIsAciklamasi.Text = "";
                     txtOperasyonKodu.Text = "";
                 }
+            }
+        }
+
+        private void cbFirma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbFirma.SelectedValue != null)
+            {
+                // Seçilen firmanın ID'sini alın
+                string selectedFirma = cbFirma.SelectedValue.ToString();
+
+                // Seçilen firmaya göre COUNTRYCODE'ları doldur
+                string wcmQuery = $"SELECT DISTINCT DOCTYPE FROM GRSWCM001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable wcmTable = CRUD.Read(wcmQuery);
+                cbIsMerkeziTipi.DataSource = wcmTable;
+                cbIsMerkeziTipi.DisplayMember = "DOCTYPE";
+                cbIsMerkeziTipi.ValueMember = "DOCTYPE";
+                cbIsMerkeziTipi.SelectedIndex = -1;
+
+                string ccmQuery = $"SELECT DISTINCT DOCTYPE FROM GRSCCM001 WHERE COMCODE = '{selectedFirma}'";
+                DataTable ccmTable = CRUD.Read(ccmQuery);
+                cbMaliyetMerkeziTipi.DataSource = ccmTable;
+                cbMaliyetMerkeziTipi.DisplayMember = "DOCTYPE";
+                cbMaliyetMerkeziTipi.ValueMember = "DOCTYPE";
+                cbMaliyetMerkeziTipi.SelectedIndex = -1;
+
+                string lanQuery = $"SELECT DISTINCT LANCODE FROM GRSGEN002 WHERE COMCODE = '{selectedFirma}'";
+                DataTable lanTable = CRUD.Read(lanQuery);
+                cbDilKodu.DataSource = lanTable;
+                cbDilKodu.DisplayMember = "LANCODE";
+                cbDilKodu.ValueMember = "LANCODE";
+                cbDilKodu.SelectedIndex = -1;
+            }
+            else
+            {
+                // Eğer firma seçimi temizlenirse diğer combobox'ları da temizle
+
+                cbIsMerkeziTipi.DataSource = null;
+                cbMaliyetMerkeziTipi.DataSource = null;
+                cbDilKodu.DataSource = null;
             }
         }
     }

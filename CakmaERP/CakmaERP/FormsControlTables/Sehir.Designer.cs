@@ -138,14 +138,17 @@
             // 
             // cbFirma
             // 
+            this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
             this.cbFirma.Location = new System.Drawing.Point(9, 99);
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(216, 21);
             this.cbFirma.TabIndex = 22;
+            this.cbFirma.SelectedIndexChanged += new System.EventHandler(this.cbFirma_SelectedIndexChanged);
             // 
             // cbUlke
             // 
+            this.cbUlke.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUlke.FormattingEnabled = true;
             this.cbUlke.Location = new System.Drawing.Point(9, 240);
             this.cbUlke.Name = "cbUlke";

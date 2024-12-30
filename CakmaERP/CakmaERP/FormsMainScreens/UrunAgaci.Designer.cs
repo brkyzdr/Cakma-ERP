@@ -345,14 +345,17 @@
             // 
             // cbFirma
             // 
+            this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
             this.cbFirma.Location = new System.Drawing.Point(12, 92);
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(216, 21);
             this.cbFirma.TabIndex = 166;
+            this.cbFirma.SelectedIndexChanged += new System.EventHandler(this.cbFirma_SelectedIndexChanged);
             // 
             // cbUrunAgaci
             // 
+            this.cbUrunAgaci.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUrunAgaci.FormattingEnabled = true;
             this.cbUrunAgaci.Location = new System.Drawing.Point(12, 135);
             this.cbUrunAgaci.Name = "cbUrunAgaci";
@@ -361,6 +364,7 @@
             // 
             // cbMalzeme
             // 
+            this.cbMalzeme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMalzeme.FormattingEnabled = true;
             this.cbMalzeme.Location = new System.Drawing.Point(12, 314);
             this.cbMalzeme.Name = "cbMalzeme";
@@ -369,6 +373,7 @@
             // 
             // cbKalemUrunAgaci
             // 
+            this.cbKalemUrunAgaci.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKalemUrunAgaci.FormattingEnabled = true;
             this.cbKalemUrunAgaci.Location = new System.Drawing.Point(12, 632);
             this.cbKalemUrunAgaci.Name = "cbKalemUrunAgaci";
