@@ -87,7 +87,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(1258, 1137);
+            this.dataGridView1.Size = new System.Drawing.Size(1558, 980);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -124,7 +124,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 934);
+            this.label13.Location = new System.Drawing.Point(12, 926);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(102, 13);
             this.label13.TabIndex = 75;
@@ -132,16 +132,16 @@
             // 
             // txtMalzemeAciklamasi
             // 
-            this.txtMalzemeAciklamasi.Location = new System.Drawing.Point(12, 950);
+            this.txtMalzemeAciklamasi.Location = new System.Drawing.Point(12, 942);
             this.txtMalzemeAciklamasi.Multiline = true;
             this.txtMalzemeAciklamasi.Name = "txtMalzemeAciklamasi";
-            this.txtMalzemeAciklamasi.Size = new System.Drawing.Size(216, 80);
+            this.txtMalzemeAciklamasi.Size = new System.Drawing.Size(216, 50);
             this.txtMalzemeAciklamasi.TabIndex = 74;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 890);
+            this.label14.Location = new System.Drawing.Point(12, 882);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 13);
             this.label14.TabIndex = 73;
@@ -150,7 +150,7 @@
             // checkBoxPasifmi
             // 
             this.checkBoxPasifmi.AutoSize = true;
-            this.checkBoxPasifmi.Location = new System.Drawing.Point(72, 865);
+            this.checkBoxPasifmi.Location = new System.Drawing.Point(72, 857);
             this.checkBoxPasifmi.Name = "checkBoxPasifmi";
             this.checkBoxPasifmi.Size = new System.Drawing.Size(15, 14);
             this.checkBoxPasifmi.TabIndex = 71;
@@ -159,7 +159,7 @@
             // checkBoxSilindimi
             // 
             this.checkBoxSilindimi.AutoSize = true;
-            this.checkBoxSilindimi.Location = new System.Drawing.Point(72, 841);
+            this.checkBoxSilindimi.Location = new System.Drawing.Point(72, 833);
             this.checkBoxSilindimi.Name = "checkBoxSilindimi";
             this.checkBoxSilindimi.Size = new System.Drawing.Size(15, 14);
             this.checkBoxSilindimi.TabIndex = 70;
@@ -168,7 +168,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 865);
+            this.label11.Location = new System.Drawing.Point(12, 857);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 13);
             this.label11.TabIndex = 69;
@@ -177,7 +177,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 842);
+            this.label10.Location = new System.Drawing.Point(12, 834);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 68;
@@ -186,7 +186,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 435);
+            this.label6.Location = new System.Drawing.Point(12, 427);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 13);
             this.label6.TabIndex = 66;
@@ -195,7 +195,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 390);
+            this.label7.Location = new System.Drawing.Point(12, 382);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 65;
@@ -203,7 +203,7 @@
             // 
             // txtNetAgirlik
             // 
-            this.txtNetAgirlik.Location = new System.Drawing.Point(12, 406);
+            this.txtNetAgirlik.Location = new System.Drawing.Point(12, 398);
             this.txtNetAgirlik.Name = "txtNetAgirlik";
             this.txtNetAgirlik.Size = new System.Drawing.Size(216, 20);
             this.txtNetAgirlik.TabIndex = 64;
@@ -211,7 +211,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 346);
+            this.label8.Location = new System.Drawing.Point(12, 338);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(101, 13);
             this.label8.TabIndex = 63;
@@ -220,7 +220,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 301);
+            this.label9.Location = new System.Drawing.Point(12, 293);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(196, 13);
             this.label9.TabIndex = 62;
@@ -228,7 +228,7 @@
             // 
             // txtTedarikTipi
             // 
-            this.txtTedarikTipi.Location = new System.Drawing.Point(12, 317);
+            this.txtTedarikTipi.Location = new System.Drawing.Point(12, 309);
             this.txtTedarikTipi.Name = "txtTedarikTipi";
             this.txtTedarikTipi.Size = new System.Drawing.Size(216, 20);
             this.txtTedarikTipi.TabIndex = 60;
@@ -236,7 +236,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 254);
+            this.label5.Location = new System.Drawing.Point(12, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 59;
@@ -245,7 +245,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 210);
+            this.label4.Location = new System.Drawing.Point(12, 202);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 13);
             this.label4.TabIndex = 58;
@@ -253,14 +253,14 @@
             // 
             // dateTimePickerBitis
             // 
-            this.dateTimePickerBitis.Location = new System.Drawing.Point(12, 270);
+            this.dateTimePickerBitis.Location = new System.Drawing.Point(12, 262);
             this.dateTimePickerBitis.Name = "dateTimePickerBitis";
             this.dateTimePickerBitis.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerBitis.TabIndex = 57;
             // 
             // dateTimePickerBaslangic
             // 
-            this.dateTimePickerBaslangic.Location = new System.Drawing.Point(12, 226);
+            this.dateTimePickerBaslangic.Location = new System.Drawing.Point(12, 218);
             this.dateTimePickerBaslangic.Name = "dateTimePickerBaslangic";
             this.dateTimePickerBaslangic.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerBaslangic.TabIndex = 56;
@@ -268,7 +268,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 165);
+            this.label3.Location = new System.Drawing.Point(12, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 13);
             this.label3.TabIndex = 55;
@@ -276,7 +276,7 @@
             // 
             // txtMalzemeKodu
             // 
-            this.txtMalzemeKodu.Location = new System.Drawing.Point(12, 181);
+            this.txtMalzemeKodu.Location = new System.Drawing.Point(12, 173);
             this.txtMalzemeKodu.Name = "txtMalzemeKodu";
             this.txtMalzemeKodu.Size = new System.Drawing.Size(216, 20);
             this.txtMalzemeKodu.TabIndex = 54;
@@ -284,7 +284,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 121);
+            this.label2.Location = new System.Drawing.Point(12, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 53;
@@ -293,7 +293,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 76);
+            this.label1.Location = new System.Drawing.Point(12, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 52;
@@ -302,7 +302,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 525);
+            this.label15.Location = new System.Drawing.Point(12, 517);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(84, 13);
             this.label15.TabIndex = 80;
@@ -311,7 +311,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 480);
+            this.label16.Location = new System.Drawing.Point(12, 472);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(57, 13);
             this.label16.TabIndex = 79;
@@ -319,14 +319,14 @@
             // 
             // txtBrutAgirlik
             // 
-            this.txtBrutAgirlik.Location = new System.Drawing.Point(12, 496);
+            this.txtBrutAgirlik.Location = new System.Drawing.Point(12, 488);
             this.txtBrutAgirlik.Name = "txtBrutAgirlik";
             this.txtBrutAgirlik.Size = new System.Drawing.Size(216, 20);
             this.txtBrutAgirlik.TabIndex = 78;
             // 
             // txtUrunAgaciKodu
             // 
-            this.txtUrunAgaciKodu.Location = new System.Drawing.Point(12, 676);
+            this.txtUrunAgaciKodu.Location = new System.Drawing.Point(12, 668);
             this.txtUrunAgaciKodu.Name = "txtUrunAgaciKodu";
             this.txtUrunAgaciKodu.Size = new System.Drawing.Size(216, 20);
             this.txtUrunAgaciKodu.TabIndex = 87;
@@ -334,7 +334,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 660);
+            this.label17.Location = new System.Drawing.Point(12, 652);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(88, 13);
             this.label17.TabIndex = 86;
@@ -343,7 +343,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 615);
+            this.label18.Location = new System.Drawing.Point(12, 607);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(80, 13);
             this.label18.TabIndex = 85;
@@ -351,7 +351,7 @@
             // 
             // txtUrunAgaciVarmi
             // 
-            this.txtUrunAgaciVarmi.Location = new System.Drawing.Point(12, 586);
+            this.txtUrunAgaciVarmi.Location = new System.Drawing.Point(12, 578);
             this.txtUrunAgaciVarmi.Name = "txtUrunAgaciVarmi";
             this.txtUrunAgaciVarmi.Size = new System.Drawing.Size(216, 20);
             this.txtUrunAgaciVarmi.TabIndex = 83;
@@ -359,7 +359,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 570);
+            this.label19.Location = new System.Drawing.Point(12, 562);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(254, 13);
             this.label19.TabIndex = 82;
@@ -367,7 +367,7 @@
             // 
             // txtRotaKodu
             // 
-            this.txtRotaKodu.Location = new System.Drawing.Point(12, 812);
+            this.txtRotaKodu.Location = new System.Drawing.Point(12, 804);
             this.txtRotaKodu.Name = "txtRotaKodu";
             this.txtRotaKodu.Size = new System.Drawing.Size(216, 20);
             this.txtRotaKodu.TabIndex = 93;
@@ -375,7 +375,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(12, 796);
+            this.label20.Location = new System.Drawing.Point(12, 788);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(58, 13);
             this.label20.TabIndex = 92;
@@ -384,7 +384,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(12, 751);
+            this.label21.Location = new System.Drawing.Point(12, 743);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(50, 13);
             this.label21.TabIndex = 91;
@@ -392,7 +392,7 @@
             // 
             // txtRotaVarmi
             // 
-            this.txtRotaVarmi.Location = new System.Drawing.Point(12, 722);
+            this.txtRotaVarmi.Location = new System.Drawing.Point(12, 714);
             this.txtRotaVarmi.Name = "txtRotaVarmi";
             this.txtRotaVarmi.Size = new System.Drawing.Size(216, 20);
             this.txtRotaVarmi.TabIndex = 89;
@@ -400,7 +400,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(12, 706);
+            this.label22.Location = new System.Drawing.Point(12, 698);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(224, 13);
             this.label22.TabIndex = 88;
@@ -410,7 +410,7 @@
             // 
             this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
-            this.cbFirma.Location = new System.Drawing.Point(12, 93);
+            this.cbFirma.Location = new System.Drawing.Point(12, 85);
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(216, 21);
             this.cbFirma.TabIndex = 94;
@@ -420,7 +420,7 @@
             // 
             this.cbMalzemeTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMalzemeTipi.FormattingEnabled = true;
-            this.cbMalzemeTipi.Location = new System.Drawing.Point(12, 137);
+            this.cbMalzemeTipi.Location = new System.Drawing.Point(12, 129);
             this.cbMalzemeTipi.Name = "cbMalzemeTipi";
             this.cbMalzemeTipi.Size = new System.Drawing.Size(216, 21);
             this.cbMalzemeTipi.TabIndex = 95;
@@ -429,7 +429,7 @@
             // 
             this.cbMalzemeStokBirimi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMalzemeStokBirimi.FormattingEnabled = true;
-            this.cbMalzemeStokBirimi.Location = new System.Drawing.Point(12, 362);
+            this.cbMalzemeStokBirimi.Location = new System.Drawing.Point(12, 354);
             this.cbMalzemeStokBirimi.Name = "cbMalzemeStokBirimi";
             this.cbMalzemeStokBirimi.Size = new System.Drawing.Size(216, 21);
             this.cbMalzemeStokBirimi.TabIndex = 96;
@@ -438,7 +438,7 @@
             // 
             this.cbNetAgirlikBirimi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNetAgirlikBirimi.FormattingEnabled = true;
-            this.cbNetAgirlikBirimi.Location = new System.Drawing.Point(12, 451);
+            this.cbNetAgirlikBirimi.Location = new System.Drawing.Point(12, 443);
             this.cbNetAgirlikBirimi.Name = "cbNetAgirlikBirimi";
             this.cbNetAgirlikBirimi.Size = new System.Drawing.Size(216, 21);
             this.cbNetAgirlikBirimi.TabIndex = 97;
@@ -447,7 +447,7 @@
             // 
             this.cbBrutAgirlikBirimi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBrutAgirlikBirimi.FormattingEnabled = true;
-            this.cbBrutAgirlikBirimi.Location = new System.Drawing.Point(12, 541);
+            this.cbBrutAgirlikBirimi.Location = new System.Drawing.Point(12, 533);
             this.cbBrutAgirlikBirimi.Name = "cbBrutAgirlikBirimi";
             this.cbBrutAgirlikBirimi.Size = new System.Drawing.Size(216, 21);
             this.cbBrutAgirlikBirimi.TabIndex = 98;
@@ -456,7 +456,7 @@
             // 
             this.cbUrunAgaciTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUrunAgaciTipi.FormattingEnabled = true;
-            this.cbUrunAgaciTipi.Location = new System.Drawing.Point(12, 631);
+            this.cbUrunAgaciTipi.Location = new System.Drawing.Point(12, 623);
             this.cbUrunAgaciTipi.Name = "cbUrunAgaciTipi";
             this.cbUrunAgaciTipi.Size = new System.Drawing.Size(216, 21);
             this.cbUrunAgaciTipi.TabIndex = 99;
@@ -465,7 +465,7 @@
             // 
             this.cbRotaTipi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRotaTipi.FormattingEnabled = true;
-            this.cbRotaTipi.Location = new System.Drawing.Point(12, 767);
+            this.cbRotaTipi.Location = new System.Drawing.Point(12, 759);
             this.cbRotaTipi.Name = "cbRotaTipi";
             this.cbRotaTipi.Size = new System.Drawing.Size(216, 21);
             this.cbRotaTipi.TabIndex = 100;
@@ -474,7 +474,7 @@
             // 
             this.cbDil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDil.FormattingEnabled = true;
-            this.cbDil.Location = new System.Drawing.Point(12, 906);
+            this.cbDil.Location = new System.Drawing.Point(12, 898);
             this.cbDil.Name = "cbDil";
             this.cbDil.Size = new System.Drawing.Size(216, 21);
             this.cbDil.TabIndex = 101;
@@ -484,7 +484,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1584, 1161);
+            this.ClientSize = new System.Drawing.Size(1884, 1006);
             this.Controls.Add(this.cbDil);
             this.Controls.Add(this.cbRotaTipi);
             this.Controls.Add(this.cbUrunAgaciTipi);
@@ -534,6 +534,7 @@
             this.Name = "Materyal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Materyal";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

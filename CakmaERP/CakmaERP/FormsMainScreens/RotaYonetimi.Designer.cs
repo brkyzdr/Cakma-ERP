@@ -121,13 +121,13 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridView1.Size = new System.Drawing.Size(1258, 1137);
+            this.dataGridView1.Size = new System.Drawing.Size(1558, 989);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // txtOperasyonKodu
             // 
-            this.txtOperasyonKodu.Location = new System.Drawing.Point(12, 680);
+            this.txtOperasyonKodu.Location = new System.Drawing.Point(12, 640);
             this.txtOperasyonKodu.Name = "txtOperasyonKodu";
             this.txtOperasyonKodu.Size = new System.Drawing.Size(216, 20);
             this.txtOperasyonKodu.TabIndex = 135;
@@ -135,7 +135,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(12, 664);
+            this.label20.Location = new System.Drawing.Point(12, 624);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(86, 13);
             this.label20.TabIndex = 134;
@@ -144,7 +144,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(12, 619);
+            this.label21.Location = new System.Drawing.Point(12, 579);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(83, 13);
             this.label21.TabIndex = 133;
@@ -152,7 +152,7 @@
             // 
             // txtIsMerkeziKodu
             // 
-            this.txtIsMerkeziKodu.Location = new System.Drawing.Point(12, 635);
+            this.txtIsMerkeziKodu.Location = new System.Drawing.Point(12, 595);
             this.txtIsMerkeziKodu.Name = "txtIsMerkeziKodu";
             this.txtIsMerkeziKodu.Size = new System.Drawing.Size(216, 20);
             this.txtIsMerkeziKodu.TabIndex = 132;
@@ -160,7 +160,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(12, 574);
+            this.label22.Location = new System.Drawing.Point(12, 534);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(75, 13);
             this.label22.TabIndex = 130;
@@ -168,7 +168,7 @@
             // 
             // txtRotaKodu
             // 
-            this.txtRotaKodu.Location = new System.Drawing.Point(12, 180);
+            this.txtRotaKodu.Location = new System.Drawing.Point(12, 170);
             this.txtRotaKodu.Name = "txtRotaKodu";
             this.txtRotaKodu.Size = new System.Drawing.Size(216, 20);
             this.txtRotaKodu.TabIndex = 129;
@@ -176,7 +176,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 164);
+            this.label17.Location = new System.Drawing.Point(12, 154);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(58, 13);
             this.label17.TabIndex = 128;
@@ -185,7 +185,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 119);
+            this.label18.Location = new System.Drawing.Point(12, 109);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(50, 13);
             this.label18.TabIndex = 127;
@@ -193,7 +193,7 @@
             // 
             // txtOperasyonNumarasi
             // 
-            this.txtOperasyonNumarasi.Location = new System.Drawing.Point(12, 545);
+            this.txtOperasyonNumarasi.Location = new System.Drawing.Point(12, 512);
             this.txtOperasyonNumarasi.Name = "txtOperasyonNumarasi";
             this.txtOperasyonNumarasi.Size = new System.Drawing.Size(216, 20);
             this.txtOperasyonNumarasi.TabIndex = 125;
@@ -201,7 +201,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 529);
+            this.label19.Location = new System.Drawing.Point(12, 496);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(105, 13);
             this.label19.TabIndex = 124;
@@ -210,7 +210,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 753);
+            this.label13.Location = new System.Drawing.Point(12, 713);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(159, 13);
             this.label13.TabIndex = 119;
@@ -218,7 +218,7 @@
             // 
             // txtOperasyonMakineSuresi
             // 
-            this.txtOperasyonMakineSuresi.Location = new System.Drawing.Point(12, 769);
+            this.txtOperasyonMakineSuresi.Location = new System.Drawing.Point(12, 729);
             this.txtOperasyonMakineSuresi.Name = "txtOperasyonMakineSuresi";
             this.txtOperasyonMakineSuresi.Size = new System.Drawing.Size(216, 20);
             this.txtOperasyonMakineSuresi.TabIndex = 118;
@@ -226,7 +226,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(12, 709);
+            this.label14.Location = new System.Drawing.Point(12, 669);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(158, 13);
             this.label14.TabIndex = 117;
@@ -234,7 +234,7 @@
             // 
             // txtOperasyonHazirlikSuresi
             // 
-            this.txtOperasyonHazirlikSuresi.Location = new System.Drawing.Point(12, 725);
+            this.txtOperasyonHazirlikSuresi.Location = new System.Drawing.Point(12, 685);
             this.txtOperasyonHazirlikSuresi.Name = "txtOperasyonHazirlikSuresi";
             this.txtOperasyonHazirlikSuresi.Size = new System.Drawing.Size(216, 20);
             this.txtOperasyonHazirlikSuresi.TabIndex = 116;
@@ -242,7 +242,7 @@
             // checkBoxPasifmi
             // 
             this.checkBoxPasifmi.AutoSize = true;
-            this.checkBoxPasifmi.Location = new System.Drawing.Point(72, 457);
+            this.checkBoxPasifmi.Location = new System.Drawing.Point(72, 440);
             this.checkBoxPasifmi.Name = "checkBoxPasifmi";
             this.checkBoxPasifmi.Size = new System.Drawing.Size(15, 14);
             this.checkBoxPasifmi.TabIndex = 115;
@@ -251,7 +251,7 @@
             // checkBoxSilindimi
             // 
             this.checkBoxSilindimi.AutoSize = true;
-            this.checkBoxSilindimi.Location = new System.Drawing.Point(72, 433);
+            this.checkBoxSilindimi.Location = new System.Drawing.Point(72, 416);
             this.checkBoxSilindimi.Name = "checkBoxSilindimi";
             this.checkBoxSilindimi.Size = new System.Drawing.Size(15, 14);
             this.checkBoxSilindimi.TabIndex = 114;
@@ -260,7 +260,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(12, 457);
+            this.label11.Location = new System.Drawing.Point(12, 440);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(49, 13);
             this.label11.TabIndex = 113;
@@ -269,7 +269,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 434);
+            this.label10.Location = new System.Drawing.Point(12, 417);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 13);
             this.label10.TabIndex = 112;
@@ -277,7 +277,7 @@
             // 
             // txtCizimNumarasi
             // 
-            this.txtCizimNumarasi.Location = new System.Drawing.Point(12, 496);
+            this.txtCizimNumarasi.Location = new System.Drawing.Point(12, 473);
             this.txtCizimNumarasi.Name = "txtCizimNumarasi";
             this.txtCizimNumarasi.Size = new System.Drawing.Size(216, 20);
             this.txtCizimNumarasi.TabIndex = 111;
@@ -285,7 +285,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 480);
+            this.label6.Location = new System.Drawing.Point(12, 457);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 13);
             this.label6.TabIndex = 110;
@@ -294,7 +294,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 389);
+            this.label7.Location = new System.Drawing.Point(12, 379);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 13);
             this.label7.TabIndex = 109;
@@ -302,7 +302,7 @@
             // 
             // txtTemelMiktar
             // 
-            this.txtTemelMiktar.Location = new System.Drawing.Point(12, 405);
+            this.txtTemelMiktar.Location = new System.Drawing.Point(12, 395);
             this.txtTemelMiktar.Name = "txtTemelMiktar";
             this.txtTemelMiktar.Size = new System.Drawing.Size(216, 20);
             this.txtTemelMiktar.TabIndex = 108;
@@ -310,7 +310,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 345);
+            this.label8.Location = new System.Drawing.Point(12, 335);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 13);
             this.label8.TabIndex = 107;
@@ -319,7 +319,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 300);
+            this.label9.Location = new System.Drawing.Point(12, 290);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 106;
@@ -327,7 +327,7 @@
             // 
             // txtMalzemeKodu
             // 
-            this.txtMalzemeKodu.Location = new System.Drawing.Point(12, 361);
+            this.txtMalzemeKodu.Location = new System.Drawing.Point(12, 351);
             this.txtMalzemeKodu.Name = "txtMalzemeKodu";
             this.txtMalzemeKodu.Size = new System.Drawing.Size(216, 20);
             this.txtMalzemeKodu.TabIndex = 105;
@@ -335,7 +335,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 253);
+            this.label5.Location = new System.Drawing.Point(12, 243);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(101, 13);
             this.label5.TabIndex = 103;
@@ -344,7 +344,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 209);
+            this.label4.Location = new System.Drawing.Point(12, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 13);
             this.label4.TabIndex = 102;
@@ -352,14 +352,14 @@
             // 
             // dateTimePickerBitis
             // 
-            this.dateTimePickerBitis.Location = new System.Drawing.Point(12, 269);
+            this.dateTimePickerBitis.Location = new System.Drawing.Point(12, 259);
             this.dateTimePickerBitis.Name = "dateTimePickerBitis";
             this.dateTimePickerBitis.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerBitis.TabIndex = 101;
             // 
             // dateTimePickerBaslangic
             // 
-            this.dateTimePickerBaslangic.Location = new System.Drawing.Point(12, 225);
+            this.dateTimePickerBaslangic.Location = new System.Drawing.Point(12, 215);
             this.dateTimePickerBaslangic.Name = "dateTimePickerBaslangic";
             this.dateTimePickerBaslangic.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerBaslangic.TabIndex = 100;
@@ -367,7 +367,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 75);
+            this.label1.Location = new System.Drawing.Point(12, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 96;
@@ -375,7 +375,7 @@
             // 
             // txtBilesenMiktari
             // 
-            this.txtBilesenMiktari.Location = new System.Drawing.Point(15, 1030);
+            this.txtBilesenMiktari.Location = new System.Drawing.Point(12, 981);
             this.txtBilesenMiktari.Name = "txtBilesenMiktari";
             this.txtBilesenMiktari.Size = new System.Drawing.Size(216, 20);
             this.txtBilesenMiktari.TabIndex = 147;
@@ -383,7 +383,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 1014);
+            this.label2.Location = new System.Drawing.Point(12, 965);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 13);
             this.label2.TabIndex = 146;
@@ -392,7 +392,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 969);
+            this.label3.Location = new System.Drawing.Point(12, 921);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 145;
@@ -400,14 +400,14 @@
             // 
             // txtBilesenKodu
             // 
-            this.txtBilesenKodu.Location = new System.Drawing.Point(15, 985);
+            this.txtBilesenKodu.Location = new System.Drawing.Point(12, 937);
             this.txtBilesenKodu.Name = "txtBilesenKodu";
             this.txtBilesenKodu.Size = new System.Drawing.Size(216, 20);
             this.txtBilesenKodu.TabIndex = 144;
             // 
             // txtIcerikNumarasi
             // 
-            this.txtIcerikNumarasi.Location = new System.Drawing.Point(15, 940);
+            this.txtIcerikNumarasi.Location = new System.Drawing.Point(12, 894);
             this.txtIcerikNumarasi.Name = "txtIcerikNumarasi";
             this.txtIcerikNumarasi.Size = new System.Drawing.Size(216, 20);
             this.txtIcerikNumarasi.TabIndex = 143;
@@ -415,7 +415,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(15, 924);
+            this.label12.Location = new System.Drawing.Point(12, 878);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(80, 13);
             this.label12.TabIndex = 142;
@@ -423,7 +423,7 @@
             // 
             // txtOperasyonIscilikSuresi
             // 
-            this.txtOperasyonIscilikSuresi.Location = new System.Drawing.Point(12, 808);
+            this.txtOperasyonIscilikSuresi.Location = new System.Drawing.Point(12, 768);
             this.txtOperasyonIscilikSuresi.Name = "txtOperasyonIscilikSuresi";
             this.txtOperasyonIscilikSuresi.Size = new System.Drawing.Size(216, 20);
             this.txtOperasyonIscilikSuresi.TabIndex = 141;
@@ -431,7 +431,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(12, 792);
+            this.label23.Location = new System.Drawing.Point(12, 752);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(150, 13);
             this.label23.TabIndex = 140;
@@ -440,7 +440,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(12, 882);
+            this.label24.Location = new System.Drawing.Point(12, 839);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(88, 13);
             this.label24.TabIndex = 151;
@@ -448,7 +448,7 @@
             // 
             // txtUrunAgaciKodu
             // 
-            this.txtUrunAgaciKodu.Location = new System.Drawing.Point(12, 898);
+            this.txtUrunAgaciKodu.Location = new System.Drawing.Point(12, 855);
             this.txtUrunAgaciKodu.Name = "txtUrunAgaciKodu";
             this.txtUrunAgaciKodu.Size = new System.Drawing.Size(216, 20);
             this.txtUrunAgaciKodu.TabIndex = 150;
@@ -456,7 +456,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(12, 837);
+            this.label25.Location = new System.Drawing.Point(12, 797);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(80, 13);
             this.label25.TabIndex = 148;
@@ -466,7 +466,7 @@
             // 
             this.cbFirma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFirma.FormattingEnabled = true;
-            this.cbFirma.Location = new System.Drawing.Point(12, 92);
+            this.cbFirma.Location = new System.Drawing.Point(12, 82);
             this.cbFirma.Name = "cbFirma";
             this.cbFirma.Size = new System.Drawing.Size(216, 21);
             this.cbFirma.TabIndex = 152;
@@ -476,7 +476,7 @@
             // 
             this.cbRota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbRota.FormattingEnabled = true;
-            this.cbRota.Location = new System.Drawing.Point(12, 135);
+            this.cbRota.Location = new System.Drawing.Point(12, 125);
             this.cbRota.Name = "cbRota";
             this.cbRota.Size = new System.Drawing.Size(216, 21);
             this.cbRota.TabIndex = 153;
@@ -485,7 +485,7 @@
             // 
             this.cbMalzeme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMalzeme.FormattingEnabled = true;
-            this.cbMalzeme.Location = new System.Drawing.Point(12, 316);
+            this.cbMalzeme.Location = new System.Drawing.Point(12, 306);
             this.cbMalzeme.Name = "cbMalzeme";
             this.cbMalzeme.Size = new System.Drawing.Size(216, 21);
             this.cbMalzeme.TabIndex = 154;
@@ -494,7 +494,7 @@
             // 
             this.cbIsMerkezi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbIsMerkezi.FormattingEnabled = true;
-            this.cbIsMerkezi.Location = new System.Drawing.Point(12, 590);
+            this.cbIsMerkezi.Location = new System.Drawing.Point(12, 550);
             this.cbIsMerkezi.Name = "cbIsMerkezi";
             this.cbIsMerkezi.Size = new System.Drawing.Size(216, 21);
             this.cbIsMerkezi.TabIndex = 155;
@@ -503,7 +503,7 @@
             // 
             this.cbUrunAgaci.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUrunAgaci.FormattingEnabled = true;
-            this.cbUrunAgaci.Location = new System.Drawing.Point(12, 853);
+            this.cbUrunAgaci.Location = new System.Drawing.Point(12, 813);
             this.cbUrunAgaci.Name = "cbUrunAgaci";
             this.cbUrunAgaci.Size = new System.Drawing.Size(216, 21);
             this.cbUrunAgaci.TabIndex = 156;
@@ -513,7 +513,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1584, 1161);
+            this.ClientSize = new System.Drawing.Size(1884, 1006);
             this.Controls.Add(this.cbUrunAgaci);
             this.Controls.Add(this.cbIsMerkezi);
             this.Controls.Add(this.cbMalzeme);
@@ -567,6 +567,7 @@
             this.Name = "RotaYonetimi";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rota Yönetimi";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
