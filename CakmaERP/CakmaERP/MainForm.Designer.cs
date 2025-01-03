@@ -306,7 +306,7 @@
             this.Controls.Add(this.btnFirma);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Grş Çakma Erp";
+            this.Text = "GRS ERP";
             this.ResumeLayout(false);
             this.PerformLayout();
 

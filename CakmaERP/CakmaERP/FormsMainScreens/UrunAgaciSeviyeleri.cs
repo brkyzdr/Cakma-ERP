@@ -40,8 +40,9 @@ namespace CakmaERP.FormsMainScreens
 
             foreach (DataRow row in dt.Rows)
             {
+                string matdocnum=row["MATDOCNUM"].ToString();
                 string id = row["BOMDOCNUM"].ToString();
-                string name = row["BOMDOCTYPE"].ToString();
+                string name = row["BOMDOCTYPE"].ToString()+" ("+id+") ("+matdocnum+")";
 
                 TreeNode node = new TreeNode(name) { Tag = id };
                 nodeDict[id] = node;
