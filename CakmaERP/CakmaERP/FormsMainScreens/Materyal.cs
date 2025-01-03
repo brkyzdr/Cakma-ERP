@@ -148,6 +148,7 @@ namespace CakmaERP.FormsMainScreens
                 {
                     { "COMCODE", cbFirma.Text },
                     { "MATDOCTYPE", cbMalzemeTipi.Text },
+                    { "MATDOCNUM", txtMalzemeKodu.Text },
                     { "LANCODE", cbDil.Text },
                     { "MATSTEXT", txtMalzemeAciklamasi.Text }
                 };
@@ -213,7 +214,7 @@ namespace CakmaERP.FormsMainScreens
                     { "MATSTEXT", txtMalzemeAciklamasi.Text }
                 };
 
-                string condition = $"COMCODE = '{cbFirma.Text}' AND MATDOCTYPE = '{cbMalzemeTipi.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND MATDOCTYPE = '{cbMalzemeTipi.Text}' AND MATDOCNUM ='{txtMalzemeKodu.Text}'";
                 CRUD.Update("GRSMATHEAD", dataHead, condition);
                 CRUD.Update("GRSMATTEXT", dataText, condition);
                 MessageBox.Show("Veri başarıyla güncellendi.");
@@ -229,7 +230,7 @@ namespace CakmaERP.FormsMainScreens
         {
             if (!string.IsNullOrEmpty(cbFirma.Text))
             {
-                string condition = $"COMCODE = '{cbFirma.Text}' AND MATDOCTYPE = '{cbMalzemeTipi.Text}'";
+                string condition = $"COMCODE = '{cbFirma.Text}' AND MATDOCTYPE = '{cbMalzemeTipi.Text}' AND MATDOCNUM ='{txtMalzemeKodu.Text}'";
                 CRUD.Delete("GRSMATHEAD", condition);
                 CRUD.Delete("GRSMATTEXT", condition);
                 MessageBox.Show("Veri başarıyla silindi.");
